@@ -55,7 +55,7 @@ like in the past with punchcards, programming would be very painful.
 > [!CAUTION]
 > The `\n` character can cause issues with the `scanf` function if printed before.
 
-[The Mental Model](./CS50%E2%80%9000:-Introduction#mental-model), can be boiled down to an input
+[The Mental Model](../README.md#mental-model), can be boiled down to an input
 is an argument. A function is the processing section in the middle and the
 output is a side effect, for example in the hello world program above the
 string printed to the console is the side effect. The side effect can also be
@@ -167,7 +167,7 @@ we created a more succinct syntax `counter += 1`, or even further as
 - This is done using the `return` keyword.
 - You can then use the function to create a variable.
   - `int x = get_number("x");`
-- There is an example in [01-C/calculator.c](https://github.com/maclong9/harvard-compsci/blob/main/CS50/01-C/calculator.c)
+- There is an example in [01-C/calculator.c](./examples/calculator.c)
 
 > [!TIP]
 > Strings, or an array of characters, should be wrapped in `"`, whereas single characters should be wrapped in `'`.
@@ -191,7 +191,7 @@ we created a more succinct syntax `counter += 1`, or even further as
 
 ## Memory Management
 
-- Your computer stores [bits](/CS50%E2%80%9000%3A-Introduction.md#The Binary System) inside of memory, or Random Access Memory.
+- Your computer stores [bits](../README#The Binary System) inside of memory, or Random Access Memory.
 - Because memory is finite you can only store a limited number of bits.
 - Integer Overflow is an issue where the number will wrap around to `0` or a negative number if the number you attempt to store is too large.
 - `32` bits is more common than `8`. It allows us to store more numbers.
