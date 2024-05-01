@@ -58,7 +58,7 @@ flowchart TD
     - $O(n^{2})$ - n people doing n things, example shaking everyones hand in the room it would be $n \times n$ or $n^{2}$ handshakes. **Quadratic**.
     - $O(n \log n)$ - **Logarithmic**.
     - $O(n)$ - takes linear time, an example of this is going through the phonebook one at a time. It represents an upper bound on the number of steps you might be counting.
-    - $O(\log n) - dividing in half. *binary search*.
+    - $O(\log n)$ - dividing in half. *binary search*.
     - $O(1)$ - this means it is a constant number of steps, no matter how many people the algorithm is working through.
 - $\Omega$ represents lower bound.
     - $\Omega(n^{2})$ 
