@@ -56,8 +56,8 @@ flowchart TD
 
 - various algorithms will be described as being on the order of one of the following runtimes:
     - $O(n^{2})$ - 
-    - $O(n log n)$ - 
+    - $O(n \log n)$ - 
     - $O(n)$ - 
-    - $O(log n) - 
+    - $O(\log n) - 
     - $O(1)$ - 
 
