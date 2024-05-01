@@ -20,7 +20,7 @@ title: Values Behind Lockers Brute Force Algorithm
 ---
 
 flowchart TD
-    1["for i from 0 to n"] -->
+    1(["for i from 0 to n"]) -->
     2{"if 50 is behind doors[i]"}
     2 --> |true| 3["Return True"] --> 6
     2 --> |false| 4["Return False"] --> 5{"if i < n"}
@@ -35,7 +35,7 @@ title: Value Behind Lockers Divide & Conquer Algorithm
 
 flowchart TD
     vars("Variables\nvalue = 50\ntotal = 8")
-    1["for count from 0 to total"] -->
+    1(["for count from 0 to total"]) -->
     2{"if count equals total"}
     2 --> |true| 3["value doesn't exist"] --> 16
     2 --> |false| 4["if value is behind doors item count"]
@@ -90,3 +90,43 @@ flowchart TD
 - we can use `typedef struct` to create a `struct`.
     - `typedef` just means create a data type.
 - there is an example [here in phonebook.c](./examples/phonebook.c).
+
+## Sorting Algorithms
+
+### Find Smallest Algorithm 
+
+``` mermaid
+---
+title: Find Smallest Algorithm
+---
+
+flowchart TD
+    vars>"Variables\n\ntotal = 8\nprevious = NULL\ncompleted = 0"]
+    1(["for count in total"]) -->
+    2{"if count + completed less than total"}
+    2 --> |true| 3
+    2 --> |false| 4["move previous to start of array and add 1 to completed"]
+    3["check bit at count"] 
+    3 --> |"smaller"| 5["store as previous"] --> 2
+    3 --> |"larger"| 6["keep current bit"] --> 2
+```
+
+### Swapping Algorithm
+
+``` mermaid
+---
+title: Pair Swap Algorithm
+---
+
+flowchart TD
+    vars>"Variables\nprevious = NULL\ncompleted = 0\nitems = [0, 2, 4, 6, 8, 1, 3, 5, 7]"]
+    1(["for count in length of items"]) -->
+    2{"if count equals length of items"} 
+    2 --> |true| 8["print sorted array"]
+    2 --> |false| 3
+    3{"if items[count] more than items[count] + 1"}
+    3 --> |true| 5("switch items[count] and items[count + 1]")
+    3 --> |false| 6("leave items[count] and items[count + 1]")
+    5 & 6 --> 7("increment count by 2") --> 2
+``` 
+
