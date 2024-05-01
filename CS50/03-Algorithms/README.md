@@ -22,9 +22,8 @@ title: Values Behind Lockers Brute Force Algorithm
 flowchart TD
     1["for i from 0 to n"] -->
     2{"if 50 is behind doors[i]"}
-    2 --> |true| 3["Return True"]
-    2 --> |false| 4["Return False"]
-    3 & 4 --> 5{"if i < n"}
+    2 --> |true| 3["Return True"] --> 6
+    2 --> |false| 4["Return False"] --> 5{"if i < n"}
     5 --> |true| 2
     5 --> |false| 6["Exit"]
 ```
