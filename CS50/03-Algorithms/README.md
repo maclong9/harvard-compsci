@@ -61,15 +61,15 @@ flowchart TD
     - $O(\log n) - dividing in half. *binary search*.
     - $O(1)$ - this means it is a constant number of steps, no matter how many people the algorithm is working through.
 - $\Omega$ represents lower bound.
-    - $Omega(n^{2})$ 
-    - $Omega(n \log n)$
-    - $Omega(n)$ 
-    - $Omega(\log n)
-    - $Omega(1)$  - _linear search_, _binary search_
+    - $\Omega(n^{2})$ 
+    - $\Omega(n \log n)$
+    - $\Omega(n)$ 
+    - $\Omega(\log n)
+    - $\Omega(1)$  - _linear search_, _binary search_
 - $\Theta$ represents that $O$ and $\Omega$ are equal.
-    - $Theta(n^{2})$ 
-    - $Theta(n \log n)$
-    - $Theta(n)$ 
-    - $Theta(\log n)
-    - $Theta(1)$  - _linear search_, _binary search_
-    
+    - $\Theta(n^{2})$ 
+    - $\Theta(n \log n)$
+    - $\Theta(n)$ 
+    - $\Theta(\log n)
+    - $\Theta(1)$  - _linear search_, _binary search_
+-    
