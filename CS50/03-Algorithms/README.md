@@ -77,4 +77,16 @@ flowchart TD
 > When you `return 0` it will exit the program and will not run any subsequent code.
 
 - `strcmp` is used to compare two strings, `0` means the strings are the same.
-    -`if(strcmp("test", "test") == 0)`
+    - `if(strcmp("test", "test") == 0)`
+    - it compares strings in _ASCIIbetical_ order.
+
+> [!NOTE]
+> A code smell is something where you can kind of tell it's going to cause an error or problem later, e.g.
+
+## Structs for Storing Data
+
+- for this example we wil luse the example of `Person`.
+    - a person has a `string name` and a `string number`.
+- we can use `typedef struct` to create a `struct`.
+    - `typedef` just means create a data type.
+- there is an example [here in phonebook.c](./examples/phonebook.c).

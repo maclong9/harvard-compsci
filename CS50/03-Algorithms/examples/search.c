@@ -19,7 +19,7 @@ int linear(void) {
 }
 
 
-int main(void) {
+int main(void) { // Linear with Strings
 	char* strings[] = {"battleship", "boot", "cannon", "iron", "thimble", "top hat"};
 	char* input;
 
