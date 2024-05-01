@@ -121,12 +121,12 @@ title: Pair Swap Algorithm
 flowchart TD
     vars>"Variables\nprevious = NULL\ncompleted = 0\nitems = [0, 2, 4, 6, 8, 1, 3, 5, 7]"]
     1(["for count in length of items"]) -->
-    2{"if count equals length of items"} 
+    2{"if count equals length of items - 1"} 
     2 --> |true| 8["print sorted array"]
     2 --> |false| 3
     3{"if items[count] more than items[count] + 1"}
     3 --> |true| 5("switch items[count] and items[count + 1]")
     3 --> |false| 6("leave items[count] and items[count + 1]")
-    5 & 6 --> 7("increment count by 2") --> 2
+    5 & 6 --> 7("increment count by 2 and completed by 1") --> 2
 ``` 
 
