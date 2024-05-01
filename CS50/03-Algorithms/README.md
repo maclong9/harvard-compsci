@@ -64,12 +64,12 @@ flowchart TD
     - $\Omega(n^{2})$ 
     - $\Omega(n \log n)$
     - $\Omega(n)$ 
-    - $\Omega(\log n)
+    - $\Omega(\log n)$
     - $\Omega(1)$  - _linear search_, _binary search_
 - $\Theta$ represents that $O$ and $\Omega$ are equal.
     - $\Theta(n^{2})$ 
     - $\Theta(n \log n)$
     - $\Theta(n)$ 
-    - $\Theta(\log n)
+    - $\Theta(\log n)$
     - $\Theta(1)$  - _linear search_, _binary search_
 -    
