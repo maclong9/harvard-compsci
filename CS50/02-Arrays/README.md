@@ -42,7 +42,7 @@
    - finally it will link all the seperately compiled files together.
 
 > [!TIP]
-> Make sure to compile any extra files that might be used for example the [`cs50.c`](https://github.com/maclong9/harvard-compsci/blob/main/CS50/01-C/cs50.c) file for `get_int`, `clang -o compare compare.c cs50.c` or using the `-l***` flag for a library `clang -o hello hello.c -lcs50`.
+> Make sure to compile any extra files that might be used for example the [`cs50.c`](../01-C/cs50.c) file for `get_int`, `clang -o compare compare.c cs50.c` or using the `-l***` flag for a library `clang -o hello hello.c -lcs50`.
 
 - All of the above is abstracted away from you for simplicity with `make`.
 - C is a low-level language, Python is a higher-level language.
@@ -82,7 +82,7 @@ string ? byte
 - the computers memory is kind of like a canvas that you can manipulate the bits on.
 
 > [!WARNING]
-> Don't forget to [type cast](/CS50%E2%80%9001%3A-C.md#type-casting) variables to floats when you need the decimal points. You can also just add one float to the equation and it will convert the rest to floats.
+> Don't forget to [type cast](../01-C.md#type-casting) variables to floats when you need the decimal points. You can also just add one float to the equation and it will convert the rest to floats.
 
 ## Arrays
 
@@ -90,7 +90,7 @@ string ? byte
 - For example, storing `score1...score20` would take up a lot of memory and make the code very messy.
 - Instead you can store them in an array: `int[] scores = {95, 80, 79};`
 - The computer will store array values back to back.
-- There is an example of this in [02-Arrays](https://github.com/maclong9/harvard-compsci/blob/main/CS50/02-Arrays/scores.c).
+- There is an example of this in [02-Arrays scores.c file](../02-Arrays/scores.c).
 
 > [!CAUTION]
 > Arrays start at `0`, so make sure to set the first value with `scores[0] = 3`
