@@ -11,7 +11,7 @@ flowchart TD
     3["One of Pair Sits"] -->
     4{"If One Person Remains Standing"}
     4 -->|True| 5["Say Number"]
-    4 -->|False| 2["Everyone Standing Back to 2"]
+    4 -->|False| 2
 ```
 
 ``` mermaid
