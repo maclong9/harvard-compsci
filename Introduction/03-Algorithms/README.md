@@ -34,7 +34,11 @@ title: Value Behind Lockers Divide & Conquer Algorithm
 ---
 
 flowchart TD
-    vars("`**Variables** \nvalue = 50\ntotal = 8`")
+    vars("`
+      **Variables**
+      value = 50
+      total = 8
+    `")
     1(["for count from 0 to total"]) -->
     2{"if count equals total"}
     2 --> |true| 3["value doesn't exist"] --> 16
