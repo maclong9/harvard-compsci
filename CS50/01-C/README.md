@@ -115,7 +115,7 @@ we created a more succinct syntax `counter += 1`, or even further as
 ## The OR and AND Operators
 
 - Using `||` you can run a conditional check on multiple parameters.
-  - it will return `true` if either of the options are true.
+  - it will return `true` if either of the options is true.
   - `if(response == 'y' || response == 'Y')`
 - Using `&&` will check and make sure that both options are true.
   - `if(isLoggedIn == true && hasAdminAccess == true)`
@@ -123,43 +123,40 @@ we created a more succinct syntax `counter += 1`, or even further as
 
 ## Loops
 
-- You can utilise a `while` loop to loop as long as a condition is true.
+- You can utilise a `while` loop to repeat as long as a condition is true.
 
   - `while(counter < 5)`
   - You can run a counter by setting the variable to the count and subtracting each loop.
   - You can also run it by setting the variable to 0 and incrementing up to the count defined in the loop.
-  - You must make sure to define the counter before running the `while` loop.
+  - You must define the counter before running the `while` loop.
   - It's canonical to use `i` for `integer` to define a counter.
-    - For larger programs it is good to define what the variable is.
+    - For larger programs, it is good to define what the variable is.
 
 - You can also write a loop as a `for` loop.
   - `for (int i = 0; i < 3; i++)`
   - This is the most common option because it is quite concise.
 - A **do while** loop will do the expression while the condition is true.
 
-  ```c
+  ``` c
   	do {
   		n = get_int("Size: ");
   	}
   	while(n < 1);
   ```
 
-> [!NOTE]
-> It is possible to omit the curly braces if there is only one line of code contained within that block. However it is better not to as you can add new lines of code to the block easier.
-
 ## Functions
 
 - Functions are used to abstract code that might need to be reused.
-- They can also be used to keep loops and the `main` function tidier.
+- They help keep loops and the `main` function tidier.
 - `void printHello() {...}`
 - A `void` function is a non-returning function.
-- You can _hoist_ functions to the top by defining them at the bottom and then copy and pasting the function defintion e.g `void printHello()` to the top of the file.
-- If you define paremeters inside the parentheses you can then pass them while calling the function.
+- You can _hoist_ functions to the top by defining them at the bottom and then copy and paste the function definition e.g. `void printHello()` at the top of the file.
+- If you define parameters inside the parentheses you can pass them while calling the function.
   - `void printHello(int n) {...}`
   - `printHello(5);`
 
 > [!TIP]
-> While `i` is used for incrementing loops in simple programs you can use `n` as a count or quantity.
+> While `i` is used for incrementing loops for simple programs you can use `n` as a count or quantity.
 
 ### Return Values
 
@@ -174,20 +171,20 @@ we created a more succinct syntax `counter += 1`, or even further as
 
 ## Scope
 
-- Scope refers to what variables are availible where.
-  - if you have a function called `int getNumber()`, all the variables defined within that function are `local` to that function and cannot be used outside of it unless you return it and store it elsewhere.
+- Scope refers to what variables are available where.
+  - if you have a function called `int getNumber()`, all the variables defined within that function are `local` to that function and cannot be used elsewhere unless you return the value.
 
 > [!NOTE]
-> The `main` function is defined as `int` because it returns `0` if the program ran successfully another number known as an **error code** if something went wrong.
+> The `main` function is defined as `int` because it returns `0` if the program is successful and a different number known as an **error code** if something goes wrong.
 
 ## Comments
 
 - In C you define comments with `//` the compiler will ignore this code.
-- Comments are a good way to quickly document code at it's definition.
-- `/* ... */` will define a multiline comment with the content of the comment being between the two asteriks.
+- Comments are a way to document code at its definition.
+- `/* ... */` will define a multiline comment with the content between the two asterisks.
 
 > [!NOTE]
-> Good code should be self documenting. You should use comments for complex and non-standard code to explain what it is for.
+> Good code should be self-documenting. Use comments for complex and non-standard code to explain what it is for.
 
 ## Memory Management
 
@@ -197,7 +194,7 @@ we created a more succinct syntax `counter += 1`, or even further as
 - `32` bits is more common than `8`. It allows us to store more numbers.
 
 > [!NOTE]
-> A lot of modern computers are actually now `64` bit. with the max numbers being unsigned: $2^{64} - 1 = 18,446,744,073,709,551,615$, signed integers: $2^{63} - 1 = 9,223,372,036,854,775,807$ which is pretty large for a number.
+> A lot of modern computers are now 64-bit. with the max numbers being unsigned: $2^{64} - 1 = 18,446,744,073,709,551,615$, signed integers: $2^{63} - 1 = 9,223,372,036,854,775,807$ which is pretty large for a number.
 
 ## Type Casting
 
@@ -211,22 +208,22 @@ we created a more succinct syntax `counter += 1`, or even further as
 - Linux is a popular OS, commonly used for servers and some desktops/laptops.
 - It is typically a command line interface, though a graphical interface can be installed and used.
 - Linux is excellent for learning the terminal.
-- Development containers are a useful way of preconfiguring environments for particular types of projects.
-  - A good example of this would be installing dependencies like [Deno](https://deno.com) for web development.
+- Development containers are a way of preconfiguring environments for particular types of projects.
+  - An example would be installing dependencies like [Deno](https://deno.com) for web development.
 
 > [!NOTE]
-> A terminal or terminal emulator is a program that you use to interact with the command line interface.
+> A terminal or terminal emulator is a program you use to interact with the command line interface.
 
-Writing in the command line is terser which is why most of the commands below are written as abbreviations instead of full command names.
+Writing in the command line is terser, so most of the commands below are written as abbreviations instead of full command names.
 
 **Common Commands**
 
 - `cd`: Change Directory.
 - `mv`: Move File/Directory.
-- `ls`: Lists Files in Current Folder.
+- `ls`: Lists Files in the Current Folder.
 - `cp`: Copies a File to a New Location.
 - `rm`: Removes a File.
-- `pwd`: Print Working Directory, also known as current directory.
+- `pwd`: Print Working Directory, or the current directory.
 - `mkdir`: Makes a New Directory.
 - `rmdir`: Removes a Directory.
 
@@ -234,10 +231,10 @@ Writing in the command line is terser which is why most of the commands below ar
 
 ## Integer Bugs
 
-- In 2038 there might be another y2K like event because the UNIX epoch time is stored in a `32` bit.
+- In 2038 there might be another y2K-like event because the UNIX epoch time is stored in a `32` bit.
 - We will likely switch it out for a `64b`.
 - This could happen again billions of years in the future.
-- Same thing happens with Pacman if you get to the `256b` with your score.
-  - When you hit it the game breaks.
-- The original Donkey Kong game had the formula $10 \times (level +4)$ is how many seconds you have to complete the level.
-  - At level `22` the `8b` value can no longer store the result and they ended up with 4 seconds to solve the level.
+- The same thing happens with Pacman if you get to the `256b` with your score.
+  - When you reach that score the game breaks.
+- The original Donkey Kong game had the formula $10 \times (level +4)$, which is how many seconds you have to complete the level.
+  - At level `22` an 8-byte value can no longer store the result, leaving players with 4 seconds to solve the level.
