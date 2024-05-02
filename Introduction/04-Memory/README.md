@@ -5,9 +5,9 @@
 - pixels are used to display images.
 - because they are blocky sometimes images can appear also blocky.
 - the more pixels a screen has the more _smooth_ and image can appear.
-- you can relate pixels to binary digits, $0 = black and 1 = white$.
+- you can relate pixels to binary digits, 0 being black and 1 white.
 - an image files is kind of just a pattern of 0's and 1's. 
-- RGB is a common way to dispaly colors.
+- RGB is a common way to display colors.
     - Stands for Red, Green and Blue. 
     - Can be a value of 0 to 255.
 - HEX is also common.  
@@ -81,6 +81,6 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 ```
 
 > [!NOTE]
-> Modern computers use 64-bit allowing you to count to crazy high numbers. $64 bit = 2^{63} - 1$
+> Modern computers use 64-bit allowing you to count to crazy high numbers. $64\,bit = 2^{63} - 1$
 
 
