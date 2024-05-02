@@ -216,8 +216,7 @@ is known as a Language Learning Model, which can find patterns in a dataset
 it has been trained on and then using this knowledge decide on a response based on the patterns found in
 your question and the dataset. Sometimes LLM's can hallucinate wrong answers.
 
-> [!WARNING] During CS50 it is not okay to use AI that isn't CS50's
-> [chatbot](https://cs50.ai).
+> [!WARNING] During CS50 it is not okay to use AI that isn't CS50's [chatbot](https://cs50.ai).
 
 ## Writing Good Code
 
