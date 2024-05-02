@@ -119,7 +119,7 @@ we created a more succinct syntax `counter += 1`, or even further as
   - `if(response == 'y' || response == 'Y')`
 - Using `&&` will check and make sure that both options are true.
   - `if(isLoggedIn == true && hasAdminAccess == true)`
-- You can see an example in [01-C/agree.c](https://github.com/maclong9/harvard-compsci/blob/main/CS50/01-C/agree.c).
+- You can see an example in [agree.c](./agree.c).
 
 ## Loops
 

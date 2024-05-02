@@ -42,7 +42,7 @@
    - finally, it will link all the separately compiled files together.
 
 > [!TIP]
-> Make sure to compile any extra files that might be used for example the [`cs50.c`](../01-C/cs50.c) file for `get_int`, `clang -o compare compare.c cs50.c` or using the `-l***` flag for a library `clang -o hello hello.c -lcs50`.
+> Make sure to compile any extra files that might be used for example the [`cs50.c`](../include/cs50.c) file for `get_int`, `clang -o compare compare.c cs50.c` or using the `-l***` flag for a library `clang -o hello hello.c -lcs50`.
 
 - All of the above is abstracted away from you for simplicity with `make`.
 - C is a low-level language, Python is a higher-level language.
@@ -89,7 +89,7 @@ string ? byte
 - For example, storing `score1...score20` would take up a lot of memory and make the code very messy.
 - Instead, you can store them in an array: `int[] scores = {95, 80, 79};`
 - The computer will store array values back to back.
-- There is an example of this in [02-Arrays scores.c file](../02-Arrays/scores.c).
+- There is an example of this in [scores.c](./scores.c) file.
 
 > [!CAUTION]
 > Arrays start at `0`, so make sure to set the first value with `scores[0] = 3`
@@ -129,14 +129,14 @@ string ? byte
 ## ctype.h
 
 - this library contains some useful functions for manipulating.
-- in the [uppercase](./examples/uppercase.c) example you can see the `toupper` function being used.
+- in the [uppercase](./uppercase.c) example you can see the `toupper` function being used.
 
 ## Command Line Arguments
 
 - you can add `string argv[]` in the `main` function declaration as a parameter.
 - this will allow you to add command line arguments to your program.
 - the arguments will be stored in an array of strings.
-- there is an example of this in [greet.c](./examples/greet.c).
+- there is an example of this in [greet.c](./greet.c).
 - `argv[0]` will print the name of the program e.g. `./greet`.
   - this allows you to figure out what command the user ran so you can supply help text for them.
 - if you print a number over the amount of command line arguments specified it will print `null`
