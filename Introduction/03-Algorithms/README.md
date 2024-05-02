@@ -108,7 +108,11 @@ title: Selection Sort
 ---
 
 flowchart TD
-    vars>"Variables\nprevious = NULL\ncompleted = 0\nitems = [0, 2, 4, 6, 1, 3, 5, 7]"]
+    vars>"`
+      Variables
+      previous = NULL
+      completed = 0
+      items = [0, 2, 4, 6, 1, 3, 5, 7]"]
     1(["for count in total"]) -->
     2{"if items[count + completed] less than total"}
     2 --> |true| 3
@@ -126,7 +130,10 @@ title: Bubble Sort
 ---
 
 flowchart TD
-    vars>"Variables\ncompleted = 0\nitems = [0, 2, 4, 6, 1, 3, 5, 7]"]
+    vars>"`
+      **Variables**
+      completed = 0
+      items = [0, 2, 4, 6, 1, 3, 5, 7]`"]
     1(["for count in length of items - 1"]) -->
     2{"if count equals the length of items - completed"}
     2 --> |true| 8["print sorted array"]
