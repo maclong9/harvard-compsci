@@ -17,6 +17,7 @@
 ## Hexadecimal
 
 - Hexadecimal is used when you require more than 10 digits for some reason.
+- The maths below shows the value of each column and how to figure out basic hex values.
 
 ``` math
 \overbrace{0}^{16} \overbrace{0}^{1} = 0\newline
@@ -43,9 +44,14 @@
 \overbrace{F}^{16} \overbrace{F}^{1} = 255\newline
 ```
 
-- The maths below shows the value of each space in hex.
-
 > [!NOTE]
 > You will not need to do these kind of conversions very frequently.
 
 - It's mostly just more convenient than binary for larger values.
+- most programs from photo editors to web programming use hex based values for colors.
+- computers typically use numbers in hexadecimal notation to number the bytes in memory. 
+
+```
+grid of memory, store 50 in 4 of the blocks.
+stored in 0x123 = 291
+``` 
