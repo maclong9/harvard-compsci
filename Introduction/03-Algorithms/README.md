@@ -164,11 +164,11 @@ flowchart TD
 - A sort for sorting $n$ numbers that are better than both selection and bubble sorts.
 - This uses recursion by running itself again on each half.
 - in an example of $8$ digits
-      - you sort down to $4$ and then $2$ and then $1$. For both halves.
-      - then merge the full right and left half together.
-      - so you sort left of the left half, right of the left half and then merge.
-      - then left of the right half, right of the right half then merge.
-      - then merge the left and right half.
+    - you sort down to $4$ and then $2$ and then $1$. For both halves.
+    - then merge the full right and left half together.
+    - so you sort left of the left half, right of the left half and then merge.
+    - then left of the right half, right of the right half then merge.
+    - then merge the left and right half.
 - This algorithm uses fewer iterations.
 - $\log_{2}n$ - if you start with 8, the result is how many times you can divide the problem in half.
 
