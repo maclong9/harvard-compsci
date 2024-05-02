@@ -98,7 +98,7 @@ flowchart TD
   - `typedef` means create a data type.
 - example in [phonebook.c](./phonebook.c).
 
-```
+``` mermaid 
 ---
 title: Person Structure Visualised
 ---
