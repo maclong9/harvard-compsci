@@ -93,9 +93,9 @@ flowchart TD
 ## Structs for Storing Data
 
 - for this example, we will use the example of `Person`.
-    - a person has a `string name` and a `string number`.
+  - a person has a `string name` and a `string number`.
 - we can use `typedef struct` to create a `struct`.
-    - `typedef` means create a data type.
+  - `typedef` means create a data type.
 - example [here in the phonebook.c](./phonebook.c).
 
 ## Sorting Algorithms
