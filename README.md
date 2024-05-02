@@ -12,8 +12,8 @@ help with your learning of computer science.
 flowchart TD
     0{"Conditional Statements"}
     1("Functions")
-    2(["Loops"])
-    3>"Variables"]
-    4["Input & Output"]
-    5[["Subroutine"]]
+    2[["Subroutine"]]
+    3(["Loops"])
+    4>"Variables"]
+    5["Input & Output"]
 ```
