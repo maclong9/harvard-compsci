@@ -103,7 +103,7 @@ title: Selection Sort
 flowchart TD
     vars>"Variables\nprevious = NULL\ncompleted = 0\nitems = [0, 2, 4, 6, 1, 3, 5, 7]"]
     1(["for count in total"]) -->
-    2{"if count + completed less than total"}
+    2{"if items[count + completed] less than total"}
     2 --> |true| 3
     2 --> |false| 4["move previous to start of array and add 1 to completed"]
     3["check bit at count"]
