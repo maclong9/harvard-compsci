@@ -97,7 +97,7 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 - `string` in CS50 is set as `typedef char *string;`
 - Pointer Arithmetic is how you would manually print a string in C you can see the example in [addresses.c](./addresses.c).
 - if you compare a `char *` with another `char *` doing `s = t` will be different everytime because the `s` and `t` are a pointer to the first character of a string.
-  - you should use `strcmp` to compare two `char*` values.
+  - you should use `strcmp` to compare two `char *` values.
 - if you assign `t = s` it will copy the address rather than the value.
   - this means if you are trying to create a copy of something to manipulate both will be manipulated because the pointer is the same for both.
 - `malloc` allows you to allocate a section of memory to a variable.
