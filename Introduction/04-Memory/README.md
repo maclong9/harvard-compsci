@@ -112,7 +112,7 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 - use the `sizeof` function to specify variables that are the size of types.
   - `int *x = malloc(sizeof(int));` creates x with bytes equal to the size of an integer.
   - `int arr = malloc(3 * sizeof(int));` creates array with 3 integers worth of memory.
-- You can use `valgrind` or `leaks` to check if you have any memory leaks in your code. You can fix these with the `free` function.
+- You can use `leaks` on macOS or `valgrind` on Linux to check if you have any memory leaks in your code. You can fix these with the `free` function.
 - **garbage values** are values of variables that you did not proactively set yourself.
 - the [garbage.c](./garbage.c) shows that if you do not set a variable in your code there is a chance that some of the addresses used may contain garbage values.
 
