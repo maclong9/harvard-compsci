@@ -150,8 +150,7 @@ xychart-beta
 This graph shows that it is better to design algorithms, like the logarithm
 detailed above, that is correct and efficient.
 
-> [!WARNING] The graph only displays the efficiency and not the correctness of
-> the algorithm.
+> [!WARNING] The graph only displays the efficiency and not the correctness of the algorithm.
 
 ## Pseudocode
 
