@@ -5,9 +5,8 @@
 - Utilises computational thinking.
 - A program is an input with a compute step resulting in an output.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > These notes and examples were created following along with [Harvard CS50's Introduction to Computer Science](https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science?webview=false&campaign=CS50%27s+Introduction+to+Computer+Science&source=edx&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Fcs50).
-
 
 <section id="Mental Model" />
 
@@ -150,7 +149,7 @@ xychart-beta
 This graph shows that it is better to design algorithms, like the logarithm
 detailed above, that is correct and efficient.
 
-> [!WARNING] 
+> [!WARNING]
 > The graph only displays the efficiency and not the correctness of the algorithm.
 
 ## Pseudocode
@@ -217,7 +216,7 @@ is known as a Language Learning Model, which can find patterns in a dataset
 it has been trained on and then using this knowledge decide on a response based on the patterns found in
 your question and the dataset. Sometimes LLM's can hallucinate wrong answers.
 
-> [!WARNING] 
+> [!WARNING]
 > During CS50 it is not okay to use AI that isn't CS50's [chatbot](https://cs50.ai).
 
 ## Writing Good Code
@@ -231,4 +230,3 @@ your question and the dataset. Sometimes LLM's can hallucinate wrong answers.
 [^1]:
     An expression with a `yes` or `no` answer, invented by mathemetician
     [George Bool](https://en.wikipedia.org/wiki/George_Boole)
-
