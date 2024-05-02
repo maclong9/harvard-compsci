@@ -81,6 +81,6 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 ```
 
 > [!NOTE]
-> Modern computers use 64-bit allowing you to count to crazy high numbers. $64\,bit = 2^{63} - 1$
+> Modern computers use 64-bit allowing you to count to crazy high numbers. $64–bit = 2^{63} - 1$.
 
 
