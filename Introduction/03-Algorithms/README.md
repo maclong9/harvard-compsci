@@ -143,14 +143,14 @@ flowchart TD
 
 - You can use [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html) by the University of [San Francisco](https://www.usfca.edu/) to compare various common sorting algorithms and visualise how they work.
 - Selection Sort takes a lot of work because it's constantly cycling through every single element above the completed amount.
-    - $O(n^{2}$ - Selection sort is on the order of n steps.
+    - $O(n^{2})$ - Selection sort is on the order of n steps.
     - $\Omega(n^{2})$ - The lower bound is the same.
     - This means we can represent it as $\Theta(n^{2})$.
 - Bubble Sort works by comparing two values again and again.
     - $(n - 1) \times (n - 1)$
     - $n^{2} - 1n + 1$
     - $n^{2} - 2n + 1$
-    - $O(n^{2}$ - Selection sort is on the order of n steps.
+    - $O(n^{2})$ - Selection sort is on the order of n steps.
     - $\Omega(n)$
     - because the upper and lower bounds are different there is no $\Theta$
 - Both Bubble Sort and Selection Sort are quite inefficient because $n^{2}$ can get very large.
@@ -165,18 +165,18 @@ flowchart TD
 - This will be more efficient because even though you are calling the same function recursively it's on a smaller scale each time.
 - You can see this in [recursion.c](./recursion.c);
 - This can tighten up the amount of code you need to write in an algorithm.
-      - It also helps with memory management.
+  - It also helps with memory management.
 
 ## Merge Sort
 
 - A sort for sorting $n$ numbers that are better than both selection and bubble sorts.
 - This uses recursion by running itself again on each half.
 - in an example of $8$ digits
-    - you sort down to $4$ and then $2$ and then $1$. For both halves.
-    - then merge the full right and left half together.
-    - so you sort left of the left half, right of the left half and then merge.
-    - then left of the right half, right of the right half then merge.
-    - then merge the left and right half.
+  - you sort down to $4$ and then $2$ and then $1$. For both halves.
+  - then merge the full right and left half together.
+  - so you sort left of the left half, right of the left half and then merge.
+  - then left of the right half, right of the right half then merge.
+  - then merge the left and right half.
 - This algorithm uses fewer iterations.
 - $\log_{2}n$ - if you start with 8, the result is how many times you can divide the problem in half.
 
@@ -186,8 +186,8 @@ flowchart TD
 ```
 
 - This shows that it is not as good as linear or binary, but much better than selection or bubble.
-      - $\Theta(n \log n)$
-      - We do not need to display $O$ or $\Omega$ because they are equal.
+  - $\Theta(n \log n)$
+  - We do not need to display $O$ or $\Omega$ because they are equal.
 
 ```mermaid
 ---
@@ -204,4 +204,3 @@ flowchart TD
 ```
 
 In [this video](https://www.youtube.com/watch?v=ZZuD6iUe3Pc) you can see an animation which compares various sorting algorithms visually.
-
