@@ -89,7 +89,7 @@ flowchart TD
   - a person has a `string name` and a `string number`.
 - we can use `typedef struct` to create a `struct`.
   - `typedef` just means create a data type.
-- there is an example [here in the phonebook.c](./phonebook.c).
+- there is an example [here in phonebook.c](./phonebook.c).
 
 ## Sorting Algorithms
 
@@ -97,11 +97,11 @@ flowchart TD
 
 ```mermaid
 ---
-title: Find the Smallest Algorithm
+title: Selection Sort
 ---
 
 flowchart TD
-    vars>"Variables\n\ntotal = 8\nprevious = NULL\ncompleted = 0"]
+    vars>"Variables\nprevious = NULL\ncompleted = 0\nitems = [0, 2, 4, 6, 1, 3, 5, 7]"]
     1(["for count in total"]) -->
     2{"if count + completed less than total"}
     2 --> |true| 3
@@ -115,11 +115,11 @@ flowchart TD
 
 ```mermaid
 ---
-title: Pair Swap Algorithm
+title: 
 ---
 
 flowchart TD
-    vars>"Variables\ncompleted = 0\nitems = [0, 2, 4, 6, 8, 1, 3, 5, 7]"]
+    vars>"Variables\ncompleted = 0\nitems = [0, 2, 4, 6, 1, 3, 5, 7]"]
     1(["for count in length of items"]) -->
     2{"if count equals the length of items - completed"}
     2 --> |true| 8["print sorted array"]
