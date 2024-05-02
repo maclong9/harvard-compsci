@@ -74,7 +74,7 @@ stored in 0x123 = 291
   - in this case `p` is just storing a number, that is equivalent to the address of the value.
 
 > [!NOTE]
-> > `&` is the address of a variable, whereas `*` is a pointer to an address.
+> `&` is the address of a variable, whereas `*` is a pointer to an address.
 
 ## Taking Off Training Wheels
 
