@@ -148,7 +148,7 @@ flowchart TD
 - Both Bubble Sort and Selection Sort are quite inefficient because $n^{2}$ can get very large.
 
 
-> [!NOTE] 
+> [!NOTE]
 > You could add `if no swaps exit` to exit early if the array is sorted ahead of time to save some iterations in the case of a lucky early finish.
 
 
