@@ -152,4 +152,4 @@ flowchart TD
 - A function that calls itself is recursive.
 - An example of this is above in the Divide and Conquer algorithm that calls itself to search the left or right half.
 - This will be more efficient because even though you are calling the same function recursively it's on a smaller scale each time.
--  
+- You can see this in [recursion.c](./recursion.c);
