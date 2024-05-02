@@ -119,3 +119,34 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
     - int *x = malloc(sizeof(int)); // creates x with bytes of memory equal to int.
     - int *arr = malloc(3 * sizeof(int)); // creates array with 3 int's worth of memory.
 - You can use `valgrind` or `leaks` to check if you have any memory leaks in your code. You can fix these with the `free` function.
+- **garbage values** are values of variables that you did not proactively set yourself.
+- the [garbage.c](./garbage.c) shows that if you do not set a variable in your code there is a chance that some of the addresses used may contain garbage values.
+
+`` example.c
+int main(void) {
+    int *x;
+    int *y;
+
+    x = malloc(sizeof(int));
+
+    *x = 42;
+    *y = 13;
+
+    y = x;
+
+    *y = 13;
+}
+```
+
+- the above code sets variables in a low-level way by allocating the variable x.
+- as you can see `x` has been allocated but `y` has not been.
+    - this is an example of a garbage value.
+    - that's how computers crash.
+
+[here](https://www.youtube.com/watch?v=5VnDaHBi8dM) is a fun video explaining pointers and memory allocation.
+
+- `pointer` point to `pointees`.
+    - a `pointee` is setup seperately to it's `pointer`.
+- a dereference will follow the pointer to the value at the address it is pointed to.
+- you cannot dereference a `pointer` that has never been pointed to a `pointee`.
+- setting `y = x` gives `y` a `pointee`.
