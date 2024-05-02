@@ -115,12 +115,12 @@ flowchart TD
 
 ```mermaid
 ---
-title: 
+title: Bubble Sort
 ---
 
 flowchart TD
     vars>"Variables\ncompleted = 0\nitems = [0, 2, 4, 6, 1, 3, 5, 7]"]
-    1(["for count in length of items"]) -->
+    1(["for count in length of items - 1"]) -->
     2{"if count equals the length of items - completed"}
     2 --> |true| 8["print sorted array"]
     2 --> |false| 3
@@ -129,3 +129,27 @@ flowchart TD
     3 --> |false| 6("leave items[count] and items[count + 1]")
     5 & 6 --> 7("increment count and completed by 1") --> 2
 ```
+
+- You can use [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html) by the University of [San Fransisco](https://www.usfca.edu/) to compare various common sorting algorithms and visualise how they work.
+- Selection Sort takes a lot of work because it's constantly cycling through every single element above the completed amount.
+    - $O(n^{2}$ - Selection sort is on the order of n steps.
+    - $\Omega(n^{2})$ - The lower bound is the same.
+    - This means we can represent it as $\Theta(n^{2})$. 
+- Bubble Sort works by comparing two values again and again.
+    - $(n - 1) \times (n - 1)$
+    - $n^{2} - 1n + 1$
+    - $n^{2} - 2n + 1$
+    - $O(n^{2}$ - Selection sort is on the order of n steps.
+    - $\Omega(n)$
+    - because the upper and lower bounds are different there is no $\Theta$
+- Both Bubble Sort and Selection sort are quite inefficient because $n^{2}$ can get very large.
+
+> [!NOTE] 
+> You could add `if no swaps exit` to exit early if the array is sorted ahead of time to save some iterations in the case of a lucky early finish.
+
+## Recursion
+
+- A function that calls itself is recursive.
+- An example of this is above in the Divide and Conquer algorithm that calls itself to search the left or right half.
+- This will be more efficient because even though you are calling the same function recursively it's on a smaller scale each time.
+-  

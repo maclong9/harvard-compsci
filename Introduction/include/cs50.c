@@ -4,11 +4,11 @@
 
 int get_int(char *text) {
   int value;
-  printf("%s: ", text);
+  printf("%s", text);
   scanf("%i", &value);
 
   while (value < 0) {
-    printf("%s: ", text);
+    printf("%s", text);
     scanf("%i", &value);
   }
 
