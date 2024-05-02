@@ -50,27 +50,27 @@ flowchart TD
 ```
 
 > [!NOTE]
-> Computer Scientists tend to talk about efficiency being on the order of several steps. They also throw away constant factors such as the number, instead, they generalise with $O(\log n)$.
+> Computer Scientists tend to talk about efficiency being on the order of several steps. They also throw away constant factors such as the number, instead, they generalise with $O(\\log n)$.
 
 ## Big $O$ Notation
 
 - various algorithms will be described as being on the order of one of the following runtimes:
   - $O(n^{2})$ - n people doing n things, for example shaking everyone's hand in the room it would be $n \times n$ or $n^{2}$ handshakes. **Quadratic**.
-  - $O(n \log n)$ - **Logarithmic**.
+  - $O(n \\log n)$ - **Logarithmic**.
   - $O(n)$ - takes linear time, an example of this is going through the phonebook one at a time. It represents an upper bound on the number of steps you might be counting.
-  - $O(\log n)$ - dividing in half. _binary search_.
+  - $O(\\log n)$ - dividing in half. _binary search_.
   - $O(1)$ - this means it is a constant number of steps, no matter how many people the algorithm is working through.
 - $\Omega$ represents a lower bound.
   - $\Omega(n^{2})$
-  - $\Omega(n \log n)$
+  - $\Omega(n \\log n)$
   - $\Omega(n)$
-  - $\Omega(\log n)$
+  - $\Omega(\\log n)$
   - $\Omega(1)$ - _linear search_, _binary search_
 - $\Theta$ represents that $O$ and $\Omega$ are equal.
   - $\Theta(n^{2})$
-  - $\Theta(n \log n)$
+  - $\Theta(n \\log n)$
   - $\Theta(n)$
-  - $\Theta(\log n)$
+  - $\Theta(\\log n)$
   - $\Theta(1)$ - _linear search_, _binary search_
 
 > [!NOTE]
@@ -168,13 +168,13 @@ flowchart TD
     - then merge left and right half. 
 - This algorithm uses less iterations.
 - $O()$
-- $log_{2}n$ - if you start with 8 
-    - $log_{2}8$
-    - $log_{2}2^{3}$
+- $\log_{2}n$ - if you start with 8 
+    - $\log_{2}8$
+    - $\log_{2}2^{3}$
     - $3$ - This is how many times you can divide a problem of 8 in half repeated.
-    - $O(n log n)$ - is the running time
-    - $\Omega(n log n)$ - so bubble sort may sometimes out match it.
-    - $\Theta(n log n)$ - due to the $O$ & $\Omega$ being equal.
+    - $O(n \log n)$ - is the running time
+    - $\Omega(n \log n)$ - so bubble sort may sometimes out match it.
+    - $\Theta(n \log n)$ - due to the $O$ & $\Omega$ being equal.
 - not as good as linear or binary search but much better than selection or bubble.
 
 ``` mermaid
