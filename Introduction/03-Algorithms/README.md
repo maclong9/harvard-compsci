@@ -135,16 +135,16 @@ flowchart TD
 
 - You can use [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html) by the University of [San Francisco](https://www.usfca.edu/) to compare various common sorting algorithms and visualise how they work.
 - Selection Sort takes a lot of work because it's constantly cycling through every single element above the completed amount.
-  - $O(n^{2}$ - Selection sort is on the order of n steps.
-  - $\Omega(n^{2})$ - The lower bound is the same.
-  - This means we can represent it as $\Theta(n^{2})$.
+    - $O(n^{2}$ - Selection sort is on the order of n steps.
+    - $\Omega(n^{2})$ - The lower bound is the same.
+    - This means we can represent it as $\Theta(n^{2})$.
 - Bubble Sort works by comparing two values again and again.
-  - $(n - 1) \times (n - 1)$
-  - $n^{2} - 1n + 1$
-  - $n^{2} - 2n + 1$
-  - $O(n^{2}$ - Selection sort is on the order of n steps.
-  - $\Omega(n)$
-  - because the upper and lower bounds are different there is no $\Theta$
+    - $(n - 1) \times (n - 1)$
+    - $n^{2} - 1n + 1$
+    - $n^{2} - 2n + 1$
+    - $O(n^{2}$ - Selection sort is on the order of n steps.
+    - $\Omega(n)$
+    - because the upper and lower bounds are different there is no $\Theta$
 - Both Bubble Sort and Selection Sort are quite inefficient because $n^{2}$ can get very large.
 
 > [!NOTE] 
