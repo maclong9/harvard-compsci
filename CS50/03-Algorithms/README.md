@@ -50,17 +50,17 @@ flowchart TD
 ```
 
 > [!NOTE]
-> Computer Scientists tend to talk about the efficiency being on the order of a number of steps. They also throw away constant factors such as the number, instead they generalise with $O(\log n)$.
+> Computer Scientists tend to talk about efficiency being on the order of several steps. They also throw away constant factors such as the number, instead, they generalise with $O(\log n)$.
 
 ## Big $O$ Notation 
 
 - various algorithms will be described as being on the order of one of the following runtimes:
-    - $O(n^{2})$ - n people doing n things, example shaking everyones hand in the room it would be $n \times n$ or $n^{2}$ handshakes. **Quadratic**.
+    - $O(n^{2})$ - n people doing n things, for example shaking everyone's hand in the room it would be $n \times n$ or $n^{2}$ handshakes. **Quadratic**.
     - $O(n \log n)$ - **Logarithmic**.
     - $O(n)$ - takes linear time, an example of this is going through the phonebook one at a time. It represents an upper bound on the number of steps you might be counting.
     - $O(\log n)$ - dividing in half. *binary search*.
     - $O(1)$ - this means it is a constant number of steps, no matter how many people the algorithm is working through.
-- $\Omega$ represents lower bound.
+- $\Omega$ represents a lower bound.
     - $\Omega(n^{2})$ 
     - $\Omega(n \log n)$
     - $\Omega(n)$ 
@@ -85,11 +85,11 @@ flowchart TD
 
 ## Structs for Storing Data
 
-- for this example we wil luse the example of `Person`.
+- for this example, we wil luse the example of `Person`.
     - a person has a `string name` and a `string number`.
 - we can use `typedef struct` to create a `struct`.
     - `typedef` just means create a data type.
-- there is an example [here in phonebook.c](./examples/phonebook.c).
+- there is an example [here in the phonebook.c](./examples/phonebook.c).
 
 ## Sorting Algorithms
 
@@ -97,7 +97,7 @@ flowchart TD
 
 ``` mermaid
 ---
-title: Find Smallest Algorithm
+title: Find the Smallest Algorithm
 ---
 
 flowchart TD
@@ -121,7 +121,7 @@ title: Pair Swap Algorithm
 flowchart TD
     vars>"Variables\ncompleted = 0\nitems = [0, 2, 4, 6, 8, 1, 3, 5, 7]"]
     1(["for count in length of items"]) -->
-    2{"if count equals length of items - completed"} 
+    2{"if count equals the length of items - completed"} 
     2 --> |true| 8["print sorted array"]
     2 --> |false| 3
     3{"if items[count] more than items[count] + 1"}
