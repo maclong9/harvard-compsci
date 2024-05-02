@@ -1,4 +1,4 @@
-#include "cs50.h"
+#include "../include/cs50.h"
 #include <stdio.h>
 
 void printBlock(int size) {
