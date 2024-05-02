@@ -111,4 +111,11 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 ```
 
 > [!CAUTION]
-> Ensure when iterating to copy strings to other variables that you do it to `<= n` to encompass the null character.
+> Ensure when iterating to copy strings to other variables using the manual method that you do it to `<= n` to encompass the null character.
+
+## Diagnosing Memory Issues 
+
+- use the `sizeof` function to specify variables that are the size of types.
+    - int *x = malloc(sizeof(int)); // creates x with bytes of memory equal to int.
+    - int *arr = malloc(3 * sizeof(int)); // creates array with 3 int's worth of memory.
+- You can use `valgrind` or `leaks` to check if you have any memory leaks in your code. You can fix these with the `free` function.
