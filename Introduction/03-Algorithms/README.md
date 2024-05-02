@@ -167,14 +167,15 @@ flowchart TD
     - then left of the right half, right of the right half then merge.
     - then merge left and right half. 
 - This algorithm uses less iterations.
-- $\log_{2}n$ - if you start with 8 
-    - $\log_{2}8$
-    - $\log_{2}2^{3}$
-    - $3$ - This is how many times you can divide a problem of 8 in half repeated.
-    - $O(n \log n)$ - is the running time
-    - $\Omega(n \log n)$ - so bubble sort may sometimes out match it.
-    - $\Theta(n \log n)$ - due to the $O$ & $\Omega$ being equal.
-- not as good as linear or binary search but much better than selection or bubble.
+- $\log_{2}n$ - if you start with 8, result is how many times you can divide the problem in half. 
+``` math
+    \log_{2}8 = \log_{2}2^{3}
+    \log_{2}2^{3} = 3
+```
+
+- This shows that it is not as good as linear or binary, but much better than selection or bubble.
+    - $\Theta(n \log n)$
+    - We do not need to display $O$ or $\Omega$ because they are equal.
 
 ``` mermaid
 ---
