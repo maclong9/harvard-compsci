@@ -84,8 +84,8 @@ flowchart TD
 > When you `return 0` it will exit the program and will not run any subsequent code.
 
 - `strcmp` is used to compare two strings, `0` means the strings are the same.
-    - `if(strcmp("test", "test") == 0)`
-    - it compares strings in _ASCIIbetical_ order.
+  - `if(strcmp("test", "test") == 0)`
+  - it compares strings in _ASCIIbetical_ order.
 
 > [!NOTE]
 > A code smell is when you can tell something will cause an error or problem later in the program development.
