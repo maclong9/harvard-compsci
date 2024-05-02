@@ -106,13 +106,6 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
   - you should check if `malloc` returns `NULL` and terminate if so, because this means there isn't enough memory.
 - `free` frees up a specified memory section that's been previously allocated.
   - this is good practice to ensure that the system consistently has enough memory.
-- the following code can be replaced with `strcpy`:
-
-```c
-	for(int i = 0, n = strlen(s); i <= n; i++) {
-		t[i] = s[i];
-	}
-```
 
 > [!CAUTION]
 > Ensure when iterating to copy strings to other variables using the manual method that you do it to `<= n` to encompass the null character.
