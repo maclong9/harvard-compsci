@@ -63,7 +63,7 @@ flowchart TD
     - $O(1)$ - this means it is a constant number of steps, no matter how many people the algorithm is working through.
 
 - $\Omega$ represents a lower bound.
-    - $\Omega(n^{2})$
+    - test $\Omega(n^{2})$
     - $\Omega(n \\log n)$
     - $\Omega(n)$
     - $\Omega(\\log n)$
