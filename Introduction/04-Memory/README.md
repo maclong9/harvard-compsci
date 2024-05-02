@@ -166,6 +166,7 @@ int main(void) {
     - to fix the issue detailed above you need to instead **pass by reference**.
         - you just replace `int a, int b` in the arguments for `swap` to `int *a, int *b`
         - this means that `*a` and `*b` are pointers to `x` and `y`.
+        - you also need to pass `&x` and `&y` where you pass them as arguments because you need to be passing the address of `x` and `y`. 
 
 > [!NOTE]
 > To do the above with a string you would have to use a temporary `char` and loop through the two strings replacing each value within the strings.
