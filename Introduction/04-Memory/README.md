@@ -90,8 +90,8 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 > [!NOTE]
 > Modern computers use 64-bit allowing you to count to crazy high numbers. $64–bit = 2^{63} - 1$.
 
-- The datatype of string is a `char*`.
-  - the `*` means `char* s` is not a `char` but the address of the first `char` in a string.
+- The datatype of string is a `char *`.
+  - the `*` means `char *s` is not a `char` but the address of the first `char` in a string.
 - `&` says the address of a variable.
 - `*` is the pointer to an address.
 - You can use `typedef` to create any number of data types.
