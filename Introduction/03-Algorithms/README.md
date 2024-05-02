@@ -112,7 +112,8 @@ flowchart TD
       Variables
       previous = NULL
       completed = 0
-      items = [0, 2, 4, 6, 1, 3, 5, 7]"]
+      items = [0, 2, 4, 6, 1, 3, 5, 7]
+    `"]
     1(["for count in total"]) -->
     2{"if items[count + completed] less than total"}
     2 --> |true| 3
