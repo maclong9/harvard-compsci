@@ -75,8 +75,12 @@ stored in 0x123 = 291
 - if the first letter of the word is at `0x123` then each letter of the word would be stored in just one address along.
 - the type of string is actually just a pointer that points to the characters in memory.
     - this is what the null terminate code is for, the pointer leads you to the beginning of the string and the null character ends the string.
-- 
 
 ```
 diagram of s stored in 8 bytes pointing to start of string hi!\0
 ```
+
+> [!NOTE]
+> Modern computers use 64-bit allowing you to count to crazy high numbers. $64-bit = 2^{63} - 1$
+
+
