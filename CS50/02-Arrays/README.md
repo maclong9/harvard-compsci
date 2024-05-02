@@ -97,40 +97,39 @@ string ? byte
 ### Other Values
 
 - You don't have to store numbers in the array, you can install any type in an array.
-- All items in the array must be of the same type. 
-- A string is just an array with each item being of type  `char`.
+- All items in the array must be of the same type.
+- A string is just an array with each item being of type `char`.
 - The computer knows a string has ended when it reaches a byte that is set to `0` or `00000000`.
-	- You can view this by printing the value of `array[length + 1]`.
-	- it will print as `NUL`, it is equal to the `0` character in ASCII.
+  - You can view this by printing the value of `array[length + 1]`.
+  - it will print as `NUL`, it is equal to the `0` character in ASCII.
 
 > [!TIP]
-> You can print the value of a `char` as an `int`. 
+> You can print the value of a `char` as an `int`.
 
 - An array of strings is just an array of arrays of `chars`.
 - You can print individual characters of words such as `printf("%s", words[0][0])` would print `H` if the value of `words[0]` is equal to `"HI"`.
 - If you go one index past one of the nested arrays it will access the `0`th value of the subsequent nested array.
-	``` index-jump.c
-	words[0] = "HI";
-	words[1] = "BYE";
-	printf("%s", words[0][4]); // `output: B`
-	```
+  ```index-jump.c
+  words[0] = "HI";
+  words[1] = "BYE";
+  printf("%s", words[0][4]); // `output: B`
+  ```
 
 > [!CAUTION]
 > When refactoring a process to a function, make sure you set the variable usage to the parameter definition.
 
-- The `<string.h>` library contains a lot of string manipulation functions. 
+- The `<string.h>` library contains a lot of string manipulation functions.
 - In the [String Length](./examples/length.c), you can see an example of a custom-defined string length function and the [strlen](https://manual.cs50.io/3/strlen) function defined in `string.h`.
 - You can use `strlen` to iterate through a string using the length as the quantity to count to.
-	- `for(int i = 0, n = strlen(s); i < n; i++)`
-	- This is done by initialising both `i` and `n` in the initialisation.
-	- The code above requires that both `i` and `n` are of the same type.
-	- This is how you would print a string if you didn't know about the `%s` format code.
+  - `for(int i = 0, n = strlen(s); i < n; i++)`
+  - This is done by initialising both `i` and `n` in the initialisation.
+  - The code above requires that both `i` and `n` are of the same type.
+  - This is how you would print a string if you didn't know about the `%s` format code.
 
 ## ctype.h
 
 - this library contains some useful functions for manipulating.
 - in the [uppercase](./examples/uppercase.c) example you can see the `toupper` function being used.
-
 
 ## Command Line Arguments
 
@@ -139,7 +138,7 @@ string ? byte
 - the arguments will be stored in an array of strings.
 - there is an example of this in [greet.c](./examples/greet.c).
 - `argv[0]` will print the name of the program e.g. `./greet`.
-	-  this allows you to figure out what command the user ran so you can supply help text for them.
+  - this allows you to figure out what command the user ran so you can supply help text for them.
 - if you print a number over the amount of command line arguments specified it will print `null`
 
 > [!TIP]
@@ -153,25 +152,24 @@ string ? byte
 - anything other than `0` is bad, it's an error code.
 - debuggers and testing programs like **unit tests** can detect and display these error codes with their messages.
 
-
 ## Cryptography
 
 - the ability to send information securely.
 - encrypting or scrambling information is a way to ensure that no one who is the person the message is intended for can read it.
 - it needs to be reversible so that someone else with the key can decrypt it.
 
-``` mermaid
+```mermaid
 flowchart LR
     key & plaintext--> cipher --> cyphertext
 ```
 
 - sending a message via plaintext is too easily read by malicious parties.
 - an example crypto `HI! -> IJ!`.
-	- you can only tell it is sent enthusiastically because of the `!`.
-	- this method is easy to brute force.
-	- it's known as the Caesar cypher because Julius Caesar used to use it.
+  - you can only tell it is sent enthusiastically because of the `!`.
+  - this method is easy to brute force.
+  - it's known as the Caesar cypher because Julius Caesar used to use it.
 - `ROT13` is more common and rotates them by `13`.
-	- this makes it a little less obvious.
-	- `26` would be useless because it rotates fully around and is back again.
+  - this makes it a little less obvious.
+  - `26` would be useless because it rotates fully around and is back again.
 - this is just a simple cipher and there are much more complex algorithms for this task.
 - decrypting on the other end requires you to reverse the process with the same algorithm.

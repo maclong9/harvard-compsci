@@ -42,7 +42,7 @@ flowchart LR
 
 </div>
 
-In **base10**  the number `123` is seen as a whole number rather than a sequence.
+In **base10** the number `123` is seen as a whole number rather than a sequence.
 
 ```math
 \begin{array}{@{}c@{\,}c@{\,}c@{}}
@@ -72,7 +72,7 @@ So that would make `11100000` equal to:
 128 + 64 + 32 = 224
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > You don't need to be able to directly translate to binary, we can view it abstractly within a programming language and just understand it is compiling down to `1`'s and `0`'s.
 
 **What About Letters?**

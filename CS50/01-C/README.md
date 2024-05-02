@@ -137,7 +137,7 @@ we created a more succinct syntax `counter += 1`, or even further as
   - This is the most common option because it is quite concise.
 - A **do while** loop will do the expression while the condition is true.
 
-  ``` c
+  ```c
   	do {
   		n = get_int("Size: ");
   	}
