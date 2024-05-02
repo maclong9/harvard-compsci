@@ -127,5 +127,5 @@ flowchart TD
     3{"if items[count] more than items[count] + 1"}
     3 --> |true| 5("switch items[count] and items[count + 1]")
     3 --> |false| 6("leave items[count] and items[count + 1]")
-    5 & 6 --> 7("increment count by 2 and completed by 1") --> 2
+    5 & 6 --> 7("increment count and completed by 1") --> 2
 ```
