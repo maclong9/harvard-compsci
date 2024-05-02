@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 int main(void) {
-	char* s = malloc(51 * sizeof(char));
+	char *s = malloc(51 * sizeof(char));
 	printf("Before: ");
 	scanf("%s", s);
 	

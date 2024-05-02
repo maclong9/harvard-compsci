@@ -12,7 +12,7 @@ int string_length(char* string) {
 }
 
 int main(void) {
-	char* name = malloc(51 * sizeof(char));
+	char *name = malloc(51 * sizeof(char));
 	printf("Name: ");
 	scanf("%s", name);
 

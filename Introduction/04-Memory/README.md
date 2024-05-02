@@ -61,12 +61,13 @@ stored in 0x123 = 291
 - you can print the memory address like so `printf("%p", &var);`
 - this is because C supports pointers which point at the memory address.
 - `int *p = &n;` this asks the compiler for a variable called `p` which I can place a pointer inside.
-- `&` will print the address, `*` means go to that address.
 - declaring a pointer is `int *p;`
 - `*p` without specifying a type means go to that address.
 - `p` is another variable. Pointers take up 8 bytes.
     - in this case `p` is just storing a number, that is equivalent to the address of the value.
 
+> [!NOTE]
+> `&` is the address of a variable, whereas `*` is a pointer to an address.
 
 ## Taking Off Training Wheels
 
@@ -83,4 +84,14 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 > [!NOTE]
 > Modern computers use 64-bit allowing you to count to crazy high numbers. $64–bit = 2^{63} - 1$.
 
+- The datatype of string is a `char*`. 
+    - the `*` means `char* s` is not a `char` but the address of the first `char` in a string.
+- `&` says the address of a variable.
+- `*` is the pointer to an address.
+- You can use `typedef` to create any number of data types.
+- a common abstraction `typedef uint8_t BYTE;`.
+- `string` in CS50 is set as `typedef char *string;`
 
+## Pointer Arithmetic
+
+- 
