@@ -42,8 +42,7 @@ flowchart LR
 
 </div>
 
-in **base10** when seeing the number `123` we assume it's a whole number and not
-a sequence.
+In **base10**  the number `123` is seen as a whole number rather than a sequence.
 
 ```math
 \begin{array}{@{}c@{\,}c@{\,}c@{}}
@@ -73,9 +72,8 @@ So that would make `11100000` equal to:
 128 + 64 + 32 = 224
 ```
 
-> [!NOTE] You don't need to be able to directly translate to binary, we can view
-> it abstractly within a programming language and just understand it is
-> compiling down to `1`'s and `0`'s.
+> [!NOTE] 
+> You don't need to be able to directly translate to binary, we can view it abstractly within a programming language and just understand it is compiling down to `1`'s and `0`'s.
 
 **What About Letters?**
 
@@ -146,7 +144,7 @@ xychart-beta
 ```
 
 This graph shows that it is better to design algorithms, like the logarithm
-detailed above, that are correct and efficient.
+detailed above, that is correct and efficient.
 
 > [!WARNING] The graph only displays the efficiency and not the correctness of
 > the algorithm.
@@ -155,9 +153,9 @@ detailed above, that are correct and efficient.
 
 Pseudocode is not actual code it's you writing your thoughts down tersely as
 though it was a logical process. Below I have written the same pseudocode as
-text and displayed it as a diagram. Writing pseudocode is a good way to ensure
+text and displayed it as a diagram. Writing pseudocode is a way to ensure
 your program will contain everything you need before you write it, rather than
-writing it and then needing to refactor to fit new things in.
+writing it and then refactoring it to fit new things in.
 
 ### Text
 
@@ -209,10 +207,10 @@ else if a student says goodbye
     say goodbye
 ```
 
-The issue with the above is we can't hardcode every single possible question, so
-we need to find a way for the AI to be able to infer the question itself. This
-is known as a Language Learning Model which can find patterns in a dataset which
-it is trained on and then decide on a response based on the patterns it found in
+The issue with the above is we can't hardcode every possible question, so
+we need to find a way for the AI to infer the question. This
+is known as a Language Learning Model, which can find patterns in a dataset
+it has been trained on and then using this knowledge decide on a response based on the patterns found in
 your question and the dataset. Sometimes LLM's can hallucinate wrong answers.
 
 > [!WARNING] During CS50 it is not okay to use AI that isn't CS50's
@@ -228,4 +226,4 @@ your question and the dataset. Sometimes LLM's can hallucinate wrong answers.
 
 [^1]:
     An expression with a `yes` or `no` answer, invented by mathemetician
-    [George Bool](https://en.wikipedia.org/wiki/
+    [George Bool](https://en.wikipedia.org/wiki/George_Boole)
