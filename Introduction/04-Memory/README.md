@@ -52,6 +52,31 @@
 - computers typically use numbers in hexadecimal notation to number the bytes in memory. 
 
 ```
-grid of memory, store 50 in 4 of the blocks.
-stored in 0x123 = 291
+grid of memory
+8 byte 0x123 for p
+store 50 in 4 of the blocks. 
+stored in 0x123 = 291 
 ``` 
+
+- you can print the memory address like so `printf("%p", &var);`
+- this is because C supports pointers which point at the memory address.
+- `int *p = &n;` this asks the compiler for a variable called `p` which I can place a pointer inside.
+- `&` will print the address, `*` means go to that address.
+- declaring a pointer is `int *p;`
+- `*p` without specifying a type means go to that address.
+- `p` is another variable. Pointers take up 8 bytes.
+    - in this case `p` is just storing a number, that is equivalent to the address of the value.
+
+
+## Taking Off Training Wheels
+
+- The [string](https://manual.cs50.io/3/get_string) type that has been detailed during the CS50 lectures
+- They are actually just arrays of `chars`.
+- if the first letter of the word is at `0x123` then each letter of the word would be stored in just one address along.
+- the type of string is actually just a pointer that points to the characters in memory.
+    - this is what the null terminate code is for, the pointer leads you to the beginning of the string and the null character ends the string.
+- 
+
+```
+diagram of s stored in 8 bytes pointing to start of string hi!\0
+```
