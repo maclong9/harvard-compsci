@@ -100,8 +100,6 @@ flowchart TD
 
 ## Sorting Algorithms
 
-### Find Smallest Algorithm
-
 ```mermaid
 ---
 title: Selection Sort
@@ -109,7 +107,7 @@ title: Selection Sort
 
 flowchart TD
     vars>"`
-      Variables
+      **Variables**
       previous = NULL
       completed = 0
       items = [0, 2, 4, 6, 1, 3, 5, 7]
@@ -122,8 +120,6 @@ flowchart TD
     3 --> |"smaller"| 5["store as previous"] --> 2
     3 --> |"larger"| 6["keep current bit"] --> 2
 ```
-
-### Swapping Algorithm
 
 ```mermaid
 ---
