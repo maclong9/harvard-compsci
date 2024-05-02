@@ -76,10 +76,9 @@ stored in 0x123 = 291
 > [!NOTE]
 > `&` is the address of a variable, whereas `*` is for dereferencing a pointer.
 
-## Taking Off Training Wheels
+## Explaining Strings
 
-- The [string](https://manual.cs50.io/3/get_string) type that has been detailed during the CS50 lectures
-- They are actually just arrays of `chars`.
+- The [string](https://manual.cs50.io/3/get_string) type is actually just an array of `chars`.
 - if the first letter of the word is at `0x123` then each letter of the word would be stored in just one address along.
 - the type of string is actually just a pointer that points to the characters in memory.
   - this is what the null terminate code is for, the pointer leads you to the beginning of the string and the null character ends the string.
