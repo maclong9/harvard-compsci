@@ -91,7 +91,16 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 - You can use `typedef` to create any number of data types.
 - a common abstraction `typedef uint8_t BYTE;`.
 - `string` in CS50 is set as `typedef char *string;`
+- Pointer Arithmetic is how you would manually print a string in C you can see the example in [addresses.c](./addresses.c). 
+- if you compare a `char*` with another `char*` doing `s = t` will be different everytime because the `s` and `t` are a pointer to the first character of a string.
+    - comparing the value of `s` and `t` with `&s` and `&t` it might be different due to it comparing the first character only.
+    - you should use `strcmp` to compare two `char*` values.
+- if you assign `t = s` it will copy the address rather than the value.
+    - this means if you are trying to create a copy of something to manipulate both will be manipulated because the pointer is the same for both.
+- `malloc` allows you to allocate a section of memory to a variable.
+    - ` char *t = malloc(strlen(s + 1));`
+- `free` frees up a specified memory section that's been previously allocated.
+    -
 
-## Pointer Arithmetic
-
-- 
+> [!CAUTION]
+> Ensure when iterating to copy strings to other variables that you do it to `<= n` to encompass the null character.
