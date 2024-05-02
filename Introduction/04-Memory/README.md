@@ -150,3 +150,19 @@ int main(void) {
 - a dereference will follow the pointer to the value at the address it is pointed to.
 - you cannot dereference a `pointer` that has never been pointed to a `pointee`.
 - setting `y = x` gives `y` a `pointee`.
+- [swap.c](./swap.c) shows an example of swapping variables values between spaces.
+    - this is called **passing by value** or by **copy**.
+    - the compiled result goes towards the top of the computers memory.
+    - below the compiled result is where global variables go. 
+    - next comes the _heap_.
+        - when you use `malloc` memory comes from here.
+    - at the very bottom of the memory is the _stack_. 
+        - when you use functions with variables and args the memory comes from here.
+        - main goes at the very bottom and calls swap.
+        - swap goes above main in it's own stack frame.
+            - swap is discarded when it's returned.
+    - this is why you can't use variables outside of their scope.
+        - the variables `x` and `y` passed into the `swap` function from `main` are actually just copies of `x` and `y`.
+    - to fix the issue detailed above you need to instead **pass by reference**.
+        - you just replace `int a, int b` in the arguments for `swap` to `int *a, int *b`
+        - this means that `*a` and `*b` are pointers to `x` and `y`.
