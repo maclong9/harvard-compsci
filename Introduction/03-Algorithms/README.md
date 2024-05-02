@@ -159,8 +159,17 @@ flowchart TD
 ## Merge Sort
 
 - A sort for sorting $n$ numbers that's better than both selection and bubble sorts.
-    0. If only one number -> Quit
-    1. Sort left half of numbers
-    2. Sort right half of numbers
-    3. Merge sorted halves.
 
+``` mermaid
+---
+title: Merge Sort
+---
+
+flowchart TD
+    0{"if only one number"}
+    0 --> |true| Quit
+    0 --> |false| 1
+    1("Sort Right Half of Numbers") -->
+    2("Sort Left Half of Numbers") -->
+    3("Merge Sorted Halves") --> Quit
+```
