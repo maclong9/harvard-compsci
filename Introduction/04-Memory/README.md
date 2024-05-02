@@ -145,7 +145,7 @@ int main(void) {
 - you cannot dereference a `pointer` that has never been pointed to a `pointee`.
 - setting `y = x` gives `y` a `pointee`.
 - [swap.c](./swap.c) shows an example of swapping variables values between spaces.
-  - this is called **passing by value** or by **copy**.
+  - if you swap to values in the local scope by it is called  **passing by value** however this won't work when you define the swap logic in a separate function.
   - the compiled result goes towards the top of the computers memory.
   - below the compiled result is where global variables go.
   - next comes the _heap_.
