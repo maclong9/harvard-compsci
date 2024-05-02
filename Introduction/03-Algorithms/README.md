@@ -96,7 +96,7 @@ flowchart TD
   - a person has a `string name` and a `string number`.
 - we can use `typedef struct` to create a `struct`.
   - `typedef` means create a data type.
-- example [here in the phonebook.c](./phonebook.c).
+- example in [phonebook.c](./phonebook.c).
 
 ## Sorting Algorithms
 
