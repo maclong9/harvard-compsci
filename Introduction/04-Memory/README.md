@@ -107,9 +107,6 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 - `free` frees up a specified memory section that's been previously allocated.
   - this is good practice to ensure that the system consistently has enough memory.
 
-> [!CAUTION]
-> Ensure when iterating to copy strings to other variables using the manual method that you do it to `<= n` to encompass the null character.
-
 ## Diagnosing Memory Issues
 
 - use the `sizeof` function to specify variables that are the size of types.
