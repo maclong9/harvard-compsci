@@ -5,3 +5,14 @@ from Artificial Intelligence to Cyber Security online for free via [EDX](https:/
 
 This repository contains my notes, examples and projects from these courses. Feel free to utilise my notes to
 help with your learning of computer science.
+
+## Flowchart Key
+
+``` mermaid
+flowchart TD
+    0{"Conditional Statements"}
+    1("Functions")
+    2(["Loops"])
+    3>"Variables"]
+    4["Input & Output"]
+```

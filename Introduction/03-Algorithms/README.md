@@ -153,3 +153,14 @@ flowchart TD
 - An example of this is above in the Divide and Conquer algorithm that calls itself to search the left or right half.
 - This will be more efficient because even though you are calling the same function recursively it's on a smaller scale each time.
 - You can see this in [recursion.c](./recursion.c);
+- This can tighten up the amount of code you need to write in an algorithm.
+    - It also helps with memory management.
+
+## Merge Sort
+
+- A sort for sorting $n$ numbers that's better than both selection and bubble sorts.
+    0. If only one number -> Quit
+    1. Sort left half of numbers
+    2. Sort right half of numbers
+    3. Merge sorted halves.
+
