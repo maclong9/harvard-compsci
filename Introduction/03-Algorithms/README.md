@@ -167,7 +167,6 @@ flowchart TD
     - then left of the right half, right of the right half then merge.
     - then merge left and right half. 
 - This algorithm uses less iterations.
-- $O()$
 - $\log_{2}n$ - if you start with 8 
     - $\log_{2}8$
     - $\log_{2}2^{3}$
