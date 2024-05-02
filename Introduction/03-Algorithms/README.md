@@ -169,7 +169,7 @@ flowchart TD
 
 ## Merge Sort
 
-- A sort for sorting $n$ numbers that are better than both selection and bubble sorts.
+- A sorting algorithm better than both selection and bubble sorts.
 - This uses recursion by running itself again on each half.
 - in an example of $8$ digits
   - you sort down to $4$ and then $2$ and then $1$. For both halves.
