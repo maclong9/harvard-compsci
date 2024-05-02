@@ -92,8 +92,6 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 
 - The datatype of string is a `char *`.
   - the `*` means `char *s` is not a `char` but the address of the first `char` in a string.
-- `&` says the address of a variable.
-- `*` is the pointer to an address.
 - You can use `typedef` to create any number of data types.
 - a common abstraction `typedef uint8_t BYTE;`.
 - `string` in CS50 is set as `typedef char *string;`
