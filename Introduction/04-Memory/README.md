@@ -98,9 +98,17 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 - if you assign `t = s` it will copy the address rather than the value.
     - this means if you are trying to create a copy of something to manipulate both will be manipulated because the pointer is the same for both.
 - `malloc` allows you to allocate a section of memory to a variable.
-    - ` char *t = malloc(strlen(s + 1));`
+    - `char *t = malloc(8);` would allocate 8 bytes of memory.
+    - `malloc` returns the first byte address of the chunk of memory.
+    - you should check if `malloc` returns `NULL` and terminate if so, because this means there isn't enough memory.
 - `free` frees up a specified memory section that's been previously allocated.
-    -
+    - this is good practice to ensure that the system consistently has enough memory.
+- the following code can be replaced with `strcpy`:
+``` c
+	for(int i = 0, n = strlen(s); i <= n; i++) {
+		t[i] = s[i];
+	}
+```
 
 > [!CAUTION]
 > Ensure when iterating to copy strings to other variables that you do it to `<= n` to encompass the null character.

@@ -9,9 +9,11 @@ int main(void) {
 	scanf("%s", s);
 
 	char *t = malloc(strlen(s + 1));
-	for(int i = 0, n = strlen(s); i <= n; i++) {
-		t[i] = s[i];
+	if(t == NULL) {
+		return 1;
 	}
+
+	strcpy(s, t);
 
 	if(strlen(t) > 0) {
 		t[0] = toupper(t[0]);
@@ -19,5 +21,6 @@ int main(void) {
 
 	printf("%s\n", s);
 	printf("%s\n", t);
-}
 
+	free(t); // * GOOD PRACTICE: frees up system memory, nullifying the chance of running out 
+}
