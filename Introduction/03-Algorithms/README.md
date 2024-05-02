@@ -55,17 +55,20 @@ flowchart TD
 ## Big $O$ Notation
 
 - various algorithms will be described as being on the order of one of the following runtimes:
+
     - $O(n^{2})$ - n people doing n things, for example, everyone in a room shaking hands would be $n \times n$ or $n^{2}$ handshakes. **Quadratic**.
     - $O(n \\log n)$ - **Logarithmic**.
     - $O(n)$ - takes linear time, for example, going through the phonebook one at a time. It represents an upper bound on the number of steps you might be counting.
     - $O(\\log n)$ - dividing in half. _binary search_.
     - $O(1)$ - this means it is a constant number of steps, no matter how many people the algorithm is working through.
+
 - $\Omega$ represents a lower bound.
     - $\Omega(n^{2})$
     - $\Omega(n \\log n)$
     - $\Omega(n)$
     - $\Omega(\\log n)$
     - $\Omega(1)$ - _linear search_, _binary search_
+
 - $\Theta$ represents that $O$ and $\Omega$ are equal.
     - $\Theta(n^{2})$
     - $\Theta(n \\log n)$
