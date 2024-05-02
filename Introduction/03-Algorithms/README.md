@@ -159,6 +159,23 @@ flowchart TD
 ## Merge Sort
 
 - A sort for sorting $n$ numbers that's better than both selection and bubble sorts.
+- This uses recursion by running itself again on each half.
+- in an example of $8$ digits
+    - you sort down to $4$ and then $2$ and then $1$. For both halves.
+    - then merge the full right and left half together.
+    - so you sort left of the left half, right of the left half and then merge.
+    - then left of the right half, right of the right half then merge.
+    - then merge left and right half. 
+- This algorithm uses less iterations.
+- $O()$
+- $log_{2}n$ - if you start with 8 
+    - $log_{2}8$
+    - $log_{2}2^{3}$
+    - $3$ - This is how many times you can divide a problem of 8 in half repeated.
+    - $O(n log n)$ - is the running time
+    - $\Omega(n log n)$ - so bubble sort may sometimes out match it.
+    - $\Theta(n log n)$ - due to the $O$ & $\Omega$ being equal.
+- not as good as linear or binary search but much better than selection or bubble.
 
 ``` mermaid
 ---
@@ -173,3 +190,6 @@ flowchart TD
     2("Sort Left Half of Numbers") -->
     3("Merge Sorted Halves") --> Quit
 ```
+
+In [this video](https://www.youtube.com/watch?v=ZZuD6iUe3Pc) you can see an animation which compares various sorting algorithms visually.
+
