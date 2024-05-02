@@ -20,13 +20,13 @@
 
 ``` math
 \overbrace{0}^{16} \overbrace{0}^{1} = 0
-\newline\overbrace{0}^{16} \overbrace{0}^{1} = 1
-\newline\overbrace{0}^{16} \overbrace{0}^{A} = 10
-\newline\overbrace{0}^{16} \overbrace{0}^{F} = 15
-\newline\overbrace{1}^{16} \overbrace{0}^{0} = 16
-\newline\overbrace{1}^{16} \overbrace{0}^{1} = 17
-\newline\overbrace{2}^{16} \overbrace{0}^{4} = 36
-\newline\overbrace{F}^{16} \overbrace{0}^{F} = 255
+\newline\overbrace{0}^{16} \overbrace{1}^{1} = 1
+\newline\overbrace{0}^{16} \overbrace{A}^{1} = 10
+\newline\overbrace{0}^{16} \overbrace{F}^{1} = 15
+\newline\overbrace{1}^{16} \overbrace{0}^{1} = 16
+\newline\overbrace{1}^{16} \overbrace{1}^{1} = 17
+\newline\overbrace{2}^{16} \overbrace{3}^{1} = 36
+\newline\overbrace{F}^{16} \overbrace{F}^{1} = 255
 ```
 
 - The maths below shows the value of each space in hex.
