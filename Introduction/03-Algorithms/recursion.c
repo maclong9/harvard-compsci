@@ -2,6 +2,11 @@
 #include <stdio.h>
 
 void draw(int n) {
+	// If nothing to draw
+	if (n <= 0) {
+		return;
+	}
+
   // Print pyramid of height n - 1
   draw(n - 1);
 
