@@ -20,12 +20,26 @@
 
 ``` math
 \overbrace{0}^{16} \overbrace{0}^{1} = 0\newline
+```
+``` math
 \overbrace{0}^{16} \overbrace{1}^{1} = 1\newline
+```
+``` math
 \overbrace{0}^{16} \overbrace{A}^{1} = 10\newline
+```
+``` math
 \overbrace{0}^{16} \overbrace{F}^{1} = 15\newline
+```
+``` math
 \overbrace{1}^{16} \overbrace{0}^{1} = 16\newline
+```
+``` math
 \overbrace{1}^{16} \overbrace{1}^{1} = 17\newline
+```
+``` math
 \overbrace{2}^{16} \overbrace{3}^{1} = 36\newline
+```
+``` math
 \overbrace{F}^{16} \overbrace{F}^{1} = 255\newline
 ```
 
