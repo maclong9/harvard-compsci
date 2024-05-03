@@ -62,7 +62,7 @@ A string is stored in memory slightly differently, while an integer is stored at
 You can manipulate strings using the `<string.h>` and `<ctype.h>` libraries, some common functions include `strlen` for finding the length of a string and `toupper` to capitalise a singular character or string. Another function is `strcmp` which is used to compare two strings and will exit with `0` if the strings are the same, it compares strings in _ASCIIbetical_ order. 
 
 ```c
-if(strcmp("test", "test") == 0)
+if(strcmp("test", "test") == 0) { ... }
 ```
 
 ## Command Line Arguments
