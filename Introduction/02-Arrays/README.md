@@ -20,7 +20,9 @@ Compiling is used as a catch-all phrase for converting source code to machine co
 
 ## Debugging
 
-It's rare to write a program 100% right the first time, this is because you may not have thought of something, typed something incorrectly or missed out on a parameter that a function requires to work. It allows you to set points in your code where the running will pause, you can then view the value of variables at that point during the runtime. This can be useful for figuring out why something isn't working as intended.
+It's rare to write a program 100% right the first time, this is because you may not have thought of something, typed something incorrectly or missed out on a parameter that a function requires to work. 
+
+A debugger allows you to set points in your code where the runtime will pause, you can then view the value of variables at that point during the runtime. This can be useful for figuring out why something isn't working as intended.
 
 The term _bug_ was coined by [Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper) whose colleague discovered a moth stuck inside one of the relays of their punchcard computer causing an error.
 
