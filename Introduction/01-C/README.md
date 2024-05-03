@@ -4,16 +4,16 @@
 
 Source code is what the human writes, it is compiled down to machine code. This is because if we were writing an entire program in 0s and 1s like in the past with [punchcards](https://en.wikipedia.org/wiki/Computer_programming_in_the_punched_card_era), programming would be very painful.
 
-### Keywords
-
-Source code is full of keywords, these words dictate to the compiler that they should cause a specific action to happen, for example, `printf` is a function meaning the compiler will see the text and link it to the function `printf`, the compiler then assembles the binary to run the processes defined in the aforementioned above.
-
 ### Compiling
 
 You can compile your program in several ways, running `make hello` will tell the compiler to compile a `.c` file named `hello.c` into a binary called `hello`. You can be more specific with `clang`, the actual compiler program that `make` is running for you. With `clang` you can specify any output file `clang -o hi hello.c`. 
 
 > [!NOTE]
 > If your compile execution prints no text to the Standard Output[^1] then it worked, if something went wrong it will print an error message.
+
+### Keywords
+
+Source code is full of keywords, these words dictate to the compiler that they should cause a specific action to happen, for example, `printf` is a function meaning the compiler will see the text and link it to the function `printf`, the compiler then assembles the binary to run the processes defined in the aforementioned above.
 
 ### Formatting
 
