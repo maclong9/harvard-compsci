@@ -66,7 +66,7 @@ int main(int argc, string argv[]) {
   print("Output:\nZero: %s\nOne: %s", ,argv[0], argv[1]);
 }
 ```
-```sh
+```console
 λ ./main hello
 Output:
 Zero: ./main
