@@ -111,7 +111,7 @@ int main(void) {
 
 The above code sets a variable in a low-level way by allocating the variable `x` and then assigning a value separately. `y` is also assigned a value but no space is ever allocated for `y` this would result in a garbage value and can cause computers to crash. You cannot dereference a pointer that has never been pointed to a memory address. The code above is fixed by the line that assigns `y` to `x` which means `y` is now pointing to a valid memory address.
 
-## Memory Overflow
+## A Brief Look Into Scope 
 
 There is an example in this directory called [swap.c](./swap.c), which uses a function to swap the values of `x` and `y` however it only works due to the usage of a temporary variable within the `old_swap` function. This is because the values passed to the `old_swap` function would just be copies of the original `x` and `y` and therefore altering the values of `a` and `b` would only affect the local scope after the function has terminated they would be discarded leaving `x` and `y` at their original values.
 
