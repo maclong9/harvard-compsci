@@ -6,7 +6,7 @@ Your screen uses pixels to render images, they are essentially tiny square light
 
 An image file simply maps to a pattern of pixels to turn on and off or alter the colour to reproduce the image detailed in the pattern. A common way to alter the colour of a pixel is known as the [RGB Color Model](https://en.wikipedia.org/wiki/RGB_color_model) with the letters standing for Red, Green & Blue with each having a possible value of 0 through 255.
 
-[HEX Triplet](https://en.wikipedia.org/wiki/Web_colors) is another common colour notation with the values of a HEX `#000000` equaling Red, Green and Blue again for every 2 places. Instead of 0 to 255, HEX uses a Hexadecimal notation with 0 to 9 followed by A to F for 10 to 15.
+[HEX Triplet](https://en.wikipedia.org/wiki/Web_colors) is another common colour notation with the values of a HEX `#000000` equaling Red, Green and Blue again for every 2 places. Instead of 0 to 255, HEX uses a Hexadecimal notation with `0-9` followed by `A-F` for `10-15`.
 
 Most programs that work with colors from photo editors to web programming use HEX and RGB as options for colors. Another common one is HSL and there is a new one called OKLCH.
 
