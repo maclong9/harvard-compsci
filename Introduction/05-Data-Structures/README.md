@@ -19,9 +19,9 @@ A stack and a queue can be defined almost identically interms of data structure,
 
 ## Allocating More Space
 
-Adding to an array that hasn't had enough space allocated to it means you have to move the data to a new memory location that can fit the array. This can be slow due to iterating over the array when copying it over into the new location. You can see this example in [list.c](./list.c). In this example the lines of code that look like `list[0-2] = 1-3` will put the values as `0-3`, `4-7` and `8-11`. The full example shows allocating extra memory and then moving a smaller array into the largest space and appending one item.
+Adding to an array that hasn't had enough space allocated to it means you have to move the data to a new memory location that can fit the array. This can be slow due to iterating over the array when copying it over into the new location. You can see this example in [list.c](./list.c). This example shows allocating extra memory and then moving a smaller array into the largest space and appending one item.
 
-You could just assign the array `300 sizeof(int)` however this could be using far too much memory and also you may still run into the same issue, and it becomes incredibly slow to copy over so many values when moving from the `tmp` array.
+You could just assign the array `300 sizeof(int)` however this could be using far too much memory and also you may still run into the same issue, finally it becomes incredibly slow to copy over so many values when moving from the `tmp` array.
 
 LECTURE TIME: 30:34
 
