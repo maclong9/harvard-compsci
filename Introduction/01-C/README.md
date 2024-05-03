@@ -8,6 +8,8 @@ Source code is what the human writes, it is compiled down to machine code. This 
 
 You can compile your program in several ways, running `make hello` will tell the compiler to compile a `.c` file named `hello.c` into a binary called `hello`. You can be more specific with `clang`, the actual compiler program that `make` is running for you. With `clang` you can specify any output file `clang -o hi hello.c`. 
 
+`clang` is a newer compiler built on top of [LLVM](https://llvm.org) which is a new compiler infrastructure designed to help people build new languages.
+
 > [!NOTE]
 > If your compile execution prints no text to the Standard Output[^1] then it worked, if something went wrong it will print an error message.
 
