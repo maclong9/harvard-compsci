@@ -66,7 +66,7 @@ You cannot compare a string with another string by doing `s == t` because `s` an
 
 ## Allocation
 
-`malloc` is a function contained within `<stdlib.h>` and is used to allocate a section of memory to a variable. As an example `char *t = malloc(8);` would reserve space in memory for `t` equal to `8B` the function then returns the first-byte address of the chunk reserved.
+`malloc` is a function contained within `<stdlib.h>` and is used to allocate a section of memory to a variable. As an example consider `char *t = malloc(8);` which would reserve space in memory for `t` equal to `8B` the function then returns the first-byte address of the chunk reserved.
 
 > [!WARNING]
 > Anytime a function could return `NULL` like in `malloc` you should check and `return 1` if so because this means there isn't enough memory.
