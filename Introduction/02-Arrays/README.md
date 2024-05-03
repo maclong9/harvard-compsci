@@ -54,7 +54,11 @@ print("%i", numbers[2]);
 
 A string is stored in memory slightly differently, while an integer is stored at a memory address with that value inside, a string is defined as a pointer with the address of the pointer being the first character of the string, the bytes in memory following that original address are the string up until it reaches a null terminate code telling the computer that the string end there.
 
-You can manipulate strings using the `<string.h>` and `<ctype.h>` libraries, some common ones include `strlen` for finding the length of a string and `toupper` to capitalise a singular character or string.
+You can manipulate strings using the `<string.h>` and `<ctype.h>` libraries, some common ones include `strlen` for finding the length of a string and `toupper` to capitalise a singular character or string. Another function is `strcmp` which is used to compare two strings and will exit with `0` if the strings are the same, it compares strings in _ASCIIbetical_ order. 
+
+```c
+if(strcmp("test", "test") == 0)
+```
 
 ## Command Line Arguments
 
