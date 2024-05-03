@@ -53,7 +53,7 @@ stored in 0x123 = 291
 
 ## Pointers 
 
-You can use the `%p` format code and the `&` appended to a variable name to print the address that a value is being stored in memory. This is known as a pointer which points to the memory address. The `*` character is used for syntax relating to pointers if you use it with a type `int *p` it will declare a pointer, if you use it without specifying a type `printf("%i", *p);` it will point to that memory address. 
+You can use the `%p` format code and the `&` appended to a variable name to print the address that a value is being stored in memory. This is known as a pointer which points to the memory address. The `*` character is used for syntax relating to pointers if you use it with a type `int *p` it declares a pointer, if you use it without specifying a type `printf("%i", *p);` it will point to that memory address. 
 
 ```
 diagram of s stored in 8 bytes pointing to the start of string hi!\0
