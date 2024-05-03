@@ -17,4 +17,6 @@ The two operations for enque and dequeue are called `push` and `pop` so you `pus
 
 A stack and a queue can be defined almost identically interms of data structure, even if the logic is different the data is the same.
 
+Adding to an array that hasn't had enough space allocated to it means you have to move the data to a new memory location that can fit the array. This can be slow due to iterating over the array when copying it over into the new location. You can see this example in [list.c](./list.c). In this example the lines of code that look like `list[0..2] = 1..3` will put the values as 0-3, 4-7 and 8-11. The full example shows allocating extra memory and then moving a smaller array into the largest space and appending one item.
+
 
