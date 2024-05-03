@@ -77,9 +77,8 @@ int main(int argc, string argv[]) {
 ```
 ```sh
 λ ./main hello
-Output:
-Zero: ./main
-One: hello
+Argument Zero: ./main
+Argument One: hello
 ```
 
 > [!TIP]
