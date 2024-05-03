@@ -16,7 +16,7 @@ Compiling is used as a catch-all phrase for converting source code to machine co
    The way linking works is by taking all of the compiled `.c` files that are mentioned or referenced by an `include <{libname}.h>` sort of stitching them together so they can utilise the functions from one another.
 
 > [!NOTE]
-> The code is only converted to assembly if you are using `gcc` if you are using the more modern `clang` which runs LLVM it instead compiles to LLVM IR.
+> The code is only converted to assembly if you are using `gcc` if you are using the more modern `clang` which is built on LLVM it instead compiles to LLVM IR.
 
 ## Debugging
 
