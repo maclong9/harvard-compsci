@@ -13,7 +13,9 @@ typedef struct {
 } queue;
 ```
 
-A __stack__ is another form of abstract data type, they support the opposite of queues which is __LIFO__ last in, first out. There are contexts where this makes sense, for example within an email program you usually start with the ones that came in most recently because they are ordered in that way.  A stack and a queue can be defined almost identically interms of data structure, even if the logic is different the data is the same.
+A __stack__ is another form of abstract data type, they support the opposite of queues which is __LIFO__ last in, first out. There are contexts where this makes sense, for example within an email program you usually start with the ones that came in most recently because they are ordered in that way.
+
+A stack and a queue can be defined almost identically interms of data structure, even if the logic is different the data is the same.
 
 ## Allocating More Space
 
