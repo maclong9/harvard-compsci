@@ -17,28 +17,28 @@ Sometimes you require more than ten digits and representing these things in byte
 The mathematics below shows the value of each column and how to figure out basic hex values.
 
 ```math
-\overbrace{0}^{16} \overbrace{0}^{1} = 0\newline
+\overbrace{0}^{16} \overbrace{0}^{1} = 0
 ```
 ```math
-\overbrace{0}^{16} \overbrace{1}^{1} = 1\newline
+\overbrace{0}^{16} \overbrace{1}^{1} = 1
 ```
 ```math
-\overbrace{0}^{16} \overbrace{A}^{1} = 10\newline
+\overbrace{0}^{16} \overbrace{A}^{1} = 10
 ```
 ```math
-\overbrace{0}^{16} \overbrace{F}^{1} = 15\newline
+\overbrace{0}^{16} \overbrace{F}^{1} = 15
 ```
 ```math
-\overbrace{1}^{16} \overbrace{0}^{1} = 16\newline
+\overbrace{1}^{16} \overbrace{0}^{1} = 16
 ```
 ```math
-\overbrace{1}^{16} \overbrace{1}^{1} = 17\newline
+\overbrace{1}^{16} \overbrace{1}^{1} = 17
 ```
 ```math
-\overbrace{2}^{16} \overbrace{3}^{1} = 36\newline
+\overbrace{2}^{16} \overbrace{3}^{1} = 36
 ```
 ```math
-\overbrace{F}^{16} \overbrace{F}^{1} = 255\newline
+\overbrace{F}^{16} \overbrace{F}^{1} = 255
 ```
 
 > [!NOTE]
