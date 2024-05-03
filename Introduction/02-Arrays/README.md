@@ -15,6 +15,9 @@ Compiling is used as a catch-all phrase for converting source code to machine co
 4. **linking**:
    The way linking works is by taking all of the compiled `.c` files that are mentioned or referenced by an `include <{libname}.h>` sort of stitching them together so they can utilise the functions from one another.
 
+> [!NOTE]
+> The code is only converted to assembly if you are using `gcc` if you are using the more modern `clang` which runs LLVM it instead compiles to LLVM IR.
+
 ## Debugging
 
 It's rare to write a program 100% right the first time, this is because you may not have thought of something, typed something incorrectly or missed out on a parameter that a function requires to work. It allows you to set points in your code where the running will pause, you can then view the value of variables at that point during the runtime. This can be useful for figuring out why something isn't working as intended.
