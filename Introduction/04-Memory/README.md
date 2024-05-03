@@ -132,7 +132,9 @@ Calling functions or recursions too much can cause a memory error known as a __h
 
 ## File IO
 
-While `stdin` and `stdout` are great sometimes we need to store values in a file or read some data from a file. That is where the following file input and output functions come in, you can see a basic [phonebook.c](./phonebook.c) implementation which walks through the basics of writing to a file. Another example file is [cp.c](./cp.c) utilises both the reading and writing of a file, the result is a simple recreation of the standard UNIX command `cp` which copies a file to a new specified location based on command line arguments.
+While `stdin` and `stdout` are great sometimes we need to store values in a file or read some data from a file. That is where the following file input and output functions come in, you can see a basic [phonebook.c](./phonebook.c) implementation which walks through the basics of writing to a file.
+
+Another example file is [cp.c](./cp.c) which utilises both the reading and writing of a file, the result is a simple recreation of the standard UNIX command `cp` which copies a file to a new specified location based on command line arguments.
 
 ``` c
 while(fread(&b, sizeof(b), 1, src) != 0) {
