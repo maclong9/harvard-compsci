@@ -178,9 +178,10 @@ This Merge Sort algorithm results in fewer iterations and the number of steps is
 
 ```math
 \log_{2}8 = \log_{2}2^{3} \\
+```
+```math
 \log_{2}2^{3} = 3
 ```
-
 ```math
 \Theta(n \log n)
 ```
