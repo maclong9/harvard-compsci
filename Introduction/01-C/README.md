@@ -1,243 +1,234 @@
 # A More Traditional Language
 
-## Focuses
-
-- Learning C
-- Learning to Solve Problems
-- Learn how to not solve problems
-
-## Hello, World!
-
-```hello.c
-#include <stdio.h>
-
-int main(void) {
-    printf("Hello, World!");
-}
-```
-
-> [!WARNING]
-> In C you must end statements with a semicolon `;`
-
 ## Source Code
 
-Source code is what the human writes, and then it is compiled down to machine
-code. This is because if we were writing an entire program in `0`s and `1`s
-like in the past with punchcards, programming would be very painful.
+Source code is what the human writes, it is compiled down to machine code. This is because if we were writing an entire program in 0s and 1s like in the past with [punchcards](https://en.wikipedia.org/wiki/Computer_programming_in_the_punched_card_era), programming would be very painful.
+
+### Compiling
+
+You can compile your program in several ways, running `make hello` will tell the compiler to compile a `.c` file named `hello.c` into a binary called `hello`. You can be more specific with `clang`, the actual compiler program that `make` is running for you. With `clang` you can specify any output file `clang -o hi hello.c`. 
+
+`clang` is a newer compiler built on top of [LLVM](https://llvm.org) which is a new compiler infrastructure designed to help people build new languages.
 
 > [!NOTE]
-> Compiling is done via a program called a compiler which translates one language to another, in this case, C to Machine Code.
+> If your compile execution prints no text to the Standard Output[^1] then it worked, if something went wrong it will print an error message.
 
-- `printf` is used to print to the console, the `f` stands for format.
-- Running `make hello` will look for a C file with the same string as input in
-  this case `hello` and convert it to machine code.
-- With `make` if nothing prints that means it worked, otherwise, it will print
-  an error.
-- You need to end print statements with a `\n` to print a blank line. Pressing
-  <kbd>Return</kbd> will not work.
-  - This is known as an **escape sequence**.
-  - If you want to print `\n` you escape it with an extra backslash `\\n`.
-- The `#include <stdio.h>` imports the C standard library, a set of functions
-  for performing common operations.
-  - This is because C tucks away a lot of functionality in other files.
-  - This allows you to keep the binary smaller by only including what is
-    required.
-  - It is known as a header file and is representative of a library you can
-    import.
-  - They are useful for sharing common code that most people will need to use at
-    some point.
-  - You or other people can also create libraries and include them in C files.
-  - You can read the **Manual Pages** for a language or library to see what it
-    does and how to use it.
-- In C you can pass parameters as pointers using `*`, this means they point to a different variable.
-  - This is done by passing the memory address of the variable to the function.
+### Keywords
 
-> [!CAUTION]
-> The `\n` character can cause issues with the `scanf` function if printed before.
+Source code is full of keywords, these words dictate to the compiler that they should cause a specific action to happen, for example, `printf` is a function meaning the compiler will see the text and link it to the function `printf`, the compiler then assembles the binary to run the processes defined in the aforementioned above.
 
-[The Mental Model](../README.md#mental-model), can be boiled down to an input
-is an argument. A function is the processing section in the middle and the
-output is a side effect, for example in the hello world program above the
-string printed to the console is the side effect. The side effect can also be
-known as a return value.
+### Formatting
+
+The `printf` function mentioned earlier prints to the Standard Output. There are some caveats such as being unable to use the <kbd>Return</kbd> key to start a new line, even though there will be a new line in the code the compiler requires what is known as an __Escape Sequence__ which is a character prefixed with a `\` in this case for the new line you would use `\n`.
+
+You can interpolate a [variable](#variables) into a string, this is useful for displaying data that might change during the running of a program or specific data that has been collected from somewhere such as the current weather.
+
+```c
+char initial = "M";
+printf("%c", initial);
+```
+
+__Format codes__
+- `%c`: Character
+- `%f`: Floating Point
+- `%f`: Double, similar to float but `64b`, also defined with `%f`.
+- `%u`: Unsigned Integer
+- `%i`: Integer
+- `%p`: Pointer
+- `%s`: String
+- `%b`: Boolean
+- `%x`: Hexadecimal
+- `%li`: Long Integer
 
 > [!NOTE]
-> Learning programming is not about memorising the whole language, it's more about learning how to solve problems and being able to look up what you need to solve the problem.
+> To print a backslash using `printf` you have to write `\\` to escape the backslash itself.
 
-## Input
+### Libraries
 
-- For receiving input from the user you can use `scanf`.
-  - `scanf` is more versatile and can read more than just strings.
-- To store input as a variable `char name[50];`.
-  - You can then store a value in the variable `name`.
-  - You are required to specify the type, such as `char` or `int`.
-  - You can define the default value for a variable `char name = "Mac";`.
-- When printing with `printf` you utilise `%s` to specify a section of the
-  string to be replaced with a variable.
-  - You then place the variable after the double quotes and a comma but inside
-    the parentheses.
-  - `printf("Hello, %s\n", answer);`
-  - You can supply multiple variables with each having its place held by `%s`
-    and defined in the function.
-- `stdin` means standard input, the program can use it to read directly from
-  the terminal.
-- Format codes
-  - `%c`: Character
-  - `%f`: Floating Point
-  - `%f`: Double, similar to float but `64b`, also defined with `%f`.
-  - `%u`: Unsigned Integer
-  - `%i`: Integer
-  - `%p`: Pointer
-  - `%s`: String
-  - `%b`: Boolean
-  - `%x`: Hexadecimal
-  - `%li`: Long Integer
-- Operators
-  - `<` less than.
-  - `>` greater than.
-  - `=` sets a variable.
-  - `==` is equal to.
-  - `!=` is not equal to.
+C utilises libraries to tuck away various functionality in __Header Files__, this allows you to keep the distributed binary small as it only includes the functions the program needs and not every single function that C is capable of running. These files are added to the compilation step by specifying them with `#include <{lib_name}.h>` at the top of a C file.
 
-## Variables
+While C comes with some standard libraries, you can create your own. This is useful if you want to define a function that may be used multiple times across different files in a large application, custom libraries are specified with `#include "{lib_name}.h"` at the top of the file.
 
-I briefly mentioned storing input to variables above. You can use them for all
-types and various uses including storing information or a counter value which
-is then incremented.
+> [!TIP]
+> Read the **Manual Pages** for a library to discover how each included function works and parameter types.
 
-You can reassign a variable, `counter = counter + 1`. Which is so common in C
-we created a more succinct syntax `counter += 1`, or even further as
-`counter++`.
+### Variables
+
+Variables are reusable values you can store in memory for the program to use later. You can store a variety of types including `char` for a single text character and `int` for an integer. Defining a variable is as simple as writing the type, followed by the variable's name and then what you would like the variable to be equal to. You can also reassign variables by assigning it again later on in the code.
+
+``` c
+int a = 9;
+int b = 10;
+const int c = 16;
+
+printf("%i", a); // 9
+printf("%i", b); // 10
+printf("%i", c); // 16
+
+a = 11;
+c = 17; // ! will not compile unless this line is removed.
+
+printf("%i", a); // 11
+printf("%i", b); // 10
+```
 
 > [!TIP]
 > You can use `const` to define unchangeable variables, `const int n = 5;` as an example.
 
-## The OR and AND Operators
+### Input
 
-- Using `||` you can run a conditional check on multiple parameters.
-  - it will return `true` if either of the options is true.
-  - `if(response == 'y' || response == 'Y')`
-- Using `&&` will check and make sure that both options are true.
-  - `if(isLoggedIn == true && hasAdminAccess == true)`
-- You can see an example in [agree.c](./agree.c).
+Receiving input from the user of the program is a key functionality that nearly every program requires, you can utilise the `scanf` function from the `<stdlib.h>` file to read input. This function can read the Standard Input[^2] to store most data types.
 
-## Loops
+```c
+int age;
+printf("Enter your age: ");
+scanf("%i", age);
 
-- You can utilise a `while` loop to repeat as long as a condition is true.
+char response;
+printf("Enter (Y)es or (N)o: ");
+scanf("%c", response);
+```
 
-  - `while(counter < 5)`
-  - You can run a counter by setting the variable to the count and subtracting each loop.
-  - You can also run it by setting the variable to 0 and incrementing up to the count defined in the loop.
-  - You must define the counter before running the `while` loop.
-  - It's canonical to use `i` for `integer` to define a counter.
-    - For larger programs, it is good to define what the variable is.
+> [!CAUTION]
+> `scanf` doesn't check the type of the data so logic will need to be implemented for validating input.
+ 
+### Logical Operators
 
-- You can also write a loop as a `for` loop.
-  - `for (int i = 0; i < 3; i++)`
-  - This is the most common option because it is quite concise.
-- A **do while** loop will do the expression while the condition is true.
+C contains a variety of logical operators used for comparing two values against each other, these can be used within what is known as an if statement to control the flow of your program, a good example of this can be seen in [compare.c](./compare.c) where we check if `x` and `y` are equal depending on whether the result is `TRUE` or `FALSE` print a different string.
 
-  ```c
-  	do {
-  		n = get_int("Size: ");
-  	}
-  	while(n < 1);
-  ```
+The final two logical operators are known as `OR` and `AND`, which can be used during a statement to add conditions to the check, an `OR` statement will return `TRUE` if any of the conditions are true, whereas `AND` will only return `TRUE` if all of the conditions are true. You can see an example of the `AND` operator used in [agree.c](./agree.c).
 
-## Functions
+```c
+if (x == y && y = z) {
+    printf("All Are Equal");
+}
+```
 
-- Functions are used to abstract code that might need to be reused.
-- They help keep loops and the `main` function tidier.
-- `void printHello() {...}`
-- A `void` function is a non-returning function.
+__A List of Logical Operators__
+- `<` less than.
+- `>` greater than.
+- `==` is equal to.
+- `!=` is not equal to.
+- `||` or.
+- `&&` and.
 
-> [!TIP]
-> The `void` keyword indicates that this function does not return a value. A non-returning function can also be called a subroutine.
+### Loops
 
-- If you define parameters inside the parentheses you can pass them while calling the function.
-  - `void printHello(int n) {...}`
-  - `printHello(5);`
+This is a way of causing a repetition in your code, it can save you from writing the same line of code to make it repeat 4 times, instead, you can just run a loop that counts to 4 and print the statement on each iteration.
+There are 2 main types of loops a `while` loop and `for` loop.
 
-> [!TIP]
-> While `i` is used for incrementing loops for simple programs you can use `n` as a count or quantity.
+A `while` loop will continue to repeat as long as a condition is true and once it returns false the loop will terminate. A while loop should be used when you aren't sure how many iterations there could be. 
 
-### Return Values
+```c
+int score = 0;
 
-- A return value is a value that is handed back from a function to where it was called.
-- This is done using the `return` keyword.
-- You can then use the function to create a variable.
-  - `int x = get_number("x");`
-- There is an example in [01-C/calculator.c](./examples/calculator.c)
+while (score < 5) {
+    printf("Shoot the Target!");
 
-> [!TIP]
-> Strings, or an array of characters, should be wrapped in `"`, whereas single characters should be wrapped in `'`.
+    if(hit) {
+        counter++;
+        print("Great Shot!");
+    } else {
+        print("You Missed!");
+    }
+}
+printf("You Win!");
+```
 
-## Scope
+You can also use a `do while` loop with the major difference being the contents of the loops is executed before the condition is checked rather than after it is checked. This is useful for adding validation to user inputs.
 
-- Scope refers to what variables are available where.
-  - if you have a function called `int getNumber()`, all the variables defined within that function are `local` to that function and cannot be used elsewhere unless you return the value.
+```c
+char *name;
+do {
+    printf("Enter your name: ");
+    scanf("%d", &name);
+} while(name < 1);
+```
+
+A `for` loop should be used when you know exactly how many times you want the loop to run. It is a more concise syntax than a while loop as the variables utilised to track the loop are defined in the loops definition.
+
+```c
+for (int i = 0; i < 3; i++) {
+    printf("Hello!"); 
+}
+```
+
+> [!NOTE]
+> In simple programs it is normal to use `i` and `j` for incrementing integers and `n` and `m` for quantities. They should be descriptive such as `score` for larger programs.
+
+### Functions
+
+A function is a process you can define and then execute by name, it's useful for keeping loops and the `main` function tidy as instead of all of the logic being placed within a code block each specific task can be separated into a function.
+
+There are two types of functions, one is just a __function__ and returns a value of a type which you must specify in the function declaration, this is known as a return type. The other is called a __subroutine__ and is defined in the same way as a function except you use `void` as the return type, this is because a subroutine doesn't return any value but just runs a piece of logic.
+
+A function can be declared with parameters, though it doesn't have to have any, parameters are values passed to the function to be used within the enclosed logic.
+
+```c
+int add(int a, int b) {
+    return a + b;
+}
+
+void print_three(char *text) {
+    for (int i = 0; i < 3; i++) {
+        printf("%s\n", &text);
+    }
+}
+
+int main(void) {
+    int result = add(5, 5); // 10
+    printThree("5 + 5 = %i", result);
+}
+```
 
 > [!NOTE]
 > The `main` function is defined as `int` because it returns `0` if the program is successful and a different number known as an **error code** if something goes wrong.
 
-## Comments
+### Scope
 
-- In C you define comments with `//` the compiler will ignore this code.
-- Comments are a way to document code at its definition.
-- `/* ... */` will define a multiline comment with the content between the two asterisks.
+Now that we have multiple functions defined in our code, __scope__ becomes an important topic. Essentially scope is a way of describing what any given aspect of your code has access to, for example in the `main` function if you have a variable defined named `age` you cannot use that variable within the `print_age` function unless it is passed down as a parameter.
 
-> [!NOTE]
+```c
+int x = 32; // Globally Scoped Variable
+
+int print_age() {
+    printf("%i", age); // will not work because age is not passed to print_age
+}
+
+int main(void) {
+    int age = 64;
+    print_age(); 
+}
+```
+
+This is known as __Local__ and __Global__ scope, with local being the contents of the block of code itself, in the example above `age` is defined in the `main` function's local scope. To define a global variable you must define it outside of any functions, including the `main` function.
+
+### Comments
+
+Comments are sections of code that are ignored by the compiler, in C they are defined with `//` and can be used to leave yourself or others who may read your code notes about the code you have written. It's particularly useful for code that might not be easily explained just by reading the code. You can define a comment over multiple lines with `/* ... */` for longer text.
+
+```c
+printf("Hello, World!"); // Hello, World!
+// printf("Hello, Two!); // won't run
+
+/*
+    printf("None of these will run!");
+    printf("None of these will run!");
+    printf("None of these will run!");
+*/
+```
+
+> [!TIP]
 > Good code should be self-documenting. Use comments for complex and non-standard code to explain what it is for.
 
-## Memory Management
+### Type Casting
 
-- Your computer stores [bits](../README#The Binary System) inside of memory, or Random Access Memory.
-- Because memory is finite you can only store a limited number of bits.
-- Integer Overflow is an issue where the number will wrap around to `0` or a negative number if the number you attempt to store is too large.
-- `32` bits is more common than `8`. It allows us to store more numbers.
+Type Casting allows you to treat one type as another, this is particularly useful when you want to perform division on a selection of integers and the result might contain a decimal point. You can utilise type casting by either wrapping the desired type in parentheses or in the case of converting to `float` you can just add one `float` to the equation and the rest of the numbers will be treated as such.
 
-> [!NOTE]
-> A lot of modern computers are now 64-bit. with the max numbers being unsigned: $2^{64} - 1 = 18,446,744,073,709,551,615$, signed integers: $2^{63} - 1 = 9,223,372,036,854,775,807$ which is pretty large for a number.
+```c
+int result_one = ((float) a + (float) b) / 3;
+int result_two = (a + b) / 3.0;
+```
 
-## Type Casting
-
-- You can treat one type as another with type casting.
-- `float z = (float) x / (float) y;`
-- the `(float)` tells the compiler to treat the subsequent variable as a float.
-
-## The Command Line
-
-- The Command Line exists on UNIX and UNIX-Like environments, such as macOS and Linux.
-- Linux is a popular OS, commonly used for servers and some desktops/laptops.
-- It is typically a command line interface, though a graphical interface can be installed and used.
-- Linux is excellent for learning the terminal.
-- Development containers are a way of preconfiguring environments for particular types of projects.
-  - An example would be installing dependencies like [Deno](https://deno.com) for web development.
-
-> [!NOTE]
-> A terminal or terminal emulator is a program you use to interact with the command line interface.
-
-Writing in the command line is terser, so most of the commands below are written as abbreviations instead of full command names.
-
-**Common Commands**
-
-- `cd`: Change Directory.
-- `mv`: Move File/Directory.
-- `ls`: Lists Files in the Current Folder.
-- `cp`: Copies a File to a New Location.
-- `rm`: Removes a File.
-- `pwd`: Print Working Directory, or the current directory.
-- `mkdir`: Makes a New Directory.
-- `rmdir`: Removes a Directory.
-
-> [!CAUTION] > `rm` does not move files to the Trash or Recycling Bin like in a GUI Explorer, so be careful when running it on files.
-
-## Integer Bugs
-
-- In 2038 there might be another y2K-like event because the UNIX epoch time is stored in a `32` bit.
-- We will likely switch it out for a `64b`.
-- This could happen again billions of years in the future.
-- The same thing happens with Pacman if you get to the `256b` with your score.
-  - When you reach that score the game breaks.
-- The original Donkey Kong game had the formula $10 \times (level +4)$, which is how many seconds you have to complete the level.
-  - At level `22` an 8-byte value can no longer store the result, leaving players with 4 seconds to solve the level.
+[^1]: Standard Output is an example of [Standard Streams](https://en.wikipedia.org/wiki/Standard_streams).
+[^2]: Standard Input is also an example of a Standard Stream, another common one is Standard Error.

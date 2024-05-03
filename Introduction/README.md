@@ -1,33 +1,17 @@
 # What is Computer Science
 
-- The study of information.
-- It's about solving problems.
-- Utilises computational thinking.
-- A program is an input with a compute step resulting in an output.
+Computer Science is the study of information, it is focused on solving problems utilising computational thinking. A program can simply be thought of as an input with a compute step resulting in an output.
 
 > [!IMPORTANT]
 > These notes and examples were created following along with [Harvard CS50's Introduction to Computer Science](https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science?webview=false&campaign=CS50%27s+Introduction+to+Computer+Science&source=edx&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Fcs50).
 
-<section id="Mental Model" />
-
-```mermaid
----
-title: Computer Science Mental Model
----
-flowchart LR
-    Input -->
-    Processing -->
-    Output
-```
-
 ## The Binary System
 
-- Computers count in binary using `0` and `1`.
-- Electricity flips the binary digits. `0` and `1` map to `off` and `on`.
-- You can shorten binary digit to bit.
-- Tiny switches called transistors that store or dissipate electricity.
+Computers count in binary utilising 0's and 1's as the only two possible values. Electricity passing through transistors which can store or allow that electricity to dissipate is how a binary digit or **bit** determines its value. 
 
 <div align="center">
+    
+**Counting from 1 to 10 in Binary**
 
 | Binary | Decimal |
 | :----: | :-----: |
@@ -45,120 +29,69 @@ flowchart LR
 
 </div>
 
-In **base10** the number `123` is seen as a whole number rather than a sequence.
+In **base 10** the number `123` is seen as a whole number rather than a sequence.
 
 ```math
-\begin{array}{@{}c@{\,}c@{\,}c@{}}
-\scriptstyle 100 & \scriptstyle 10 & \scriptstyle 1 \\
-1 & 2 & 3 \\
-\scriptstyle 100\times1 &
-\scriptstyle10\times2 & \scriptstyle 1\times3
-\end{array}
+\overbrace{1}^{100} \overbrace{2}^{10} \overbrace{3}^{1}
 ```
 
-You can count to higher numbers with more bits. Using `3` bits at a time isn't
-useful. We instead utilise `bytes` which are a collection of `8` bits or `8b`.
-This is helpful for cleaner equations as it's a power of `2`.
+```math
+\scriptstyle (100 \times 1) + (10 \times 2) + (1 \times 3)
+```
 
-`00000000` is Zero represented by a `byte` and `11111111` is `255`.
+You can count to higher numbers with more bits. We utilise `bytes` or `B` which are a collection of 8 `bits` or `b`. This is helpful for cleaner equations as it's a power of 2. `00000000` is 0 represented in a `byte` and `11111111` is `255`.
 
-A byte can be represented as the following places.
+<div align="center">
 
-| 128 | 64  | 32  | 16  | 8   | 4   | 2   | 1   |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 1   | 1   | 1   | 0   | 0   | 0   | 0   | 0   |
+**Column Values of Binary Bytes**
+|  128  |  64   |  32   |  16   |  8    |  4    |  2    |  1    |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|   1   |   1   |   1   |   0   |   0   |   0   |   0   |   0   |
 
-To add binary you just need to add the value of each column with a number in it.
-So that would make `11100000` equal to:
+</div>
+
+To add binary you just need to add the value of each column with a number in it. So that would make `11100000` equal to:
 
 ```math
-128 + 64 + 32 = 224
+\begin{align*}
+11100000_2 &= (1 \times 2^7) + (1 \times 2^6) + (1 \times 2^5) + (0 \times 2^4) + (0 \times 2^3) + (0 \times 2^2) + (0 \times 2^1) + (0 \times 2^0) \\
+&= 128 + 64 + 32 + 0 + 0 + 0 + 0 + 0 \\
+&= 224
+\end{align*}
 ```
 
 > [!NOTE]
-> You don't need to be able to directly translate to binary, we can view it abstractly within a programming language and just understand it is compiling down to `1`'s and `0`'s.
+> You don't need to be able to directly translate to binary, we can view it abstractly within a programming language and just understand it is compiling down to 1's and 0's.
 
-**What About Letters?**
+### What About Letters?
 
-Letters are represented with a number, for example, a capital `A` is represented
-by `65` or `01000001`. This is a system known as `ASCII`. This gives us a
-possible total of `256` letters however, for accented or script languages like
-Japanese we would need more values.
+Letters are represented with a number, for example, a capital `A` is represented by $65_{16}$ or $01000001_{2}$. This is a system known as **ASCII**. This gives us a possible total of 256 letters, for accented or script languages like Japanese we would need more values.
 
-The way we have so many options for characters is because we now use Unicode
-instead of ASCII. Unicode uses between `1B` & `4B` for characters which gives us
-roughly `4 billion` characters. Unicode's mission is to preserve all human
-languages past, present and future.
+ASCII was updated to a new system known as **Unicode** which uses between 1 and 4 `bytes` for characters, allowing for a total of 4 billion possible characters. The idea is for Unicode to preserve all known human languages.
 
-Emojis are interesting because it's just a character, therefore each platform
-(Apple, Google, Meta, etc) can render the image differently. Unicode uses
-**base16** to map to the `bytes`, this means instead of a `4B` long number you
-can use `U+1F602` or similar. uses: `0-9, a-f` representing `1-16`.
+Emojis are interesting because it's just a character, therefore each platform can render the image differently. Unicode uses base 16 to map to the `bytes`, this means instead of a `4B` long number you can use a hexadecimal value which looks like `U+1FF44D` the `U` prefix is a Unicode-specific identifier.
 
-With skin tones in emojis, for example, we can add it as a modification of the
-original emoji character code to change the skin tones. For example, you can use
-`U+1F44D` to represent the default yellow thumbs up, to change the skin tone you
-would use `U+1F44D U+1F3FD` with the second number being a modification of the
+With skin tones in emojis, we can add the change in tone as a modification of the original emoji character code to change the skin tones, for example, you can use `U+1F44D` to represent the default yellow thumbs up and to change the skin tone you would use `U+1F44D U+1F3FD` with the second number being a modification of the
 original emoji value.
 
-This can extend further for complex emojis, using more values, for example in
-the `Couple with Heart` emoji, the first value dictates the person on the left,
-the two in the middle represent the heart and the one on the far right
-represents the person on the right. The two identical `U+200D` are a joining
-value that tells the computer to join the previous values.
+This can extend further for complex emojis, using more values, such as the `Couple with Heart` emoji, the first value dictates the person on the left, the two in the middle represent the heart and the one on the far right represents the person on the right. The two identical `U+200D` are a joining value that tells the computer to join the left and right values.
 
 ```Couple with a Heart Emoji
 U+1F469 U+200D U+2764 U+FE0F U+200D U+1F469
 ```
 
-This is a quick demonstration to show that lots of emojis are a combination of
-various emojis.
-
-**What About Colors?**
-
-**RGB** is a good standard for representing colours based on the value of the
-red, green and blue values. Every pixel on your screen has `3B` that maps to a
-value telling it how much of each colour it should use to light itself. Each
-value can be up to `255`.
-
 ## Algorithms
 
-This is what is inside the middle section between _input_ and _output_.
+Code is a way of expressing algorithms for a computer to run. Looking through a phonebook a page at a time until you find the one with the person you're looking for is a very simple algorithm.
 
-Code is the implementation in computers of algorithms. Looking through a
-phonebook is a good analogy for an algorithm, stepping through the phonebook one
-page at a time until you find the correct page with the person you're looking
-for is a very simple algorithm.
-
-A better algorithm would first jump to the middle and then calculate which side
-the result would be on so if looking for `John Harvard` the phonebook would be
-torn in half leaving just the first half of the book. Then just repeat by
-opening at the middle and then tearing the problem in half again. Eventually,
-there would be one page left that should contain `John Harvard`'s name.
-
-```mermaid
-xychart-beta
-    title "Phonebook Algorithm"
-    x-axis "Size of Problem"
-    y-axis "Time to Solve (s)"
-    line [0, 10]
-    line [0, 8]
-    line [0, 0.8]
-```
-
-This graph shows that it is better to design algorithms, like the logarithm
-detailed above, that is correct and efficient.
+A better algorithm would first jump to the middle and then calculate which side the result would be on so if looking for `John Harvard` the phonebook would be torn in half leaving just the first half of the book. Then just repeat by opening at the middle and then tearing the problem in half again. Eventually, there would be one page left that should contain `John Harvard`'s name.
 
 > [!WARNING]
 > The graph only displays the efficiency and not the correctness of the algorithm.
 
 ## Pseudocode
 
-Pseudocode is not actual code it's you writing your thoughts down tersely as
-though it was a logical process. Below I have written the same pseudocode as
-text and displayed it as a diagram. Writing pseudocode is a way to ensure
-your program will contain everything you need before you write it, rather than
-writing it and then refactoring it to fit new things in.
+Pseudocode is writing your thoughts tersely as a logical process. Good pseudocode is a way to ensure your program will contain everything you need before you write anything, rather than refactoring to fit new things.
 
 ### Text
 
@@ -201,32 +134,18 @@ flowchart TD
 
 ## Artificial Intelligence
 
-This requires much more than functions, conditionals and loops.
-
-```Chatbot Pseudocode
+```plaintext
 if a student says hello
     say hello back
 else if a student says goodbye
     say goodbye
 ```
 
-The issue with the above is we can't hardcode every possible question, so
-we need to find a way for the AI to infer the question. This
-is known as a Language Learning Model, which can find patterns in a dataset
-it has been trained on and then using this knowledge decide on a response based on the patterns found in
-your question and the dataset. Sometimes LLM's can hallucinate wrong answers.
-
-> [!WARNING]
-> During CS50 it is not okay to use AI that isn't CS50's [chatbot](https://cs50.ai).
+The issue with the above is we can't hardcode every possible question, so we need to find a way for the AI to infer the question. This is known as a Language Learning Model. An LLM can find patterns in a dataset and use these patterns in its decision-making process when generating a response.
 
 ## Writing Good Code
 
-- You shouldn't repeat yourself because you have to change things in multiple
-  places. Use loops instead.
-- A return value is a value that can be returned from a function and can be
-  stored to a variable.
-- Abstract sections of code to functions for readability and reusability.
+Good code should be [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself), clean[^2] and easy to read which can be achieved by abstracting away large and regularly required processes to functions and repetitive tasks to [loops](./01-C/README.md/#loops) or [recursion](./03-Algorithms/README.md#recursion).
 
-[^1]:
-    An expression with a `yes` or `no` answer, invented by mathemetician
-    [George Bool](https://en.wikipedia.org/wiki/George_Boole)
+[^1]: Invented by mathematician [George Bool](https://en.wikipedia.org/wiki/George_Boole), an expression with a `true` or `false` answer.
+[^2]: A term used to describe readable and elegant code, you can read about clean code in [this book](https://github.com/dev-marko/clean-code-book) by [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) a software engineer and author. 

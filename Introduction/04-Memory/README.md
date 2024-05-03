@@ -2,61 +2,47 @@
 
 ## Colors
 
-- pixels are used to display images.
-- because they are squares sometimes images can appear blocky.
-- the more pixels a screen has the more _smooth_ and image can appear.
-- you can relate pixels to binary digits, 0 being black and 1 white.
-- an image files is kind of just a pattern of 0's and 1's.
-- RGB is a common way to display colors.
-  - Stands for Red, Green and Blue.
-  - Can be a value of 0 to 255.
-- HEX is also common.
-  - Similar with each 2 of the 6 digits being Red, Green and Blue.
-  - Goes in base-16 from 0 to `FF` with `FF` being 255.
+Your screen uses pixels to render images on the screens, they are essentially little tiny lights which is why low-resolution images or screens can render images that appear blocky because of the size of the pixels used to create the image. This is sometimes used for artistic style in video games known as Pixel Art. 
+
+An image file simply maps to a pattern of pixels to turn on and off or alter the colour to reproduce the image detailed in the pattern. A common way to alter the colour of a pixel is known as the [RGB Color Model](https://en.wikipedia.org/wiki/RGB_color_model) with the letters standing for Red, Green & Blue with each having a possible value of 0 through 255.
+
+[HEX Triplet](https://en.wikipedia.org/wiki/Web_colors) is another common colour notation with the values of a HEX `#000000` equaling Red, Green and Blue again for every 2 places. Instead of 0 to 255, HEX uses a Hexadecimal notation with 0 to 9 followed by A to F for 10 to 15.
+
+Most programs that work with colors from photo editors to web programming use HEX and RGB as options for colors. Another common one is HSL and there is a new one called OKLCH.
 
 ## Hexadecimal
 
-- Hexadecimal is used when you require more than 10 digits for some reason.
-- The maths below shows the value of each column and how to figure out basic hex values.
+Sometimes you require more than ten digits and representing these things in bytes can become tedious so we instead use hexadecimal. Most computers typically use hexadecimal to number the bytes available in memory.
+
+The mathematics below shows the value of each column and how to figure out basic hex values.
 
 ```math
-\overbrace{0}^{16} \overbrace{0}^{1} = 0\newline
+\overbrace{0}^{16} \overbrace{0}^{1} = 0
 ```
-
 ```math
-\overbrace{0}^{16} \overbrace{1}^{1} = 1\newline
+\overbrace{0}^{16} \overbrace{1}^{1} = 1
 ```
-
 ```math
-\overbrace{0}^{16} \overbrace{A}^{1} = 10\newline
+\overbrace{0}^{16} \overbrace{A}^{1} = 10
 ```
-
 ```math
-\overbrace{0}^{16} \overbrace{F}^{1} = 15\newline
+\overbrace{0}^{16} \overbrace{F}^{1} = 15
 ```
-
 ```math
-\overbrace{1}^{16} \overbrace{0}^{1} = 16\newline
+\overbrace{1}^{16} \overbrace{0}^{1} = 16
 ```
-
 ```math
-\overbrace{1}^{16} \overbrace{1}^{1} = 17\newline
+\overbrace{1}^{16} \overbrace{1}^{1} = 17
 ```
-
 ```math
-\overbrace{2}^{16} \overbrace{3}^{1} = 36\newline
+\overbrace{2}^{16} \overbrace{3}^{1} = 36
 ```
-
 ```math
-\overbrace{F}^{16} \overbrace{F}^{1} = 255\newline
+\overbrace{F}^{16} \overbrace{F}^{1} = 255
 ```
 
 > [!NOTE]
-> You will not need to do these kind of conversions very frequently.
-
-- It's mostly just more convenient than binary for larger values.
-- most programs from photo editors to web programming use hex based values for colors.
-- computers typically use numbers in hexadecimal notation to number the bytes in memory.
+> You will not need to do this kind of conversion very frequently.
 
 ```
 grid of memory
@@ -65,60 +51,48 @@ store 50 in 4 of the blocks.
 stored in 0x123 = 291
 ```
 
-- you can print the memory address like so `printf("%p", &var);`
-- this is because C supports pointers which point at the memory address.
-- `int *p = &n;` this asks the compiler for a variable called `p` which I can place a pointer inside.
-- declaring a pointer is `int *p;`
-- `*p` without specifying a type means go to that address.
-- `p` is another variable. Pointers take up 8 bytes.
-  - in this case `p` is just storing a number, that is equivalent to the address of the value.
+## Pointers 
 
-> [!NOTE]
-> `&` is the address of a variable, whereas `*` is for dereferencing a pointer.
-
-## Explaining Strings
-
-- The [string](https://manual.cs50.io/3/get_string) type is actually just an array of `chars`.
-- if the first letter of the word is at `0x123` then each letter of the word would be stored in just one address along.
-- the type of string is actually just a pointer that points to the characters in memory.
-  - this is what the null terminate code is for, the pointer leads you to the beginning of the string and the null character ends the string.
+You can use the `%p` format code and the `&` appended to a variable name to print the address that a value is being stored in memory. This is known as a pointer which points to the memory address. The `*` character is used for syntax relating to pointers if you use it with a type `int *p` it will declare a pointer, if you use it with specifying a type `printf("%i", *p);` it will point to that memory address. 
 
 ```
-diagram of s stored in 8 bytes pointing to start of string hi!\0
+diagram of s stored in 8 bytes pointing to the start of string hi!\0
 ```
 
 > [!NOTE]
 > Modern computers use 64-bit allowing you to count to crazy high numbers. $64–bit = 2^{63} - 1$.
 
-- The datatype of string is a `char *`.
-  - the `*` means `char *s` is not a `char` but the address of the first `char` in a string.
-- You can use `typedef` to create any number of data types.
-- a common abstraction `typedef uint8_t BYTE;`.
-- `string` in CS50 is set as `typedef char *string;`
-- Pointer Arithmetic is how you would manually print a string in C you can see the example in [addresses.c](./addresses.c).
-- if you compare a `char *` with another `char *` doing `s = t` will be different everytime because the `s` and `t` are a pointer to the first character of a string.
-  - you should use `strcmp` to compare two `char *` values.
-- if you assign `t = s` it will copy the address rather than the value.
-  - this means if you are trying to create a copy of something to manipulate both will be manipulated because the pointer is the same for both.
-- `malloc` allows you to allocate a section of memory to a variable.
-  - `char *t = malloc(8);` would allocate 8 bytes of memory.
-  - `malloc` returns the first byte address of the chunk of memory.
-  - you should check if `malloc` returns `NULL` and terminate if so, because this means there isn't enough memory.
-- `free` frees up a specified memory section that's been previously allocated.
-  - this is good practice to ensure that the system consistently has enough memory.
+You cannot compare a string with another string by doing `s == t` because `s` and `t` in this case are defined as a pointer to the first item in an array of characters making up a string. This is why the `strcmp` function exists. The same issue will happen if you try to copy the value of a string variable into a new variable, which is why the `strcpy` function exists because if you copied with `s == t` you would end up with the issue of `s` and `t` mirroring each other with changes to each individually because they are both pointed at the same memory address.
 
-## Diagnosing Memory Issues
+## Allocation
 
-- use the `sizeof` function to specify variables that are the size of types.
-  - `int *x = malloc(sizeof(int));` creates x with bytes equal to the size of an integer.
-  - `int arr = malloc(3 * sizeof(int));` creates array with 3 integers worth of memory.
-- You can use `leaks` on macOS or `valgrind` on Linux to check if you have any memory leaks in your code. You can fix these with the `free` function.
-- **garbage values** are values of variables that you did not proactively set yourself.
-- the [garbage.c](./garbage.c) shows that if you do not set a variable in your code there is a chance that some of the addresses used may contain garbage values.
+`malloc` is a function contained within `<stdlib.h>` and is used to allocate a section of memory to a variable. As an example `char *t = malloc(8);` would reserve space in memory for `t` equal to `8B` the function then returns the first-byte address of the chunk reserved.
+
+> [!WARNING]
+> Anytime a function could return `NULL` like in `malloc` you should check and `return 1` if so because this means there isn't enough memory.
+
+The `free` function is the exact opposite of `malloc` instead of reserving space for a variable it frees up a chunk of memory that was previously allocated. You should always free the memory that you have allocated otherwise you can end up with memory leaks which cause the user's system to run out of memory.
+
+```c
+free(t);
+```
+
+For convenience, you can use the `sizeof` function to reserve chunks of memory that are the exact size of various data types. You can also use the result of the `sizeof` function in an equation to easily create arrays that are the correct memory size of 8 integers or something similar. This makes your code more portable as there are rare inconsistencies across operating systems where the size of a type may be slightly different.
+
+```c 
+int *x = malloc(sizeof(int));
+int arr = malloc(3 * sizeof(int));
+```
+
+There are tools you can use to check for memory leaks, on macOS you can use `leaks` and on Linux, you can use `valgrind` both work in pretty much the same way with minor differences. However, if you have allocated space using `malloc` but not freed that memory with `free` then these tools will let you know about it.
+
+### Garbage Values
+
+These are quite a fun little experiment, if you allocate some memory but do not assign anything to the space you allocated and then iterate over every address within that section of memory and print the value you, you are likely to see what are known as __garbage values__, these are values that are stored in memory that you did not set, so they came from another programming or something the operating system was running. You can compile and run [garbage.c](./garbage.c) and you will see a lot of values printed out with some of them being non-zero values even though the code never assigns any values.
 
 [here](https://www.youtube.com/watch?v=5VnDaHBi8dM) is a fun video explaining pointers and memory allocation.
 
-```example.c
+```c
 
 int main(void) {
     int *x;
@@ -135,77 +109,49 @@ int main(void) {
 }
 ```
 
-- the above code sets variables in a low-level way by allocating the variable x.
-- as you can see `x` has been allocated but `y` has not been.
-  - this is an example of a garbage value.
-  - that's how computers crash.
-- `pointer` point to `pointees`.
-  - a `pointee` is setup seperately to it's `pointer`.
-- a dereference will follow the pointer to the value at the address it is pointed to.
-- you cannot dereference a `pointer` that has never been pointed to a `pointee`.
-- setting `y = x` gives `y` a `pointee`.
-- [swap.c](./swap.c) shows an example of swapping variables values between spaces.
-  - if you swap to values in the local scope it is called  **passing by value** however this won't work when you define the swap logic in a separate function.
-  - the compiled result goes towards the top of the computers memory.
-  - below the compiled result is where global variables go.
-  - next comes the _heap_.
-    - when you use `malloc` memory comes from here.
-  - at the very bottom of the memory is the _stack_.
-    - when you use functions with variables and args the memory comes from here.
-    - main goes at the very bottom and calls swap.
-    - swap goes above main in it's own stack frame.
-      - swap is discarded when it's returned.
-    - using too much `swap` or `stack` frames could cause overlap which can cause issues.
-        - stack grows when you call functions, so too many functions or recursions could cause a memory error.
-        - calling `malloc` too much will cause the stack memory to overflow.
-        - known as `heap` and `stack` overflow.
-        - `buffer overflow` is when a chunk of memory is overflowed.
-        - this is why online videos can buffer.
-  - this is why you can't use variables outside of their scope.
-    - the variables `x` and `y` passed into the `swap` function from `main` are actually just copies of `x` and `y`.
-  - to fix the issue detailed above you need to instead **pass by reference**.
-    - you just replace `int a, int b` in the arguments for `swap` to `int *a, int *b`
-    - this means that `*a` and `*b` are pointers to `x` and `y`.
-    - you also need to pass `&x` and `&y` where you pass them as arguments because you need to be passing the address of `x` and `y`.
+The above code sets a variable in a low-level way by allocating the variable `x` and then assigning a value separately. `y` is also assigned a value but no space is ever allocated for `y` this would result in a garbage value and can cause computers to crash. You cannot dereference a pointer that has never been pointed to a memory address. The code above is fixed by the line that assigns `y` to `x` which means `y` is now pointing to a valid memory address.
 
-> [!NOTE]
-> To do the above with a string you would have to use a temporary `char` and loop through the two strings replacing each value within the strings.
+## Memory Overflow
 
- ## Recreating the CS50 Library
+There is an example in this directory called [swap.c](./swap.c), which uses a function to swap the values of `x` and `y` however it only works due to the usage of a temporary variable within the `old_swap` function. This is because the values passed to the `old_swap` function would just be copies of the original `x` and `y` and therefore altering the values of `a` and `b` would only affect the local scope after the function has terminated they would be discarded leaving `x` and `y` at their original values.
 
- - You can accept user input using the `scanf` function and passing a memory address to store the input.
- - You do not pass an address for a string, instead you pass the normal variable. 
+To fix the issue mentioned above, there is another function labelled `swap` which instead of taking just integers accepts a pointer to an integer, this allows the `swap` function to directly manipulate the value at the address of `x` and `y` because `a` and `b` are not a value but instead a pointer that locates the original values.
+
+## Stack Frames and Overflowing
+
+The compiled result of machine code goes to the top of the computer's memory in a stack of frames. Just below that you will find the __global variables__, followed by the __heap__ which is where the `malloc` function will assign chunks of memory from, at the very bottom of the frames you have what is known as the __stack__, this is where functions with variables and the command line arguments get their memory from. 
+
+In the `swap` example from the previous section inside of the stack, you will find `main` which is at the very bottom and calls `swap`, swap will get its _frame_ placed above `main` and will be discarded once it exits. 
+
+Using too many swap or stack frames can cause overlap because one starts from the top and the other from the bottom, so if you don't remember to call `free` they can run into each other, overwrite one another and then the program will have a lot of problems.
+
+Calling functions or recursions too much can cause a memory error known as a __heap overflow__, calling `malloc` too much can cause the stack memory to overflow known as __stack overflow__. Finally, there is something called __buffer overflow__ which is when an individual chunk of memory overflows.
 
  > [!NOTE]
  > A **Segmentation Fault** means something has gone wrong with the memory. You may run into this if you don't initialise a `char *` variable.
 
-- the cs50 `get_string` function is constantly allocating more memory dependent on the size of the string.
-- file I/O functions:
-    - `fopen` opens a file
-        - works with read, write or append mode.
-        - store as a `FILE *`
-    - `fclose` closes a file
-    - `fprintf` print to a file
-    - `fscanf` read from a file
-    - `fread` read write binary data from a file
-    - `write` binary data to a file
-    - `fseek` move around in file
-- in the [phonebook.c](./phonebook.c) example it will store the input of name and number to a csv file that can be opened within a spreadsheet software.
+## File IO
 
-> [!WARNING]
-> Any time a function returns a pointer you should check if the result is `NULL` in case something went wrong.
-
-- the [cp.c](./cp.c) file is a simple recreation of the standard UNIX command `cp` which copies a file to a new specified location based on command line arguments.
-- 
+While `stdin` and `stdout` are great sometimes we need to store values in a file or read some data from a file. That is where the following file input and output functions come in, you can see a basic [phonebook.c](./phonebook.c) implementation which walks through the basics of writing to a file. Another example file is [cp.c](./cp.c) utilises both the reading and writing of a file, the result is a simple recreation of the standard UNIX command `cp` which copies a file to a new specified location based on command line arguments.
 
 ``` c
 while(fread(&b, sizeof(b), 1, src) != 0) {
 ```
 
-The above line of code uses `fread` to read from the address of `b`, at the size of `b`, and then copy `1` byte at a time from the `src` variables. It will do this as long as it succeeds, then there are no bytes left so it exits.
+The above line of code uses `fread` to read from the address of `b`, at the size of `b`, and then copy `1` byte at a time from the `src` variables. It will do this as long as it succeeds, then there are no bytes left so it exits. The following line does the opposite, instead, it tells `fwrite` to find the address of `b` then 1 byte at a time write to `ds`.
+
 
 ``` c
 fwrite(&b, sizeof(b), 1, dst);
 ```
 
-This line does the opposite, instead it tells `fwrite` to find address of `b` then 1 byte at a time write to `ds`.
+__file I/O functions__
+- `fopen` opens a file
+  - works with read, write or append mode.
+  - store as a `FILE *`
+- `fclose` closes a file
+- `fprintf` print to a file
+- `fscanf` read from a file
+- `fread` read write binary data from a file
+- `write` binary data to a file
+- `fseek` moves around in the file
