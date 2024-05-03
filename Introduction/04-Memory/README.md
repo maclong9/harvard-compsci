@@ -62,7 +62,7 @@ diagram of s stored in 8 bytes pointing to the start of string hi!\0
 > [!NOTE]
 > Modern computers use 64-bit allowing you to count to crazy high numbers. $64–bit = 2^{63} - 1$.
 
-You cannot compare a string with another string by doing `s == t` because `s` and `t` in this case are defined as a pointer to the first item in an array of characters making up a string. This is why the `strcmp` function exists. The same issue will happen if you try to copy the value of a string variable into a new variable, which is why the `strcpy` function exists because if you copied with `s == t` you would end up with the issue of `s` and `t` mirroring each other with changes to each individually because they are both pointed at the same memory address.
+You cannot compare a string with another string by doing `s == t` because `s` and `t` in this case are defined as a pointer to the first item in an array of characters making up a string. This is why the `strcmp` function exists. The same issue will happen if you try to copy the value of a string variable into a new variable, which is why the `strcpy` function exists because if you tried to copy a variable using `s = t` you would end up with the issue of `s` and `t` mirroring each other with changes to each individually because they are both pointed at the same memory address.
 
 ## Allocation
 
