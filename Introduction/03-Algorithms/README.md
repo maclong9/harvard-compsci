@@ -171,7 +171,7 @@ Merge Sort works out as more efficient than both the Bubble and Selection sortin
 
 A more simplistic way to describe it is you sort the left half of the left half, the right half of the left half and then merge both sides of the left half of the original array, then repeat with the right half of the original array and merge the two halves of the original array.
 
-This Merge Sort algorithm results in fewer iterations and the number of steps is equal to $log_{2}n$ and below is an example of this algorithm with 8 being $n$.
+This Merge Sort algorithm results in fewer iterations and the number of steps is equal to $log_{2n}$ and below is an example of this algorithm with 8 being $n$.
 
 ```math
 \log_{2}8 = \log_{2}2^{3} \\
