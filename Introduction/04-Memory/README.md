@@ -84,7 +84,7 @@ int *x = malloc(sizeof(int));
 int arr = malloc(3 * sizeof(int));
 ```
 
-There are tools you can use to check for memory leaks, on macOS you can use `leaks` and on Linux, you can use `valgrind` both work in pretty much the same way with minor differences. However, if you have allocated space using `malloc` but not freed that memory with `free` then these tools will let you know about it.
+There are tools you can use to check for memory leaks, on macOS you can use `leaks` and on Linux, you can use `valgrind` both work in pretty much the same way with minor differences. However, if you have allocated space using `malloc` but not freed that memory with `free` these tools will let you know about it.
 
 ### Garbage Values
 
