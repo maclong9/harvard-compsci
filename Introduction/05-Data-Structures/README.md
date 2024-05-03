@@ -20,3 +20,7 @@ Adding to an array that hasn't had enough space allocated to it means you have t
 You could just assign the array `300 sizeof(int)` however this could be using far too much memory and also you may still run into the same issue, and it becomes incredibly slow to copy over so many values when moving from the `tmp` array.
 
 LECTURE TIME: 30:34
+
+
+[Previous: 04-Me](../04-Memory/README.md) <br />
+[Next: 06-](../06-) 
