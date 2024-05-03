@@ -168,6 +168,12 @@ int main(void) {
     - main goes at the very bottom and calls swap.
     - swap goes above main in it's own stack frame.
       - swap is discarded when it's returned.
+    - using too much `swap` or `stack` frames could cause overlap which can cause issues.
+        - stack grows when you call functions, so too many functions or recursions could cause a memory error.
+        - calling `malloc` too much will cause the stack memory to overflow.
+        - known as `heap` and `stack` overflow.
+        - `buffer overflow` is when a chunk of memory is overflowed.
+        - this is why online videos can buffer.
   - this is why you can't use variables outside of their scope.
     - the variables `x` and `y` passed into the `swap` function from `main` are actually just copies of `x` and `y`.
   - to fix the issue detailed above you need to instead **pass by reference**.
@@ -177,3 +183,42 @@ int main(void) {
 
 > [!NOTE]
 > To do the above with a string you would have to use a temporary `char` and loop through the two strings replacing each value within the strings.
+
+ ## Recreating the CS50 Library
+
+ - You can accept user input using the `scanf` function and passing a memory address to store the input.
+ - You do not pass an address for a string, instead you pass the normal variable. 
+
+ > [!NOTE]
+ > A **Segmentation Fault** means something has gone wrong with the memory. You may run into this if you don't initialise a `char *` variable.
+
+- the cs50 `get_string` function is constantly allocating more memory dependent on the size of the string.
+- file I/O functions:
+    - `fopen` opens a file
+        - works with read, write or append mode.
+        - store as a `FILE *`
+    - `fclose` closes a file
+    - `fprintf` print to a file
+    - `fscanf` read from a file
+    - `fread` read write binary data from a file
+    - `write` binary data to a file
+    - `fseek` move around in file
+- in the [phonebook.c](./phonebook.c) example it will store the input of name and number to a csv file that can be opened within a spreadsheet software.
+
+> [!WARNING]
+> Any time a function returns a pointer you should check if the result is `NULL` in case something went wrong.
+
+- the [cp.c](./cp.c) file is a simple recreation of the standard UNIX command `cp` which copies a file to a new specified location based on command line arguments.
+- 
+
+``` c
+while(fread(&b, sizeof(b), 1, src) != 0) {
+```
+
+The above line of code uses `fread` to read from the address of `b`, at the size of `b`, and then copy `1` byte at a time from the `src` variables. It will do this as long as it succeeds, then there are no bytes left so it exits.
+
+``` c
+fwrite(&b, sizeof(b), 1, dst);
+```
+
+This line does the opposite, instead it tells `fwrite` to find address of `b` then 1 byte at a time write to `ds`.

@@ -17,8 +17,9 @@ void print_hello(char *name, int n, int *age) {
 }
 
 int main(void) {
-	// TODO: fix get_string not assigning correctly. It's currently a char should be string
-  char name = get_string("Enter your name: ");
+  char *name;
+	printf("Enter your name: ");
+	scanf("%s", name);
   int age = get_int("Enter your age: ");
-  print_hello(&name, 3, &age);
+  print_hello(name, 3, &age);
 }
