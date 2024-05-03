@@ -140,8 +140,7 @@ Another example file is [cp.c](./cp.c) which utilises both the reading and writi
 while(fread(&b, sizeof(b), 1, src) != 0) {
 ```
 
-The above line of code uses `fread` to read from the address of `b`, at the size of `b`, and then copy `1` byte at a time from the `src` variables. It will do this as long as it succeeds, then there are no bytes left so it exits. The following line does the opposite, instead, it tells `fwrite` to find the address of `b` then 1 byte at a time write to `ds`.
-
+The above line of code uses `fread` to read from the address of `b`, at a size of `b`, and then copy `1` byte at a time from the `src` file variable. It will do this as long as it succeeds, when there are no bytes it exits. The following line does the opposite, instead, it tells `fwrite` to find the address of `b` then 1 byte at a time write to `ds`.
 
 ``` c
 fwrite(&b, sizeof(b), 1, dst);
