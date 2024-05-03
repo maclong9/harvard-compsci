@@ -87,7 +87,7 @@ __$\Theta$ represents that $O \text{ and } \Omega$ are equal__
 
 ## Structs for Storing Data
 
-A `struct` is a way of defining structure for variables and containing them within one namespace. This can help clean up code and allow more readable code. There is an example of creating a `struct` named `Person` with the attributes `string name` and `string number` for phone number within the [phonebook.c](./phonebook.c) file.
+A `struct` is a way of defining structure for variables and containing them within one namespace. This cam help make code clean and readable. There is an example of creating a `struct` named `Person` with the attributes `string name` and `string number` for phone number within the [phonebook.c](./phonebook.c) file.
 
 ``` mermaid 
 ---
