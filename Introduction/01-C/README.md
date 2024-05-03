@@ -230,7 +230,8 @@ Writing in the command line is terser, so most of the commands below are written
 - `mkdir`: Makes a New Directory.
 - `rmdir`: Removes a Directory.
 
-> [!CAUTION] > `rm` does not move files to the Trash or Recycling Bin like in a GUI Explorer, so be careful when running it on files.
+> [!CAUTION]
+> `rm` does not move files to the Trash or Recycling Bin like in a GUI Explorer, so be careful when running it on files.
 
 ## Integer Bugs
 
