@@ -9,7 +9,7 @@ A program can simply be thought of as an input with a compute step resulting in 
 
 ## The Binary System
 
-Computers count in binary utilising 0's and 1's as the only two possible values. Electricity passing through transistors which can store or allow that electricity to dissipate is how a binary digit or **bit** determines its value. 
+Computers count in binary utilising a combination of 0's and 1's to represent data. Electricity passing through transistors which can store or allow that electricity to dissipate is how a binary digit or **bit** determines its value. 
 
 <div align="center">
     
