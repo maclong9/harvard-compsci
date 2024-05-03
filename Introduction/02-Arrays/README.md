@@ -6,13 +6,13 @@ Compiling is used as a catch-all phrase for converting source code to machine co
 
 ### The Four Steps of Compilation
 
-1. **preprocessing**
+1. **preprocessing**:
    Lines starting with `#` are known as a preprocessor directive, the most common case being `#include` which tells the compiler to replace the contents of the `#include` line with the contents of the stated header file.
-3. **compiling**
+2. **compiling**:
   This step is where the computer converts the C code the programmer wrote into a language known as [Assembly Language](https://en.wikipedia.org/wiki/Assembly_language) which was used for programming before C.
-4. **assembling**
+3. **assembling**:
   Next up the compiler will take the Assembly Code from the previous step and convert it to [Machine Code](https://en.wikipedia.org/wiki/Machine_Code). 
-5. **linking**
+4. **linking**:
    The way linking works is by taking all of the compiled `.c` files that are mentioned or referenced by an `include <{libname}.h>` sort of stitching them together so they can utilise the functions from one another.
 
 ## Debugging
