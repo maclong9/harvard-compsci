@@ -34,7 +34,11 @@ title: Value Behind Lockers Divide & Conquer Algorithm
 ---
 
 flowchart TD
-    vars("Variables\nvalue = 50\ntotal = 8")
+    vars>"`
+      **Variables**
+      value = 50
+      total = 8
+    `"]
     1(["for count from 0 to total"]) -->
     2{"if count equals total"}
     2 --> |true| 3["value doesn't exist"] --> 16
@@ -80,8 +84,8 @@ flowchart TD
 > When you `return 0` it will exit the program and will not run any subsequent code.
 
 - `strcmp` is used to compare two strings, `0` means the strings are the same.
-    - `if(strcmp("test", "test") == 0)`
-    - it compares strings in _ASCIIbetical_ order.
+  - `if(strcmp("test", "test") == 0)`
+  - it compares strings in _ASCIIbetical_ order.
 
 > [!NOTE]
 > A code smell is when you can tell something will cause an error or problem later in the program development.
@@ -89,14 +93,23 @@ flowchart TD
 ## Structs for Storing Data
 
 - for this example, we will use the example of `Person`.
-    - a person has a `string name` and a `string number`.
+  - a person has a `string name` and a `string number`.
 - we can use `typedef struct` to create a `struct`.
-    - `typedef` means create a data type.
-- example [here in the phonebook.c](./phonebook.c).
+  - `typedef` means create a data type.
+- example in [phonebook.c](./phonebook.c).
+
+``` mermaid 
+---
+title: Person Structure Visualised
+---
+classDiagram
+    class Person
+    Person : +String name
+    Person : +String phone_number
+```
+
 
 ## Sorting Algorithms
-
-### Find Smallest Algorithm
 
 ```mermaid
 ---
@@ -104,7 +117,12 @@ title: Selection Sort
 ---
 
 flowchart TD
-    vars>"Variables\nprevious = NULL\ncompleted = 0\nitems = [0, 2, 4, 6, 1, 3, 5, 7]"]
+    vars>"`
+      **Variables**
+      previous = NULL
+      completed = 0
+      items = [0, 2, 4, 6, 1, 3, 5, 7]
+    `"]
     1(["for count in total"]) -->
     2{"if items[count + completed] less than total"}
     2 --> |true| 3
@@ -114,15 +132,16 @@ flowchart TD
     3 --> |"larger"| 6["keep current bit"] --> 2
 ```
 
-### Swapping Algorithm
-
 ```mermaid
 ---
 title: Bubble Sort
 ---
 
 flowchart TD
-    vars>"Variables\ncompleted = 0\nitems = [0, 2, 4, 6, 1, 3, 5, 7]"]
+    vars>"`
+      **Variables**
+      completed = 0
+      items = [0, 2, 4, 6, 1, 3, 5, 7]`"]
     1(["for count in length of items - 1"]) -->
     2{"if count equals the length of items - completed"}
     2 --> |true| 8["print sorted array"]
@@ -135,14 +154,14 @@ flowchart TD
 
 - You can use [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html) by the University of [San Francisco](https://www.usfca.edu/) to compare various common sorting algorithms and visualise how they work.
 - Selection Sort takes a lot of work because it's constantly cycling through every single element above the completed amount.
-    - $O(n^{2}$ - Selection sort is on the order of n steps.
+    - $O(n^{2})$ - Selection sort is on the order of n steps.
     - $\Omega(n^{2})$ - The lower bound is the same.
     - This means we can represent it as $\Theta(n^{2})$.
 - Bubble Sort works by comparing two values again and again.
     - $(n - 1) \times (n - 1)$
     - $n^{2} - 1n + 1$
     - $n^{2} - 2n + 1$
-    - $O(n^{2}$ - Selection sort is on the order of n steps.
+    - $O(n^{2})$ - Selection sort is on the order of n steps.
     - $\Omega(n)$
     - because the upper and lower bounds are different there is no $\Theta$
 - Both Bubble Sort and Selection Sort are quite inefficient because $n^{2}$ can get very large.
@@ -157,18 +176,18 @@ flowchart TD
 - This will be more efficient because even though you are calling the same function recursively it's on a smaller scale each time.
 - You can see this in [recursion.c](./recursion.c);
 - This can tighten up the amount of code you need to write in an algorithm.
-      - It also helps with memory management.
+  - It also helps with memory management.
 
 ## Merge Sort
 
-- A sort for sorting $n$ numbers that are better than both selection and bubble sorts.
+- A sorting algorithm better than both selection and bubble sorts.
 - This uses recursion by running itself again on each half.
 - in an example of $8$ digits
-    - you sort down to $4$ and then $2$ and then $1$. For both halves.
-    - then merge the full right and left half together.
-    - so you sort left of the left half, right of the left half and then merge.
-    - then left of the right half, right of the right half then merge.
-    - then merge the left and right half.
+  - you sort down to $4$ and then $2$ and then $1$. For both halves.
+  - then merge the full right and left half together.
+  - so you sort left of the left half, right of the left half and then merge.
+  - then left of the right half, right of the right half then merge.
+  - then merge the left and right half.
 - This algorithm uses fewer iterations.
 - $\log_{2}n$ - if you start with 8, the result is how many times you can divide the problem in half.
 
@@ -178,8 +197,8 @@ flowchart TD
 ```
 
 - This shows that it is not as good as linear or binary, but much better than selection or bubble.
-      - $\Theta(n \log n)$
-      - We do not need to display $O$ or $\Omega$ because they are equal.
+  - $\Theta(n \log n)$
+  - We do not need to display $O$ or $\Omega$ because they are equal.
 
 ```mermaid
 ---
@@ -196,4 +215,3 @@ flowchart TD
 ```
 
 In [this video](https://www.youtube.com/watch?v=ZZuD6iUe3Pc) you can see an animation which compares various sorting algorithms visually.
-

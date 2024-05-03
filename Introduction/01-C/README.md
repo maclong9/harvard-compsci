@@ -150,7 +150,10 @@ we created a more succinct syntax `counter += 1`, or even further as
 - They help keep loops and the `main` function tidier.
 - `void printHello() {...}`
 - A `void` function is a non-returning function.
-- You can _hoist_ functions to the top by defining them at the bottom and then copy and paste the function definition e.g. `void printHello()` at the top of the file.
+
+> [!TIP]
+> The `void` keyword indicates that this function does not return a value. A non-returning function can also be called a subroutine.
+
 - If you define parameters inside the parentheses you can pass them while calling the function.
   - `void printHello(int n) {...}`
   - `printHello(5);`

@@ -3,7 +3,7 @@
 ## Colors
 
 - pixels are used to display images.
-- because they are blocky sometimes images can appear also blocky.
+- because they are squares sometimes images can appear blocky.
 - the more pixels a screen has the more _smooth_ and image can appear.
 - you can relate pixels to binary digits, 0 being black and 1 white.
 - an image files is kind of just a pattern of 0's and 1's.
@@ -73,12 +73,12 @@ stored in 0x123 = 291
 - `p` is another variable. Pointers take up 8 bytes.
   - in this case `p` is just storing a number, that is equivalent to the address of the value.
 
-> [!NOTE] > `&` is the address of a variable, whereas `*` is a pointer to an address.
+> [!NOTE]
+> `&` is the address of a variable, whereas `*` is for dereferencing a pointer.
 
-## Taking Off Training Wheels
+## Explaining Strings
 
-- The [string](https://manual.cs50.io/3/get_string) type that has been detailed during the CS50 lectures
-- They are actually just arrays of `chars`.
+- The [string](https://manual.cs50.io/3/get_string) type is actually just an array of `chars`.
 - if the first letter of the word is at `0x123` then each letter of the word would be stored in just one address along.
 - the type of string is actually just a pointer that points to the characters in memory.
   - this is what the null terminate code is for, the pointer leads you to the beginning of the string and the null character ends the string.
@@ -90,17 +90,14 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
 > [!NOTE]
 > Modern computers use 64-bit allowing you to count to crazy high numbers. $64–bit = 2^{63} - 1$.
 
-- The datatype of string is a `char*`.
-  - the `*` means `char* s` is not a `char` but the address of the first `char` in a string.
-- `&` says the address of a variable.
-- `*` is the pointer to an address.
+- The datatype of string is a `char *`.
+  - the `*` means `char *s` is not a `char` but the address of the first `char` in a string.
 - You can use `typedef` to create any number of data types.
 - a common abstraction `typedef uint8_t BYTE;`.
 - `string` in CS50 is set as `typedef char *string;`
 - Pointer Arithmetic is how you would manually print a string in C you can see the example in [addresses.c](./addresses.c).
-- if you compare a `char*` with another `char*` doing `s = t` will be different everytime because the `s` and `t` are a pointer to the first character of a string.
-  - comparing the value of `s` and `t` with `&s` and `&t` it might be different due to it comparing the first character only.
-  - you should use `strcmp` to compare two `char*` values.
+- if you compare a `char *` with another `char *` doing `s = t` will be different everytime because the `s` and `t` are a pointer to the first character of a string.
+  - you should use `strcmp` to compare two `char *` values.
 - if you assign `t = s` it will copy the address rather than the value.
   - this means if you are trying to create a copy of something to manipulate both will be manipulated because the pointer is the same for both.
 - `malloc` allows you to allocate a section of memory to a variable.
@@ -109,23 +106,13 @@ diagram of s stored in 8 bytes pointing to start of string hi!\0
   - you should check if `malloc` returns `NULL` and terminate if so, because this means there isn't enough memory.
 - `free` frees up a specified memory section that's been previously allocated.
   - this is good practice to ensure that the system consistently has enough memory.
-- the following code can be replaced with `strcpy`:
-
-```c
-	for(int i = 0, n = strlen(s); i <= n; i++) {
-		t[i] = s[i];
-	}
-```
-
-> [!CAUTION]
-> Ensure when iterating to copy strings to other variables using the manual method that you do it to `<= n` to encompass the null character.
 
 ## Diagnosing Memory Issues
 
 - use the `sizeof` function to specify variables that are the size of types.
-  - int \*x = malloc(sizeof(int)); // creates x with bytes of memory equal to int.
-  - int _arr = malloc(3 _ sizeof(int)); // creates array with 3 int's worth of memory.
-- You can use `valgrind` or `leaks` to check if you have any memory leaks in your code. You can fix these with the `free` function.
+  - `int *x = malloc(sizeof(int));` creates x with bytes equal to the size of an integer.
+  - `int arr = malloc(3 * sizeof(int));` creates array with 3 integers worth of memory.
+- You can use `leaks` on macOS or `valgrind` on Linux to check if you have any memory leaks in your code. You can fix these with the `free` function.
 - **garbage values** are values of variables that you did not proactively set yourself.
 - the [garbage.c](./garbage.c) shows that if you do not set a variable in your code there is a chance that some of the addresses used may contain garbage values.
 
@@ -158,7 +145,7 @@ int main(void) {
 - you cannot dereference a `pointer` that has never been pointed to a `pointee`.
 - setting `y = x` gives `y` a `pointee`.
 - [swap.c](./swap.c) shows an example of swapping variables values between spaces.
-  - this is called **passing by value** or by **copy**.
+  - if you swap to values in the local scope it is called  **passing by value** however this won't work when you define the swap logic in a separate function.
   - the compiled result goes towards the top of the computers memory.
   - below the compiled result is where global variables go.
   - next comes the _heap_.
