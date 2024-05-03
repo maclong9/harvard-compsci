@@ -88,7 +88,7 @@ There are tools you can use to check for memory leaks, on macOS you can use `lea
 
 ### Garbage Values
 
-These are quite a fun little experiment, if you allocate some memory but do not assign anything to the space you allocated and then iterate over every address within that section of memory and print the value you, you are likely to see what are known as __garbage values__, these are values that are stored in memory that you did not set, so they came from another programming or something the operating system was running. You can compile and run [garbage.c](./garbage.c) and you will see a lot of values printed out with some of them being non-zero values even though the code never assigns any values.
+These are quite a fun little experiment, if you allocate some memory but do not assign anything to the space you allocated and then iterate over every address within that section of memory and print the value you, you are likely to see what are known as __garbage values__, these are values that are stored in memory that you did not set, so they came from another program or something the operating system was running. You can compile and run [garbage.c](./garbage.c) and you will see a lot of values printed out with some of them being non-zero values even though the code never assigns any values.
 
 [here](https://www.youtube.com/watch?v=5VnDaHBi8dM) is a fun video explaining pointers and memory allocation.
 
