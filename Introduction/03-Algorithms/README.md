@@ -60,7 +60,7 @@ flowchart TD
 
 This notation is a way to describe the maximum possible number of steps an algorithm can take during runtime. 
 
-__$O$Maximum Number of Steps__
+__$O$ Maximum Number of Steps__
 - $O(n^{2})$
      - n people doing n things, for example, everyone in a room shaking hands would be $n \times n$ or $n^{2}$ handshakes.
 - $O(n \\log n)$
