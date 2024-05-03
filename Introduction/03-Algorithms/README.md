@@ -177,8 +177,8 @@ A more simplistic way to describe it is you sort the left half of the left half,
 This Merge Sort algorithm results in fewer iterations and the number of steps is equal to $log_{2}n$ and below is an example of this algorithm with 8 being $n$.
 
 ```math
-\log_{2}8 &= \log_{2}2^{3} \\
-\log_{2}2^{3} &= 3
+\log_{2}8 = \log_{2}2^{3} \\
+\log_{2}2^{3} = 3
 ```
 
 ```math
