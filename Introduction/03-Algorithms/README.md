@@ -58,45 +58,38 @@ flowchart TD
 
 ## Big $O$ Notation
 
-- various algorithms will be described as being on the order of one of the following runtimes:
+This notation is a way to describe the maximum possible number of steps an algorithm can take during runtime. 
 
-  - $O(n^{2})$: n people doing n things, for example, everyone in a room shaking hands would be $n \times n$ or $n^{2}$ handshakes. **Quadratic**.
-  - $O(n \\log n)$: **Logarithmic**.
-  - $O(n)$: takes linear time, for example, going through the phonebook one at a time. It represents an upper bound on the number of steps you might be counting.
-  - $O(\\log n)$: dividing in half. _binary search_.
-  - $O(1)$: this means it is a constant number of steps, no matter how many people the algorithm is working through.
+__$O$ Notation Maximum Number of Steps__
+- $O(n^{2})$
+     - n people doing n things, for example, everyone in a room shaking hands would be $n \times n$ or $n^{2}$ handshakes. **Quadratic**.
+- $O(n \\log n)$
+     - **Logarithmic**.
+- $O(n)$
+     - takes linear time, for example, going through the phonebook one at a time. It represents an upper bound on the number of steps you might be counting.
+- $O(\\log n)$
+     - dividing in half. _binary search_.
+- $O(1)$
+     - this means it is a constant number of steps, no matter how many people the algorithm is working through.
 
-- $\Omega$ represents a lower bound.
-  - $\Omega(n^{2})$
-  - $\Omega(n \\log n)$
-  - $\Omega(n)$
-  - $\Omega(\\log n)$
-  - $\Omega(1)$: _linear search_, _binary search_
+__$\Omega$ Lowest Number of Steps__
+- $\Omega(n^{2})$
+- $\Omega(n \\log n)$
+- $\Omega(n)$
+- $\Omega(\\log n)$
+- $\Omega(1)$
+     - _linear search_, _binary search_
 
-- $\Theta$ represents that $O$ and $\Omega$ are equal.
-  - $\Theta(n^{2})$
-  - $\Theta(n \\log n)$
-  - $\Theta(n)$
-  - $\Theta(\\log n)$
-  - $\Theta(1)$: _linear search_, _binary search_
-
-> [!NOTE]
-> When you `return 0` it will exit the program and will not run any subsequent code.
-
-- `strcmp` is used to compare two strings, `0` means the strings are the same.
-  - `if(strcmp("test", "test") == 0)`
-  - it compares strings in _ASCIIbetical_ order.
-
-> [!NOTE]
-> A code smell is when you can tell something will cause an error or problem later in the program development.
+__$\Theta$ represents that $O \text{ and } \Omega$ are equal__
+- $\Theta(n^{2})$
+- $\Theta(n \\log n)$
+- $\Theta(n)$
+- $\Theta(\\log n)$
+- $\Theta(1)$: _linear search_, _binary search_
 
 ## Structs for Storing Data
 
-- for this example, we will use the example of `Person`.
-  - a person has a `string name` and a `string number`.
-- we can use `typedef struct` to create a `struct`.
-  - `typedef` means create a data type.
-- example in [phonebook.c](./phonebook.c).
+A `struct` is a way of defining structure for variables and containing them within one namespace. This can help clean up code and allow more readable code. There is an example of creating a `struct` named `Person` with the attributes `string name` and `string number` for phone number within the [phonebook.c](./phonebook.c) file.
 
 ``` mermaid 
 ---
@@ -152,53 +145,47 @@ flowchart TD
     5 & 6 --> 7("increment count and completed by 1") --> 2
 ```
 
-- You can use [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html) by the University of [San Francisco](https://www.usfca.edu/) to compare various common sorting algorithms and visualise how they work.
-- Selection Sort takes a lot of work because it's constantly cycling through every single element above the completed amount.
-    - $O(n^{2})$ - Selection sort is on the order of n steps.
-    - $\Omega(n^{2})$ - The lower bound is the same.
-    - This means we can represent it as $\Theta(n^{2})$.
-- Bubble Sort works by comparing two values again and again.
-    - $(n - 1) \times (n - 1)$
-    - $n^{2} - 1n + 1$
-    - $n^{2} - 2n + 1$
-    - $O(n^{2})$ - Selection sort is on the order of n steps.
-    - $\Omega(n)$
-    - because the upper and lower bounds are different there is no $\Theta$
-- Both Bubble Sort and Selection Sort are quite inefficient because $n^{2}$ can get very large.
+> [!NOTE]
+> [Comparison Sorting Algorithms](
+- You can use [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html) is a great website that visualises the differences between various sorting algorithms created by the University of [San Francisco](https://www.usfca.edu/). There is also [this video](https://www.youtube.com/watch?v=ZZuD6iUe3Pc) which shows the speeds of various sorting algorithms.
+
+As an algorithm selection sort is quite inefficient as it is constantly cycling through every single element above the current loop increment. Selection Sort is on $\Theta(n^{2})$ because the upper and lower bound of steps are equal.
+
+Bubble Sort works by comparing two values against each over, over and over again. Below is an equation that works out what the order of steps for Bubble Sort is.
+
+```math
+n = \text{Number of Items Sorted} \\
+
+\begin{align}
+     (n - 1) \times (n - 1) &= n^{2} - 1n + 1 \\
+     &= n^{2} - 2n + 1 \\
+     &= O(n^{2}) \\
+     &= \Omega(n)
+\end{align}
+```
 
 > [!NOTE]
 > You could add `if no swaps exit` to exit early if the array is sorted ahead of time to save some iterations in the case of a lucky early finish.
 
 ## Recursion
 
-- A function that calls itself is recursive.
-- An example of this is above in the Divide and Conquer algorithm that calls itself to search the left or right half.
-- This will be more efficient because even though you are calling the same function recursively it's on a smaller scale each time.
-- You can see this in [recursion.c](./recursion.c);
-- This can tighten up the amount of code you need to write in an algorithm.
-  - It also helps with memory management.
+So far we have spoken about _iteration_ when talking about [loops](../01-C/#loops), however there is another way to cause a repetition and that is known as __recursion__. A recursive function is a function that calls itself, an example is known as merge sort, which splits the array of numbers in half and then calls itself again on the left and right halves of the array, this means each time it is called it's on a smaller amount items, it then ends by merging the halves back together. You can see an example of recursion in [recursion.c](./recursion.c) and one of iteration in [iteration.c](./iteration.c).
 
-## Merge Sort
 
-- A sorting algorithm better than both selection and bubble sorts.
-- This uses recursion by running itself again on each half.
-- in an example of $8$ digits
-  - you sort down to $4$ and then $2$ and then $1$. For both halves.
-  - then merge the full right and left half together.
-  - so you sort left of the left half, right of the left half and then merge.
-  - then left of the right half, right of the right half then merge.
-  - then merge the left and right half.
-- This algorithm uses fewer iterations.
-- $\log_{2}n$ - if you start with 8, the result is how many times you can divide the problem in half.
+Merge Sort works out as more efficient than both the Bubble and Selection sorting algorithms. The basic steps applied to a n 8 digit array would result in the array being split into half down to 4, 2 and finally 1 you'd then merge the 2 individuals sorting the values at the same time, then you'd do the same for each step back up to the full array of 8.
+
+A more simplistic way to describe it is you sort the left half of the left half, the right half of the right half and then merge both sides of the left half of the original array, then repeat with the right half of the original array and merge the two halves of the original array.
+
+This Merge Sort algorithm results in fewer iterations and the number of steps is equal to $log_{2}n$ and below is an example of this algorithm with 8 being $n$.
 
 ```math
-    \log_{2}8 = \log_{2}2^{3}
-    \log_{2}2^{3} = 3
+\log_{2}8 &= \log_{2}2^{3} \\
+\log_{2}2^{3} &= 3
 ```
 
-- This shows that it is not as good as linear or binary, but much better than selection or bubble.
-  - $\Theta(n \log n)$
-  - We do not need to display $O$ or $\Omega$ because they are equal.
+```math
+\Theta(n \log n)
+```
 
 ```mermaid
 ---
@@ -213,5 +200,3 @@ flowchart TD
     2("Sort Left Half of Numbers") -->
     3("Merge Sorted Halves") --> Quit
 ```
-
-In [this video](https://www.youtube.com/watch?v=ZZuD6iUe3Pc) you can see an animation which compares various sorting algorithms visually.
