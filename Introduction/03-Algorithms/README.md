@@ -168,7 +168,7 @@ n = \text{Number of Items Sorted} \\
 So far we have spoken about _iteration_ when talking about [loops](../01-C/#loops), however there is another way to cause a repetition and that is known as __recursion__. A recursive function is a function that calls itself, an example is known as merge sort, which splits the array of numbers in half and then calls itself again on the left and right halves of the array, this means each time it is called it's on a smaller amount items, it then ends by merging the halves back together. You can see an example of recursion in [recursion.c](./recursion.c) and one of iteration in [iteration.c](./iteration.c).
 
 
-Merge Sort works out as more efficient than both the Bubble and Selection sorting algorithms. The basic steps applied to a n 8 digit array would result in the array being split into half down to 4, 2 and finally 1 you'd then merge the 2 individuals sorting the values at the same time, then you'd do the same for each step back up to the full array of 8.
+Merge Sort works out as more efficient than both the Bubble and Selection sorting algorithms. The basic steps applied to an 8 digit array would result in the array being split into half down to 4, 2 and finally 1 you'd then merge the 2 individuals sorting the values at the same time, then you'd do the same for each step back up to the full array of 8.
 
 A more simplistic way to describe it is you sort the left half of the left half, the right half of the right half and then merge both sides of the left half of the original array, then repeat with the right half of the original array and merge the two halves of the original array.
 
