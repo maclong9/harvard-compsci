@@ -143,9 +143,7 @@ flowchart TD
     5 & 6 --> 7("increment count and completed by 1") --> 2
 ```
 
-> [!NOTE]
-> [Comparison Sorting Algorithms](
-- You can use [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html) is a great website that visualises the differences between various sorting algorithms created by the University of [San Francisco](https://www.usfca.edu/). There is also [this video](https://www.youtube.com/watch?v=ZZuD6iUe3Pc) which shows the speeds of various sorting algorithms.
+[Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html) is a great website that visualises the differences between various sorting algorithms created by the University of [San Francisco](https://www.usfca.edu/). There is also [this video](https://www.youtube.com/watch?v=ZZuD6iUe3Pc) which shows the speeds of various sorting algorithms.
 
 As an algorithm selection sort is quite inefficient as it is constantly cycling through every single element above the current loop increment. Selection Sort is on $\Theta(n^{2})$ because the upper and lower bound of steps are equal.
 
