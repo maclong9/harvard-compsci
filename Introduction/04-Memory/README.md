@@ -2,7 +2,7 @@
 
 ## Colors
 
-Your screen uses pixels to render images, they are essentially little tiny lights which is why low-resolution images or screens can render images that appear blocky because of the size of the pixels used to create the image. This is sometimes used for artistic style in video games known as Pixel Art. 
+Your screen uses pixels to render images, they are essentially tiny square lights which is why low-resolution images or screens can render images that appear blocky because of the size of the pixels used to create the image. This is sometimes used for artistic style in video games known as Pixel Art. 
 
 An image file simply maps to a pattern of pixels to turn on and off or alter the colour to reproduce the image detailed in the pattern. A common way to alter the colour of a pixel is known as the [RGB Color Model](https://en.wikipedia.org/wiki/RGB_color_model) with the letters standing for Red, Green & Blue with each having a possible value of 0 through 255.
 
