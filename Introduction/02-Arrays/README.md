@@ -1,175 +1,81 @@
 # A Deeper Glimpse of How Programming Works
 
-## Compiling Code
+## Compiling In More Detail
 
-- `make` is running `clang` for you.
-- `make` isn't a compiler but a program that runs the compiler for you.
-- `clang` can be configured with command line arguments.
-  - a command line argument is additional words typed after the command to modify its output.
-- `clang -o hello hello.c` is how to compile our [Hello, World!](https://github.com/maclong9/harvard-compsci/blob/main/CS50/01-C/hello.c) program.
-
-> [!NOTE]
-> Another commonly used compiler for C is `gcc`. `clang` is slightly more modern and has more readable error messages.
-
-- compiling is a catch-all phrase for converting source code to machine code.
-- compiling is one of four steps:
-  - preprocessing
-  - compiling
-  - assembling
-  - linking
+Compiling is used as a catch-all phrase for converting source code to machine code, however, it's only one step of the actual process. The full process contains 4 steps known as __preprocessing__, __compiling__, __assembling__, and __linking__.
 
 ### The Four Steps of Compilation
 
 1. **preprocessing**
-   - lines starting with `#` are a preprocessor directive.
-   - inside of the header files there are prototypes for the functions you can use from that library.
-   - it means you don't have to mess up each file by defining the same functions.
-2. **compiling**
-   - it's used as a catch-all phrase for the above four steps.
-   - it transfers the C code into [assembly language](https://en.wikipedia.org/wiki/Assembly_language).
-   - assembly was used before C
-   - Before Assembly, they used [machine code](https://en.wikipedia.org/wiki/Machine_code).
-   - you can see some function names and other semantics in assembly code.
-3. **assembling**
-   - this step takes the assembly code and converts it to machine code.
-   - `clang` names its files `a.out` by default as a side effect of this.
-4. **linking**
-   - there are different files involved even in the simple hello, world.
-   - `cs50.h`, `stdio.h` in hello, world.
-   - there is a matching `.c` file for each of the header files.
-     - this file contains the definition of the functions.
-   - the compiler will then compile each of these.
-   - finally, it will link all the separately compiled files together.
-
-> [!TIP]
-> Make sure to compile any extra files that might be used for example the [`cs50.c`](../include/cs50.c) file for `get_int`, `clang -o compare compare.c cs50.c` or using the `-l***` flag for a library `clang -o hello hello.c -lcs50`.
-
-- All of the above is abstracted away from you for simplicity with `make`.
-- C is a low-level language, Python is a higher-level language.
-  - a higher-level language abstracts away more complex and tedious functions.
-  - this makes the language easier to understand and write.
-
-## Reverse Engineering
-
-- This is easier said than done due to multiple ways for each thing existing. It is usually a mess because you lose function names and variable names.
-- It's easier to build the program yourself than reverse engineer.
+   Lines starting with `#` are known as a preprocessor directive, the most common case being `#include` which tells the compiler to replace the contents of the `#include` line with the contents of the stated header file.
+3. **compiling**
+  This step is where the computer converts the C code the programmer wrote into a language known as [Assembly Language](https://en.wikipedia.org/wiki/Assembly_language) which was used for programming before C.
+4. **assembling**
+  Next up the compiler will take the Assembly Code from the previous step and convert it to [Machine Code](https://en.wikipedia.org/wiki/Machine_Code). 
+5. **linking**
+   The way linking works is by taking all of the compiled `.c` files that are mentioned or referenced by an `include <{libname}.h>` sort of stitching them together so they can utilise the functions from one another.
 
 ## Debugging
 
-- It's rare to write a program 100% right the first time.
-- This is because you might miss mistakes if it's your first time implementing something in particular.
-- Grace Hopper is known for popularising the phrase "bug" meaning a mistake in the code.
-  - It comes from a moth getting stuck in one of the relays.
-- `printf` is useful for quickly seeing what's going on and finding simple mistakes.
-- a debugger allows you to set a breakpoint and step through the code step by step.
-- it will display the value of the relevant variables at each step.
+It's rare to write a program 100% right the first time, this is because you may not have thought of something, typed something incorrectly or missed out on a parameter that a function requires to work. It allows you to set points in your code where the running will pause, you can then view the value of variables at that point during the runtime. This can be useful for figuring out why something isn't working as intended.
 
-```
-bool   1 byte
-int    4 byte
-long   8 byte
-float  4 byte
-double 8 byte
-char   1 byte
-string ? byte
-```
+The term _bug_ was coined by [Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper) whose colleague discovered a moth stuck inside one of the relays of their punchcard computer causing an error.
+
+> [!TIP]
+> If your text editor has [Language Server Protocol](https://en.wikipedia.org/wiki/Language_Server_Protocol) support, you can get useful warnings and errors directly inside your code editor without the need for compiling or running a debugger, this can save you a lot of time by helping you catch errors early.
 
 ## Memory
 
-- The black chips on the memory circuit board are the storage where bytes are stored.
-- we call their location and address.
-- the computer's memory is like a canvas you can manipulate the bits of.
+A stick of RAM contains black chips on the circuit board, these are where the bytes your computer uses as Random Access Memory are stored. Each byte has a location which is accessible in C by finding the address of the byte.
 
-> [!WARNING]
-> Don't forget to [type cast](../01-C.md#type-casting) variables to floats when you need the decimal points. You can add one float to the equation and the rest convert to floats.
+```
+bool   1 byte
+int    4 bytes
+long   8 bytes
+float  4 bytes
+double 8 bytes
+char   1 byte
+string ? bytes
+```
 
 ## Arrays
 
-- Instead of setting a single variable for a collection of numbers you can use an array.
-- For example, storing `score1...score20` would take up a lot of memory and make the code very messy.
-- Instead, you can store them in an array: `int[] scores = {95, 80, 79};`
-- The computer will store array values back to back.
-- There is an example of this in [scores.c](./scores.c) file.
+Arrays are a collection of a type, the values must all be of the same type. A great use case for this is storing a collection of scores which would be of type integer. This allows us to keep the data of the array stored in memory with each value back to back. There is an example of this in the [scores.c](./scores.c) file.
 
-> [!CAUTION]
-> Arrays start at `0`, so make sure to set the first value with `scores[0] = 3`
+You use what is known as an __index__ to access data from an array, so to print the third item of an array you would point to the array with an index of 2. This is because arrays start at 0 instead of 1.
 
-### Other Values
+```c
+int[] numbers = { 0, 1, 2, 3, 4 };
 
-- You don't have to store numbers in the array, you can install any type in an array.
-- All items in the array must be of the same type.
-- A string is just an array with each item being of type `char`.
-- The computer knows a string has ended when it reaches a byte that is set to `0` or `00000000`.
-  - You can view this by printing the value of `array[length + 1]`.
-  - it will print as `NUL`, it is equal to the `0` character in ASCII.
+print("%i", numbers[2]);
+```
 
-> [!TIP]
-> You can print the value of a `char` as an `int`.
+## Strings
 
-- An array of strings is just an array of arrays of `chars`.
-- You can print individual characters of words such as `printf("%s", words[0][0])` would print `H` if the value of `words[0]` is equal to `"HI"`.
-- If you go one index past one of the nested arrays it will access the `0`th value of the subsequent nested array.
-  ```index-jump.c
-  words[0] = "HI";
-  words[1] = "BYE";
-  printf("%s", words[0][4]); // `output: B`
-  ```
+A string is stored in memory slightly differently, while an integer is stored at a memory address with that value inside, a string is defined as a pointer with the address of the pointer being the first character of the string, the bytes in memory following that original address are the string up until it reaches a null terminate code telling the computer that the string end there.
 
-> [!CAUTION]
-> When refactoring a process to a function, make sure you set the variable usage to the parameter definition.
-
-- The `<string.h>` library contains a lot of string manipulation functions.
-- In the [String Length](./examples/length.c), you can see an example of a custom-defined string length function and the [strlen](https://manual.cs50.io/3/strlen) function defined in `string.h`.
-- You can use `strlen` to iterate through a string using the length as the quantity to count to.
-  - `for(int i = 0, n = strlen(s); i < n; i++)`
-  - This is done by initialising both `i` and `n` in the initialisation.
-  - The code above requires that both `i` and `n` are of the same type.
-  - This is how you would print a string if you didn't know about the `%s` format code.
-
-## ctype.h
-
-- this library contains some useful functions for manipulating.
-- in the [uppercase](./uppercase.c) example you can see the `toupper` function being used.
+You can manipulate strings using the `<string.h>` and `<ctype.h>` libraries, some common ones include `strlen` for finding the length of a string and `toupper` to capitalise a singular character or string.
 
 ## Command Line Arguments
 
-- you can add `string argv[]` in the `main` function declaration as a parameter.
-- this will allow you to add command line arguments to your program.
-- the arguments will be stored in an array of strings.
-- there is an example of this in [greet.c](./greet.c).
-- `argv[0]` will print the name of the program e.g. `./greet`.
-  - this allows you to figure out what command the user ran so you can supply help text for them.
-- if you print a number over the amount of command line arguments specified it will print `null`
+While accepting user input during runtime is useful, sometimes you want to be able to run a program with a specific input and have the program use that during its processing. You can see this method used with `cp` and `mv` as well as other common UNIX commands.
+
+```c
+int main(int argc, string argv[]) {
+  printf("%i", argc); // returns count of arguments starting from 0
+  print("Output:\nZero: %s\nOne: %s", ,argv[0], argv[1]);
+}
+```
+```sh
+λ ./main hello
+Output:
+Zero: ./main
+One: hello
+```
 
 > [!TIP]
-> It is a good idea to allow the user to run the program without any arguments.
-
-- you can use something called flags `./binary -f` for checking for particular arguments.
-
-## Exit Status
-
-- the default exit status is `0`.
-- anything other than `0` is bad, it's an error code.
-- debuggers and testing programs like **unit tests** can detect and display these error codes with their messages.
+> It is common for Command Line Tools to use __flags__ to check for particular arguments e.g `rm -r` to recursively remove everything within a folder. `if (strcmp(argv[i], "-r") == 0)` is how you would check for this flag.
 
 ## Cryptography
 
-- the ability to send information securely.
-- encrypting or scrambling information is a way to ensure that no one who is the person the message is intended for can read it.
-- it needs to be reversible so that someone else with the key can decrypt it.
-
-```mermaid
-flowchart LR
-    key & plaintext--> cipher --> cyphertext
-```
-
-- sending a message via plaintext is too easily read by malicious parties.
-- an example crypto `HI! -> IJ!`.
-  - you can only tell it is sent enthusiastically because of the `!`.
-  - this method is easy to brute force.
-  - it's known as the Caesar cypher because Julius Caesar used to use it.
-- `ROT13` is more common and rotates them by `13`.
-  - this makes it a little less obvious.
-  - `26` would be useless because it rotates fully around and is back again.
-- this is just a simple cipher and there are much more complex algorithms for this task.
-- decrypting on the other end requires you to reverse the process with the same algorithm.
+Cryptography is the art of scrambling and sending information, it is a way to ensure that only the desired recipient can open the data. It has been commonly achieved by rotating the letters of the alphabet, for example, the cypher `ROT13` which moves each letter of the alphabet forward 13 places wrapping around at the end. More complex algorithms are used in real-world applications and require both the sender and receiver to have a `key` which is an algorithm allowing them to decrypt the data.
