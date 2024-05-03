@@ -1,6 +1,8 @@
 # What is Computer Science
 
-Computer Science is the study of information, it is focused on solving problems utilising computational thinking. A program can simply be thought of as an input with a compute step resulting in an output.
+Computer Science is the study of information, it is focused on solving problems utilising computational thinking. 
+
+A program can simply be thought of as an input with a compute step resulting in an output.
 
 > [!IMPORTANT]
 > These notes and examples were created following along with [Harvard CS50's Introduction to Computer Science](https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science?webview=false&campaign=CS50%27s+Introduction+to+Computer+Science&source=edx&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Fcs50).
