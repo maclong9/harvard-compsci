@@ -155,3 +155,6 @@ __file I/O functions__
 - `fread` read write binary data from a file
 - `write` binary data to a file
 - `fseek` moves around in the file
+
+[Previous: 03-Algorithms](../03-Algorithms/README.md) <br />
+[Next: 05-Data-Structures](../05-Data-Structures/README.md)

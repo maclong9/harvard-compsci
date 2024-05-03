@@ -84,5 +84,5 @@ One: hello
 
 Cryptography is the art of scrambling and sending information, it is a way to ensure that only the desired recipient can open the data. It has been commonly achieved by rotating the letters of the alphabet, for example, the cypher `ROT13` which moves each letter of the alphabet forward 13 places wrapping around at the end. More complex algorithms are used in real-world applications and require both the sender and receiver to have a `key` which is an algorithm allowing them to decrypt the data.
 
-[Previous: 01-C](./01-C/README.md) <br />
-[Next: 03-Algorithms](./02-Algorithns/README.md)
+[Previous: 01-C](../01-C/README.md) <br />
+[Next: 03-Algorithms](../03-Algorithms/README.md)

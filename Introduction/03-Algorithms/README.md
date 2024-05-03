@@ -199,3 +199,6 @@ flowchart TD
     2("Sort Left Half of Numbers") -->
     3("Merge Sorted Halves") --> Quit
 ```
+
+[Previous: 02-Arrays](../02-Arrays/README.md) <br />
+[Next: 04-Memory](../04-Memory/README.md)

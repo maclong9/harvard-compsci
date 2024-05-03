@@ -231,7 +231,7 @@ int result_two = (a + b) / 3.0;
 ```
 
 [Previous: 00-Introduction](../README.md) <br />
-[Next: 02-Arrays](./02-Arrays/README.md)
+[Next: 02-Arrays](../02-Arrays/README.md)
 
 [^1]: Standard Output is an example of [Standard Streams](https://en.wikipedia.org/wiki/Standard_streams).
 [^2]: Standard Input is also an example of a Standard Stream, another common one is Standard Error.
