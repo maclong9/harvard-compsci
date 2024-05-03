@@ -62,13 +62,12 @@ This notation is a way to describe the maximum possible number of steps an algor
 
 __$O$ Notation Maximum Number of Steps__
 - $O(n^{2})$
-     - n people doing n things, for example, everyone in a room shaking hands would be $n \times n$ or $n^{2}$ handshakes. **Quadratic**.
+     - n people doing n things, for example, everyone in a room shaking hands would be $n \times n$ or $n^{2}$ handshakes.
 - $O(n \\log n)$
-     - **Logarithmic**.
 - $O(n)$
      - takes linear time, for example, going through the phonebook one at a time. It represents an upper bound on the number of steps you might be counting.
 - $O(\\log n)$
-     - dividing in half. _binary search_.
+     - dividing in half.
 - $O(1)$
      - this means it is a constant number of steps, no matter how many people the algorithm is working through.
 
@@ -78,7 +77,6 @@ __$\Omega$ Lowest Number of Steps__
 - $\Omega(n)$
 - $\Omega(\\log n)$
 - $\Omega(1)$
-     - _linear search_, _binary search_
 
 __$\Theta$ represents that $O \text{ and } \Omega$ are equal__
 - $\Theta(n^{2})$
