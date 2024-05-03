@@ -1,6 +1,8 @@
 # Using The Computers Memory in Interesting Ways
 
-An abstract data type is a implemented by a programmer, for example __queues__. As simple as a queue in the normal world, they offer a __FIFO__ or first in first out approach. You can usually enqueu and deque which is akin to entering and exiting a queue. You can use an array to define a queue.  The two operations for enque and dequeue are called `push` and `pop` so you `push` a user into the array and `pop` them out of the array. 
+An abstract data type is a implemented by a programmer, for example __queues__. As simple as a queue in the normal world, they offer a __FIFO__ or first in first out approach. You can enqueue and deqeue which is akin to entering and exiting a queue. 
+
+You can use an array to define a queue. The two operations for enque and dequeue are called `push` and `pop` so you `push` a user into the array and `pop` them out of the array. 
 
 ```c
 const int CAPACITY = 50;
