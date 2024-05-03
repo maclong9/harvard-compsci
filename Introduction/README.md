@@ -145,8 +145,7 @@ The issue with the above is we can't hardcode every possible question, so we nee
 
 ## Writing Good Code
 
-Good code should be [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself), clean[^2] and easy to read which can be achieved by abstracting away large and regularly required processes to functions and repetitive tasks to [loops](./01-C/README.md/#Loops) or [recursion](./03-Algorithms/README.md#Recursion).
+Good code should be [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself), clean[^2] and easy to read which can be achieved by abstracting away large and regularly required processes to functions and repetitive tasks to [loops](./01-C/README.md/#loops) or [recursion](./03-Algorithms/README.md#recursion).
 
-[^1]: Invented by mathemetician
-    [George Bool](https://en.wikipedia.org/wiki/George_Boole), an expression with a `true` or `false` answer.
+[^1]: Invented by mathematician [George Bool](https://en.wikipedia.org/wiki/George_Boole), an expression with a `true` or `false` answer.
 [^2]: A term used to describe readable and elegant code, you can read about clean code in [this book](https://github.com/dev-marko/clean-code-book) by [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) a software engineer and author. 
