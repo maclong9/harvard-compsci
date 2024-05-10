@@ -57,7 +57,7 @@ Trees are a variant of arrays and linked lists that are more complelling 1 and u
 > [!NOTE]
 > For simple explanations an array of 7 is usefu because it has a perfect middle value.
 
-The problem with a linked list is you lose $\log(n)$ running time because you must start from the beginning every time you need to reach a value further into the array.
+The problem with a linked list is you lose $O(\log{n})$ running time because you must start from the beginning every time you need to reach a value further into the array.
 
 You can view a 7 value array as the middle, the middle of the middle and the middle of the middle of the middle.
 
@@ -65,7 +65,25 @@ You can view a 7 value array as the middle, the middle of the middle and the mid
 
 You can then view this 2 dimensionally instead with moving the red nodes up 1 row and the yellow center up 2 rows. 
 
+This is considered a tree, where the leaves are the ones at the bottom and the root node is the single node at the top. In reverse to the way a normal tree grows from bottom to top.
+
+You can name refer to this as a binary search tree, everything to the left and below of a node is smaller and everything to the right and below is larger.
+
+In the 7 value array example the tree is made up of two smaller trees.
+
 ![Array Displayed 2 Dimensionally](https://github.com/maclong9/harvard-compsci/assets/115668288/3a3876b2-b675-4c6a-8735-b665f5ca5a7e)
+
+When writing code, instead of `next` you would add `left` and `right` as nodes within the struct.
+
+``` c
+typedef struct node {
+    int number;
+    struct node *left;
+    struct node *right;
+}
+```
+
+The above is back to $O(\log n)$ as opposed to $O(n)$.
 
 [Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-](../06-) 
