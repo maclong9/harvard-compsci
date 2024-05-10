@@ -85,6 +85,9 @@ typedef struct node {
 
 The above is back to $O(\log{n})$ as opposed to $O(n)$. In the code you point the root of the tree, in this example the root is 4.
 
+You can see in the Hash Table example below that the table is a standard array for each letter of the alphabet and then if there are multiple names that start with the same letter then those names are joined together as a linked list. This allows you to store multiple values that should be sorted into the same point of an array.
+
+![Hash Table Example](https://github.com/maclong9/harvard-compsci/assets/115668288/683d4dc5-b533-4c67-b91b-1cf30df25a83)
 
 [Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-](../06-) 
