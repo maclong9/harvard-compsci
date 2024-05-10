@@ -120,5 +120,23 @@ Above is a very simple hash function that looks at only the first letter of a na
 
 A hash table is $O(n/k)$ with $k = number of hash values. In the example above hash values is the collection of first letters e.g. `lin` for `link`.
 
+## Tries
+
+A tree of arrays, $O(1)$. 
+
+In a trie, every node is an array and each array represents a letter of the alphabet.
+
+You hash and create one array for every letter in your word. Each is null by default. To insert a friend you find the location for T change the null to a pointer to O and hash and so on for each letter in the name and on the final letter you indicate it's the end of the name. The example name is `Toad` and `Taodette` you can see they share a common prefix but have different endpoints, within the termination address you would also store the persons phone number etc. You could then add the name `Tom` and it would still utilise the first pathway.
+
+``` c
+typedef struct node {
+    struct node *children[26];
+    char *number;
+} node;
+```
+
+> [!NOTE]
+> `k` can be considered a constant value that is the max possible, for example in the character name section it would equal the maximum name length.
+
 [Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-Python](../06-Python/README.md) 
