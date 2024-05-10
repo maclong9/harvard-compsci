@@ -1,8 +1,8 @@
 # Using The Computers Memory in Interesting Ways
 
-An abstract data type is a implemented by a programmer, for example __queues__. As simple as a queue in the normal world, they offer a __FIFO__ or first in first out approach. You can enqueue and deqeue which is akin to entering and exiting a queue. 
+An abstract data type is a implemented by a programmer, for example __queues__. As simple as a queue in the normal world, they offer a __FIFO__ or first in first out approach. You can enqueue and dequeue which is akin to entering and exiting a queue. 
 
-You can use an array to define a queue. The two operations for enque and dequeue are called `push` and `pop` so you `push` a user into the array and `pop` them out of the array. 
+You can use an array to define a queue. The two operations for enqueue and dequeue are called `push` and `pop` so you `push` a user into the array and `pop` them out of the array. 
 
 ```c
 const int CAPACITY = 50;
@@ -15,7 +15,7 @@ typedef struct {
 
 A __stack__ is another form of abstract data type, they support the opposite of queues which is __LIFO__ last in, first out. There are contexts where this makes sense, for example within an email program you usually start with the ones that came in most recently because they are ordered in that way.
 
-A stack and a queue can be defined almost identically interms of data structure, even if the logic is different the data is the same.
+A stack and a queue can be defined almost identically in terms of data structure, even if the logic is different the data is the same.
 
 ## Allocating More Space
 
@@ -30,7 +30,7 @@ This allows you to connect values that aren't in contiguous memory together, for
 You can link memory addresses using pointers. Pointers can be considered metadata or an implementation detail that is useful for organisation of data. 
 
 > [!NOTE]
-> `NULL` is equalt to `0x0` when represented with hexadecimal.`
+> `NULL` is equal to `0x0` when represented with hexadecimal.`
 
 A linked list uses one node per value and one pointer that points to the first item of the list.  Below is an example of using a structure that points to the next value within it's linked list.
 
@@ -40,6 +40,9 @@ typedef struct node {
     struct node *pointer;
 } node
 ```
+
+You can then use `malloc` and `sizeof` to allocate memory equal to the size of the node for a pointer that points to the first item of the linked list, with each item of the linked list pointing to the next item in the list.
+
 
 
 [Previous: 04-Memory](../04-Memory/README.md) <br />
