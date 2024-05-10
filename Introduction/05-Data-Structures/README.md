@@ -95,5 +95,30 @@ You can see in the Hash Table example below that the table is a standard array f
 
 ![Hash Table Example](https://github.com/maclong9/harvard-compsci/assets/115668288/683d4dc5-b533-4c67-b91b-1cf30df25a83)
 
+A hash table is constant time in certain locations due to some names being the first in a linked list or a sole item of that index.
+
+``` c
+typedef struct node {
+    char *name;
+    char *number;
+    struct node *next;
+} node;
+```
+
+``` c
+#include <ctype.h>
+
+int hash(char *word) {
+    return toupper(word[0]) - 'A';
+}
+```
+
+Above is a very simple hash function that looks at only the first letter of a name.
+
+> [!NOTE]
+> If you are passing a string as an paramter for a function and the function should not change the variable you should define the parameter with `const` so it cannot be changed.
+
+A hash table is $O(n/k)$ with $k = number of hash values. In the example above hash values is the collection of first letters e.g. `lin` for `link`.
+
 [Previous: 04-Memory](../04-Memory/README.md) <br />
-[Next: 06-](../06-) 
+[Next: 06-Python](../06-Python/README.md) 
