@@ -29,6 +29,9 @@ This allows you to connect values that aren't in contiguous memory together, for
 
 You can link memory addresses using pointers. Pointers can be considered metadata or an implementation detail that is useful for organisation of data. 
 
+> [!NOTE]
+> `NULL` is equalt to `0x0` when represented with hexadecimal.`
+
 A linked list uses one node per value and one pointer that points to the first item of the list.  Below is an example of using a structure that points to the next value within it's linked list.
 
 ``` c 
@@ -38,10 +41,6 @@ typedef struct node {
 } node
 ```
 
-
-
-> [!NOTE]
-> `NULL` is equalt to `0x0` when represented with hexadecimal.`
 
 [Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-](../06-) 
