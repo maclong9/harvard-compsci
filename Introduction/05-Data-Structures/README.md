@@ -50,7 +50,16 @@ You can see an example of the above in [linked-list.c](./linked-list.c).
 > [!WARNING]
 > Always ensure to link the new value to the previous first value of the linked list.
 
-## 
+## Trees
+
+Trees are a variant of arrays and linked lists that are more complelling 1 and up dimensional solutions.
+
+> [!NOTE]
+> For simple explanations an array of 7 is usefu because it has a perfect middle value.
+
+The problem with a linked list is you lose $\log(n)$ running time because you must start from the beginning every time you need to reach a value further into the array.
+
+You can view a 7 value array as the middle, the middle of the middle and the middle of the middle of the middle.
 
 [Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-](../06-) 
