@@ -19,8 +19,25 @@ Adding to an array that hasn't had enough space allocated to it means you have t
 
 You could just assign the array `300 sizeof(int)` however this could be using far too much memory and also you may still run into the same issue, and it becomes incredibly slow to copy over so many values when moving from the `tmp` array.
 
-LECTURE TIME: 30:34
+## A Linked List
+
+This allows you to connect values that aren't in contiguous memory together, for example you have an array of 3 values and you push a 4th value into the array the computer needs to link the memory from the original array to the 4th value.
+
+You can link memory addresses using pointers. Pointers can be considered metadata or an implementation detail that is useful for organisation of data. 
+
+A linked list uses one node per value and one pointer that points to the first item of the list.  Below is an example of using a structure that points to the next value within it's linked list.
+
+``` c 
+typedef struct node {
+    int number;
+    struct node *pointer;
+} node
+```
 
 
-[Previous: 04-Me](../04-Memory/README.md) <br />
+
+> [!NOTE]
+> `NULL` is equalt to `0x0` when represented with hexadecimal.`
+
+[Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-](../06-) 
