@@ -85,6 +85,11 @@ typedef struct node {
 
 The above is back to $O(\log{n})$ as opposed to $O(n)$. In the code you point the root of the tree, in this example the root is 4.
 
+## Hashing
+
+When you sort a deck of cards, to make life easier you will take out all of the hearts, clubs, spades and diamonds individually and then sort each pile individually. This process is called hashing. 
+
+Hashing takes inputs and _hashes_ them to output values. You can use hashing to implement hash tables, a combination of arrays and linked lists. 
 
 [Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-](../06-) 
