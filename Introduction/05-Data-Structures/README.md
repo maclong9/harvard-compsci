@@ -91,5 +91,9 @@ When you sort a deck of cards, to make life easier you will take out all of the 
 
 Hashing takes inputs and _hashes_ them to output values. You can use hashing to implement hash tables, a combination of arrays and linked lists. 
 
+You can see in the Hash Table example below that the table is a standard array for each letter of the alphabet and then if there are multiple names that start with the same letter then those names are joined together as a linked list. This allows you to store multiple values that should be sorted into the same point of an array.
+
+![Hash Table Example](https://github.com/maclong9/harvard-compsci/assets/115668288/683d4dc5-b533-4c67-b91b-1cf30df25a83)
+
 [Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-](../06-) 
