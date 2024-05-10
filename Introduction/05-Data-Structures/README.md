@@ -41,9 +41,16 @@ typedef struct node {
 } node
 ```
 
-You can then use `malloc` and `sizeof` to allocate memory equal to the size of the node for a pointer that points to the first item of the linked list, with each item of the linked list pointing to the next item in the list.
+You can then use `malloc` and `sizeof` to allocate memory equal to the size of a node for a pointer that points to the first item of the linked list, with each item of the linked list pointing to the next item in the list.
 
+You can then set `list = n` as `n` was a temporary value to be used to find the list and `list` is the permanent global variable. You would do this each time you add a new item to the liked list ensuring that the list variable is always pointing to the first item of an array.
 
+You can see an example of the above in [linked-list.c](./linked-list.c).
+
+> [!WARNING]
+> Always ensure to link the new value to the previous first value of the linked list.
+
+## 
 
 [Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-](../06-) 
