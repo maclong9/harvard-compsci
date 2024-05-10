@@ -2,13 +2,13 @@
 
 ## Colors
 
-Your screen uses pixels to render images on the screens, they are essentially little tiny lights which is why low-resolution images or screens can render images that appear blocky because of the size of the pixels used to create the image. This is sometimes used for artistic style in video games known as Pixel Art. 
+Your screen uses pixels to render images, they are essentially tiny square lights which is why low-resolution images or screens can render images that appear blocky because of the size of the pixels used to create the image. This is sometimes in an art style called [Pixel Art](https://en.wikipedia.org/wiki/Pixel_Art), popularised by 8-bit video games. 
 
 An image file simply maps to a pattern of pixels to turn on and off or alter the colour to reproduce the image detailed in the pattern. A common way to alter the colour of a pixel is known as the [RGB Color Model](https://en.wikipedia.org/wiki/RGB_color_model) with the letters standing for Red, Green & Blue with each having a possible value of 0 through 255.
 
-[HEX Triplet](https://en.wikipedia.org/wiki/Web_colors) is another common colour notation with the values of a HEX `#000000` equaling Red, Green and Blue again for every 2 places. Instead of 0 to 255, HEX uses a Hexadecimal notation with 0 to 9 followed by A to F for 10 to 15.
+[HEX Triplet](https://en.wikipedia.org/wiki/Web_colors) is another common colour notation with the values of a HEX `#000000` equaling Red, Green and Blue again for every 2 places. Instead of 0 to 255, HEX uses a Hexadecimal notation with `0-9` followed by `A-F` for `10-15`.
 
-Most programs that work with colors from photo editors to web programming use HEX and RGB as options for colors. Another common one is HSL and there is a new one called OKLCH.
+Most programs that work with colors from photo editors to web programming use HEX and RGB as options for colors. Another common choice is HSL and there is a new colorspace called OKLCH.
 
 ## Hexadecimal
 
@@ -53,7 +53,7 @@ stored in 0x123 = 291
 
 ## Pointers 
 
-You can use the `%p` format code and the `&` appended to a variable name to print the address that a value is being stored in memory. This is known as a pointer which points to the memory address. The `*` character is used for syntax relating to pointers if you use it with a type `int *p` it will declare a pointer, if you use it with specifying a type `printf("%i", *p);` it will point to that memory address. 
+You can use the `%p` format code and the `&` appended to a variable name to print the address that a value is being stored in memory. This is known as a pointer which points to the memory address. The `*` character is used for syntax relating to pointers if you use it with a type `int *p` it declares a pointer, if you use it without specifying a type `printf("%i", *p);` it will point to that memory address. 
 
 ```
 diagram of s stored in 8 bytes pointing to the start of string hi!\0
@@ -62,11 +62,11 @@ diagram of s stored in 8 bytes pointing to the start of string hi!\0
 > [!NOTE]
 > Modern computers use 64-bit allowing you to count to crazy high numbers. $64–bit = 2^{63} - 1$.
 
-You cannot compare a string with another string by doing `s == t` because `s` and `t` in this case are defined as a pointer to the first item in an array of characters making up a string. This is why the `strcmp` function exists. The same issue will happen if you try to copy the value of a string variable into a new variable, which is why the `strcpy` function exists because if you copied with `s == t` you would end up with the issue of `s` and `t` mirroring each other with changes to each individually because they are both pointed at the same memory address.
+You cannot compare a string with another string by doing `s == t` because `s` and `t` in this case are defined as a pointer to the first item in an array of characters making up a string. This is why the `strcmp` function exists. The same issue will happen if you try to copy the value of a string variable into a new variable, which is why the `strcpy` function exists because if you tried to copy a variable using `s = t` you would end up with the issue of `s` and `t` mirroring each other with changes to each individually because they are both pointed at the same memory address.
 
 ## Allocation
 
-`malloc` is a function contained within `<stdlib.h>` and is used to allocate a section of memory to a variable. As an example `char *t = malloc(8);` would reserve space in memory for `t` equal to `8B` the function then returns the first-byte address of the chunk reserved.
+`malloc` is a function contained within `<stdlib.h>` and is used to allocate a section of memory to a variable. As an example consider `char *t = malloc(8);` which would reserve space in memory for `t` equal to `8B` the function then returns the first-byte address of the chunk reserved.
 
 > [!WARNING]
 > Anytime a function could return `NULL` like in `malloc` you should check and `return 1` if so because this means there isn't enough memory.
@@ -84,11 +84,11 @@ int *x = malloc(sizeof(int));
 int arr = malloc(3 * sizeof(int));
 ```
 
-There are tools you can use to check for memory leaks, on macOS you can use `leaks` and on Linux, you can use `valgrind` both work in pretty much the same way with minor differences. However, if you have allocated space using `malloc` but not freed that memory with `free` then these tools will let you know about it.
+There are tools you can use to check for memory leaks, on macOS you can use `leaks` and on Linux, you can use `valgrind` both work in pretty much the same way with minor differences. However, if you have allocated space using `malloc` but not freed that memory with `free` these tools will let you know about it.
 
 ### Garbage Values
 
-These are quite a fun little experiment, if you allocate some memory but do not assign anything to the space you allocated and then iterate over every address within that section of memory and print the value you, you are likely to see what are known as __garbage values__, these are values that are stored in memory that you did not set, so they came from another programming or something the operating system was running. You can compile and run [garbage.c](./garbage.c) and you will see a lot of values printed out with some of them being non-zero values even though the code never assigns any values.
+These are quite a fun little experiment, if you allocate some memory but do not assign anything to the space you allocated and then iterate over every address within that section of memory and print the value you, you are likely to see what are known as __garbage values__, these are values that are stored in memory that you did not set, so they came from another program or something the operating system was running. You can compile and run [garbage.c](./garbage.c) and you will see a lot of values printed out with some of them being non-zero values even though the code never assigns any values.
 
 [here](https://www.youtube.com/watch?v=5VnDaHBi8dM) is a fun video explaining pointers and memory allocation.
 
@@ -111,7 +111,7 @@ int main(void) {
 
 The above code sets a variable in a low-level way by allocating the variable `x` and then assigning a value separately. `y` is also assigned a value but no space is ever allocated for `y` this would result in a garbage value and can cause computers to crash. You cannot dereference a pointer that has never been pointed to a memory address. The code above is fixed by the line that assigns `y` to `x` which means `y` is now pointing to a valid memory address.
 
-## Memory Overflow
+## A Brief Look Into Scope 
 
 There is an example in this directory called [swap.c](./swap.c), which uses a function to swap the values of `x` and `y` however it only works due to the usage of a temporary variable within the `old_swap` function. This is because the values passed to the `old_swap` function would just be copies of the original `x` and `y` and therefore altering the values of `a` and `b` would only affect the local scope after the function has terminated they would be discarded leaving `x` and `y` at their original values.
 
@@ -132,14 +132,15 @@ Calling functions or recursions too much can cause a memory error known as a __h
 
 ## File IO
 
-While `stdin` and `stdout` are great sometimes we need to store values in a file or read some data from a file. That is where the following file input and output functions come in, you can see a basic [phonebook.c](./phonebook.c) implementation which walks through the basics of writing to a file. Another example file is [cp.c](./cp.c) utilises both the reading and writing of a file, the result is a simple recreation of the standard UNIX command `cp` which copies a file to a new specified location based on command line arguments.
+While `stdin` and `stdout` are great sometimes we need to store values in a file or read some data from a file. That is where the following file input and output functions come in, you can see a basic [phonebook.c](./phonebook.c) implementation which walks through the basics of writing to a file.
+
+Another example file is [cp.c](./cp.c) which utilises both the reading and writing of a file, the result is a simple recreation of the standard UNIX command `cp` which copies a file to a new specified location based on command line arguments.
 
 ``` c
 while(fread(&b, sizeof(b), 1, src) != 0) {
 ```
 
-The above line of code uses `fread` to read from the address of `b`, at the size of `b`, and then copy `1` byte at a time from the `src` variables. It will do this as long as it succeeds, then there are no bytes left so it exits. The following line does the opposite, instead, it tells `fwrite` to find the address of `b` then 1 byte at a time write to `ds`.
-
+The above line of code uses `fread` to read from the address of `b`, at a size of `b`, and then copy `1` byte at a time from the `src` file variable. It will do this as long as it succeeds, when there are no bytes it exits. The following line does the opposite, instead, it tells `fwrite` to find the address of `b` then 1 byte at a time write to `dst` file.
 
 ``` c
 fwrite(&b, sizeof(b), 1, dst);

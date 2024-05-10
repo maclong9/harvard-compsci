@@ -1,13 +1,15 @@
 # What is Computer Science
 
-Computer Science is the study of information, it is focused on solving problems utilising computational thinking. A program can simply be thought of as an input with a compute step resulting in an output.
+Computer Science is the study of information, it is focused on solving problems utilising computational thinking. 
+
+A program can simply be thought of as an input with a compute step resulting in an output.
 
 > [!IMPORTANT]
 > These notes and examples were created following along with [Harvard CS50's Introduction to Computer Science](https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science?webview=false&campaign=CS50%27s+Introduction+to+Computer+Science&source=edx&product_category=course&placement_url=https%3A%2F%2Fwww.edx.org%2Fcs50).
 
 ## The Binary System
 
-Computers count in binary utilising 0's and 1's as the only two possible values. Electricity passing through transistors which can store or allow that electricity to dissipate is how a binary digit or **bit** determines its value. 
+Computers count in binary utilising a combination of 0's and 1's to represent numbers. Electricity passing through transistors which can store or allow that electricity to dissipate is how a binary digit or **bit** determines its value. 
 
 <div align="center">
     
@@ -145,7 +147,7 @@ The issue with the above is we can't hardcode every possible question, so we nee
 
 ## Writing Good Code
 
-Good code should be [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself), clean[^2] and easy to read which can be achieved by abstracting away large and regularly required processes to functions and repetitive tasks to [loops](./01-C/README.md/#loops) or [recursion](./03-Algorithms/README.md#recursion).
+Good code should be [DRY](https://en.wikipedia.org/wiki/Don't_repeat_yourself), clean[^2] and easy to read which can be achieved by abstracting away large and regularly required processes to [functions](./01-C/README.md) and repetitive tasks to [loops](./01-C/README.md/#loops) or [recursion](./03-Algorithms/README.md#recursion).
 
 [Next: 01-C](./01-C/README.md)
 

@@ -6,18 +6,23 @@ Compiling is used as a catch-all phrase for converting source code to machine co
 
 ### The Four Steps of Compilation
 
-1. **preprocessing**
+1. **preprocessing**:
    Lines starting with `#` are known as a preprocessor directive, the most common case being `#include` which tells the compiler to replace the contents of the `#include` line with the contents of the stated header file.
-3. **compiling**
+2. **compiling**:
   This step is where the computer converts the C code the programmer wrote into a language known as [Assembly Language](https://en.wikipedia.org/wiki/Assembly_language) which was used for programming before C.
-4. **assembling**
+3. **assembling**:
   Next up the compiler will take the Assembly Code from the previous step and convert it to [Machine Code](https://en.wikipedia.org/wiki/Machine_Code). 
-5. **linking**
-   The way linking works is by taking all of the compiled `.c` files that are mentioned or referenced by an `include <{libname}.h>` sort of stitching them together so they can utilise the functions from one another.
+4. **linking**:
+   The way linking works is by taking all of the compiled `.c` files that are mentioned or referenced by an `include <{libname}.h>` and sort of stitching them together so they can utilise the functions from one another.
+
+> [!NOTE]
+> The code is only converted to assembly if you are using `gcc` if you are using the more modern `clang` which is built on LLVM it instead compiles to LLVM IR.
 
 ## Debugging
 
-It's rare to write a program 100% right the first time, this is because you may not have thought of something, typed something incorrectly or missed out on a parameter that a function requires to work. It allows you to set points in your code where the running will pause, you can then view the value of variables at that point during the runtime. This can be useful for figuring out why something isn't working as intended.
+It's rare to write a program 100% right the first time, this is because you may not have thought of something, typed something incorrectly or missed out on a parameter that a function requires to work. 
+
+A debugger allows you to set points in your code where the runtime will pause, you can then view the value of variables at that point during the runtime. This can be useful for figuring out why something isn't working as intended.
 
 The term _bug_ was coined by [Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper) whose colleague discovered a moth stuck inside one of the relays of their punchcard computer causing an error.
 
@@ -52,12 +57,12 @@ print("%i", numbers[2]);
 
 ## Strings
 
-A string is stored in memory slightly differently, while an integer is stored at a memory address with that value inside, a string is an array of type `char` defined as a [pointer](../04-Memory#pointers) with the address of the pointer being the first character of the string, the bytes in memory following that original address are the string up until it reaches a null terminate code usually represented by `00000000` telling the computer that the string end there.
+A string is stored in memory slightly differently, while an integer is stored at a memory address with that value inside, a string is an array of type `char` defined as a [pointer](../04-Memory#pointers) with the address of the pointer being the first character of the string, the bytes in memory following that original address are the string up until it reaches a null terminate code usually represented by `00000000` telling the computer that the string ends there.
 
-You can manipulate strings using the `<string.h>` and `<ctype.h>` libraries, some common ones include `strlen` for finding the length of a string and `toupper` to capitalise a singular character or string. Another function is `strcmp` which is used to compare two strings and will exit with `0` if the strings are the same, it compares strings in _ASCIIbetical_ order. 
+You can manipulate strings using the `<string.h>` and `<ctype.h>` libraries, some common functions include `strlen` for finding the length of a string and `toupper` to capitalise a singular character or string. Another function is `strcmp` which is used to compare two strings and will exit with `0` if the strings are the same, it compares strings in _ASCIIbetical_ order. 
 
 ```c
-if(strcmp("test", "test") == 0)
+if(strcmp("test", "test") == 0) { ... }
 ```
 
 ## Command Line Arguments
@@ -72,9 +77,8 @@ int main(int argc, string argv[]) {
 ```
 ```sh
 λ ./main hello
-Output:
-Zero: ./main
-One: hello
+Argument Zero: ./main
+Argument One: hello
 ```
 
 > [!TIP]

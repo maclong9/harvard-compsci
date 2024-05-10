@@ -60,7 +60,7 @@ flowchart TD
 
 This notation is a way to describe the maximum possible number of steps an algorithm can take during runtime. 
 
-__$O$ Notation Maximum Number of Steps__
+__$O$ Maximum Number of Steps__
 - $O(n^{2})$
      - n people doing n things, for example, everyone in a room shaking hands would be $n \times n$ or $n^{2}$ handshakes.
 - $O(n \\log n)$
@@ -87,7 +87,7 @@ __$\Theta$ represents that $O \text{ and } \Omega$ are equal__
 
 ## Structs for Storing Data
 
-A `struct` is a way of defining structure for variables and containing them within one namespace. This can help clean up code and allow more readable code. There is an example of creating a `struct` named `Person` with the attributes `string name` and `string number` for phone number within the [phonebook.c](./phonebook.c) file.
+A `struct` is a way of defining structure for variables and containing them within one namespace. This can help make code clean and readable. There is an example of creating a `struct` named `Person` with the attributes `string name` and `string number` for phone number within the [phonebook.c](./phonebook.c) file.
 
 ``` mermaid 
 ---
@@ -143,9 +143,7 @@ flowchart TD
     5 & 6 --> 7("increment count and completed by 1") --> 2
 ```
 
-> [!NOTE]
-> [Comparison Sorting Algorithms](
-- You can use [Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html) is a great website that visualises the differences between various sorting algorithms created by the University of [San Francisco](https://www.usfca.edu/). There is also [this video](https://www.youtube.com/watch?v=ZZuD6iUe3Pc) which shows the speeds of various sorting algorithms.
+[Comparison Sorting Algorithms](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html) is a great website that visualises the differences between various sorting algorithms created by [the University of San Francisco](https://www.usfca.edu/). There is also [this video](https://www.youtube.com/watch?v=ZZuD6iUe3Pc) which shows the speeds of various sorting algorithms.
 
 As an algorithm selection sort is quite inefficient as it is constantly cycling through every single element above the current loop increment. Selection Sort is on $\Theta(n^{2})$ because the upper and lower bound of steps are equal.
 
@@ -169,12 +167,11 @@ n = \text{Number of Items Sorted} \\
 
 So far we have spoken about _iteration_ when talking about [loops](../01-C/#loops), however there is another way to cause a repetition and that is known as __recursion__. A recursive function is a function that calls itself, an example is known as merge sort, which splits the array of numbers in half and then calls itself again on the left and right halves of the array, this means each time it is called it's on a smaller amount items, it then ends by merging the halves back together. You can see an example of recursion in [recursion.c](./recursion.c) and one of iteration in [iteration.c](./iteration.c).
 
+Merge Sort works out as more efficient than both the Bubble and Selection sorting algorithms. The basic steps applied to an 8 digit array would result in the array being split into half down to 4, 2 and finally 1 you'd then merge the 2 individuals sorting the values at the same time, then you'd do the same for each step back up to the full array of 8.
 
-Merge Sort works out as more efficient than both the Bubble and Selection sorting algorithms. The basic steps applied to a n 8 digit array would result in the array being split into half down to 4, 2 and finally 1 you'd then merge the 2 individuals sorting the values at the same time, then you'd do the same for each step back up to the full array of 8.
+A more simplistic way to describe it is you sort the left half of the left half, the right half of the left half and then merge both sides of the left half of the original array, then repeat with the right half of the original array and merge the two halves of the original array.
 
-A more simplistic way to describe it is you sort the left half of the left half, the right half of the right half and then merge both sides of the left half of the original array, then repeat with the right half of the original array and merge the two halves of the original array.
-
-This Merge Sort algorithm results in fewer iterations and the number of steps is equal to $log_{2}n$ and below is an example of this algorithm with 8 being $n$.
+This Merge Sort algorithm results in fewer iterations and the number of steps is equal to $\log_{2}n$ and below is an example of this algorithm with $n = 8$.
 
 ```math
 \log_{2}8 = \log_{2}2^{3} \\
