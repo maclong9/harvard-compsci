@@ -83,7 +83,8 @@ typedef struct node {
 }
 ```
 
-The above is back to $O(\log n)$ as opposed to $O(n)$.
+The above is back to $O(\log{n})$ as opposed to $O(n)$. In the code you point the root of the tree, in this example the root is 4.
+
 
 [Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-](../06-) 
