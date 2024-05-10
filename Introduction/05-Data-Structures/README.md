@@ -61,5 +61,7 @@ The problem with a linked list is you lose $\log(n)$ running time because you mu
 
 You can view a 7 value array as the middle, the middle of the middle and the middle of the middle of the middle.
 
+![Middle's Highlighed in Arrray](https://github.com/maclong9/harvard-compsci/assets/115668288/683f9f23-5609-426f-be1c-5590b60a5f11)
+
 [Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-](../06-) 
