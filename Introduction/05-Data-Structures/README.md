@@ -63,5 +63,7 @@ You can view a 7 value array as the middle, the middle of the middle and the mid
 
 ![Middle's Highlighed in Arrray](https://github.com/maclong9/harvard-compsci/assets/115668288/683f9f23-5609-426f-be1c-5590b60a5f11)
 
+![Array Displayed 2 Dimensionally](https://github.com/maclong9/harvard-compsci/assets/115668288/3a3876b2-b675-4c6a-8735-b665f5ca5a7e)
+
 [Previous: 04-Memory](../04-Memory/README.md) <br />
 [Next: 06-](../06-) 
