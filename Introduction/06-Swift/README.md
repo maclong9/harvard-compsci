@@ -14,3 +14,8 @@ To quickly open the Playground directly from the GitHub repository you can use t
 git clone https://github.com/maclong9/harvard-compsci
 open harvard-compsci/Introduction/06-Swift/Examples.playground
 ```
+
+ > [!NOTE]
+ > This playground requires having macOS with Xcode installed.
+
+

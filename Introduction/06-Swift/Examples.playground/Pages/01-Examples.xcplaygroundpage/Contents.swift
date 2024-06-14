@@ -44,7 +44,7 @@ import PlaygroundSupport
 struct ContentView: View {
   var body: some View {
     VStack {
-      Text("Hello, world!")
+      Text("Blurring an Image!").font(.title)
       Image(
         nsImage: #imageLiteral(resourceName: "sampleImage.jpg")
       ).blur(radius: 5.0)
