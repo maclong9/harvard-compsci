@@ -1,3 +1,8 @@
+/*:
+ # Swift Charts
+ 
+ One of the more convenient libraries is Swift Charts, this library allows you to display charts of varying kinds within your program or playground, this can be particularly useful for scientific or mathematical computing as you can create documentation and notes with functioning code that can have the variables altered directly inline with your notes so you can see the changes.
+ */
 import SwiftUI
 import Charts
 import PlaygroundSupport
@@ -113,3 +118,4 @@ struct ContentView: View {
 
 // Set the playground live view to ContentView
 PlaygroundPage.current.setLiveView(ContentView())
+

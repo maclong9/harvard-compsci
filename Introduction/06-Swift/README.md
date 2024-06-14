@@ -8,4 +8,9 @@ methods built into the language. Another benefit of higher level languages is au
 
 A lot of this section is completed within the [Examples.playground](./Examples.playground) file which will require Xcode to open and run the files. I will include some notes in this `README.md` file for continuity's sake however the program examples are within the Playground. 
 
+To quickly open the Playground directly from the GitHub repository you can use the commands below within your terminal emulator.
 
+``` sh
+git clone https://github.com/maclong9/harvard-compsci
+open harvard-compsci/Introduction/06-Swift/Examples.playground
+```
