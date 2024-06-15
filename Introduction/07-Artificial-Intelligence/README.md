@@ -22,6 +22,9 @@ graph TD
     D -- No --> F[Stay still]
 ```
 
+> [!NOTE]
+> AI is good at games because the inputs and outputs can be represented mathematically with a goal in the form of a function to maximise/minimise.
+
 ``` mermaid
 ---
 title: Tic Tac Toe
@@ -34,5 +37,19 @@ graph TD
     D -- No --> F[?]
 ```
 
-> [!NOTE]
-> AI are good at games because the inputs and outputs can be represented mathematically with a goal in the form of a function to maximise/minimise.
+If you give the AI instructions based on what side it is playing to reach the following: 
+    - if O wins `-1`
+    - if draw `0`
+    - if X wins `1`
+
+It will find it easier to find the correct output as the results are represented mathematically. The value of the board is not determined until either of the teams have won or there are no spaces left to play.
+
+The issue is with larger games than Tic Tac Toe is there are much more inputs and possibilities in how to play them. For example Chess in the first 4 moves only are `288 Million` possible moves an in Go there are `256 Quintillion`.
+
+This is why we created **machine learning** which is a subset of AI for computers learning what they should do without being coached step by step by a human. Another option is **reinforcement learning** where you give it `+1` or `-1` depending on whether it was good or not, like a dog.
+
+There are examples of robots being guided by a human to show it the general motion of flipping a pancake, the robot is then left to attempt it without the human's guidance only recieving a `1` or `0` depending on whether it did a good job or not. The robot's hand movement is mapped to coordinates so it knows what it is doing.
+
+In this example of a maze with lava pits, it would be a good idea to reward the computer for getting there with less moves so that it finds the quickes solution possible. You can do something like add a randomisation of `10%` that will mean that in that percintile it will randomly move to a different direction rather than the move that returns the highest score so that it can find more efficient pathways.
+
+

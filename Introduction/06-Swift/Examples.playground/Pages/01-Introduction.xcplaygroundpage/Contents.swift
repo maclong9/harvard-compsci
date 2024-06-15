@@ -183,12 +183,5 @@ print(people[0]["name"] ?? "No Person Found at index 0")
 people.remove(at: 0)
 print(people[0]["name"]!)
 
-/*:
- ## Example Libraries
- 
- Foundation is a Swift library that contains a lot of functions for interacting with the operating system, some functionality that is built into C is abstracted into this Library for organisation sake. Some examples of tasks you can perform with this library including finding, creating, manipulating and removing files within your operating system and working with dates and times.
-*/
-
-
 
 //: [Next](@next)
