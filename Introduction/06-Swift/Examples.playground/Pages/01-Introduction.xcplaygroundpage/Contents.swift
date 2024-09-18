@@ -5,19 +5,20 @@
  
  > It is recommended to enable `Editor > Show Rendered Markup` so you can see this markup text with proper formatting and also to enable `Automatically Run` by force clicking the play bottom in the bottom left of the Xcode Playground window.
  
- You can view a higher level language to contain the CS50 library and much more to make your life easier. They are also commonly written more concisely for example in Swift you are able to omit semicolons and the `\n` escape sequence as you can see in the `print` statement below. You can also label parameters so the code becomes easier to read.
+ You can view a higher level language to contain the CS50 Header library we worked with in C earlier in this course and much more to make your life easier. They are also commonly written more concisely for example in Swift you are able to omit semicolons and the `\n` escape sequence as you can see in the `print` statement below. You can also label parameters so the code becomes easier to read and for functions with a single return statement you can omit the `return` keyword.
+ */
  
- Swift has something known as an interpreter, this means that even though it is a compiled language you can quickly run code from the command line without needing to compile it every time with the simple command `swift file.swift` this can save you a lot of time when iterating through versions of a project.
+print("Hello, World!")
+ 
+/*:
+ ## Language Interpreter
+ Swift has something known as an interpreter, this means that even though it is a compiled language you can quickly run code from the command line without needing to compile it every single time with the simple command `swift file.swift` this can save you a lot of time when iterating through versions of a project.
  
  This is the main benefit of working with higher level languages, **getting work done quicker**.
- 
+
  * Callout(Tip):
  You can compile Swift code into a binary to ensure peak efficiency when running performance-critical tasks.
- */
 
-print("Hello, world!")
-
-/*:
  ## Memory Management
  
  If you define a variable you don't need to worry about specifying memory to allocate to it and then unallocating it once the variable is no longer in use as in higher level languages memory management is done automatically.
@@ -60,12 +61,7 @@ PlaygroundPage.current.setLiveView(ContentView())
  Below is an example of defining and using a simple function in Swift. You can also see an example of string interpolation being used in Swift, you don't need to tell the compiler or interpreter that it is a formatted string with `f` like in C or Python, you can just interpolate the values within `\(value)`.
  
  One useful feature of Swift is the ability to *label* parameters, this means when you call the function you can use a different word rather than the name of the parameter which makes reading the code more like reading an English sentence. You can also use an `_` to omit a label altogether.
- 
-  ### Conciseness
-  
-  Swift allows you to write more concicse code by omitting certain things such as semicolons or in the case of functions that have only one possible outcome you can omit the `return` keyword.
 */
-
 
 func Greet(_ name: String) {
   print("Hello, \(name)")
@@ -83,7 +79,7 @@ func checkNumber(_ x: Int, against y: Int) -> Bool {
   }
 }
 checkNumber(5, against: 8)
-
+checkNumber(5, against: 5)
 
 /*:
  ## Types
@@ -104,7 +100,6 @@ explicitType = "Hello, World"
  
  You can do basic flow control like loops and if, else statements using the following examples.
  */
-
 
 if "a" == "b" {
   print("Hello, world!")
@@ -133,7 +128,6 @@ repeat {
   print(c)
   c -= 1
 } while c > 0
-
 
 /*:
  ## String Comparison
@@ -182,6 +176,5 @@ print(people[3]["name"]!)
 print(people[0]["name"] ?? "No Person Found at index 0")
 people.remove(at: 0)
 print(people[0]["name"]!)
-
 
 //: [Next](@next)
